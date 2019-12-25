@@ -1,0 +1,28 @@
+.btn--header_login {
+  width: 65px;
+  height: 16px;
+  @include font(22px, $font-light, $standart--color__1, 400);
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  text-decoration: none;
+  background: url("../img/Login.svg") no-repeat 100%;
+  width: 115px;
+  height: auto;
+  display: inline-block;
+}
+
+.btn--liveChat {
+    width: 65px;
+    height: 16px;
+    @include font(22px, $font-light, $standart--color__1, 400);
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    background: url("../img/Chat.svg") no-repeat 100%;
+    width: 162px;
+    height: auto;
+    display: inline-block;
+  }
+  

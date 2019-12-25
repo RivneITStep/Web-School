@@ -1,0 +1,8 @@
+.test{
+    background-color: $btn--color-primary_1;
+    color: $font--color-primary_1;
+    &:hover{
+        background-color: $btn--color-primary_1--hover;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,24 @@
+.top--header{
+    .top--header__bg{
+        background-image: url("../../img/Bg\ Dark2.svg");
+        background-size: cover;
+        padding: 20px 0;
+    }
+    .top--header_toll{
+        @include font(20px, $font-light, $btn--color-primary_2--hover, 100);
+    }
+    .top--header__numbers{
+        @include font(20px, $font-light, $btn--color-primary_2--hover, 600);
+        text-decoration: none;
+    }
+    .top--header_butons{
+        text-align: right;
+        a{
+            text-align: left;
+        }
+    }
+    a:first-child{
+        margin-right: 30px;
+    }
+}
+
