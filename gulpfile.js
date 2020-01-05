@@ -21,7 +21,7 @@ const path = {
         js: 'src/js/*.js',
         jsmain: 'src/js/main.js',
         scss: 'src/css/main.scss',
-        css: 'src/css/*.css',
+        css: 'src/css/**/.css',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
