@@ -1,28 +1,30 @@
-.btn--header_login {
-  width: 65px;
-  height: 16px;
-  @include font(22px, $font-light, $btn--color-primary_1, 400);
-  line-height: 24px;
-  text-transform: uppercase;
-  letter-spacing: 1.1px;
-  text-decoration: none;
-  background: url("../img/Login.svg") no-repeat 100%;
-  width: 115px;
-  height: auto;
+.btn--joint {
   display: inline-block;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.4s ease-in-out;
+  color: $font--color-primary_3;
 }
 
-.btn--liveChat {
-    width: 65px;
-    height: 16px;
-    @include font(22px, $font-light, $btn--color-primary_1, 400);
-    line-height: 24px;
-    text-transform: uppercase;
-    letter-spacing: 1.1px;
-    text-decoration: none;
-    background: url("../img/Chat.svg") no-repeat 100%;
-    width: 162px;
-    height: auto;
-    display: inline-block;
+.btn--main {
+  @extend .btn--joint;
+  background-color: $bgc--color-primary_3;
+  border: 1px solid $bgc--color-primary_3;
+  &:hover {
+    background-color: $bgc--color-primary_1;
+    border-color: $bgc--color-primary_1;
   }
+}
+
+.btn--card {
+  @extend .btn--joint;
+  background-color: $bgc--color-primary_7;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: rgba(0,0,0,0.4);
+  }
+}
   
