@@ -8,36 +8,71 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <section class="top--header">
-      <div class="container-fluid top--header__bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-md">
-              <span class="top--header_toll">Sales toll free:</span>
-              <a href="#" class="top--header__numbers">1 (877) 894-0925</a>
-            </div>
-            <div class="col-md">
-              <span class="top--header_toll">Sales toll free:</span>
-              <a href="#" class="top--header__numbers">1 (877) 894-0925</a>
-            </div>
-            <div class="col-md-4 top--header_butons">
-                <a href="#" class="btn--header_login" >Login</a>
-                <a href="#" class="btn--liveChat" >Live Chat</a>
-            </div>
+    <header>
+      <div class="container">
+        <div class="head-line">
+          <div class="logo">
+            <a href="#">
+              <img src="../img/logo5.png" alt="">
+            </a>
+            <a href="#">
+              <h1><span>Web</span>school</h1>
+            </a>
+          </div>
+          <div class="menu">
+            <nav>
+              <ul>
+                <li><a class="active" href="#">Онлайн-курси</a></li>
+                <li><a href="#">Вiдгуки</a></li>
+                <li><a href="#">Наш блог</a></li>
+                <li><a href="#">Викладачi</a></li>
+                <li><a href="#">Вартiсть навчання</a></li>
+                <li><a href="#">Контакти</a></li>
+                <li><a href="#">Реестрацiя</a></li>
+                <li><a href="#">Вхiд</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-    </section>
-    <header>
-        <h1>Hello its header !!!!!!</h1>
     </header>
-    <main>
+    <div class="header-poster">
+        <input type="radio" id="i1" name="images" checked />
+        <input type="radio" id="i2" name="images" />
+        <input type="radio" id="i3" name="images" />
+        <div class="slide_img" id="one">
+            <!-- <img src="../img/hero-1.jpg"> -->
+            <div class="slide-item">
+                <h1>Lorem ipsum dolor</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button>Get started</button>
+            </div>
+        </div>
+        <div class="slide_img" id="two">
+            <!-- <img src="../img/hero-2.jpg"> -->
+            <div class="slide-item">
+                <h1>Lorem ipsum dolor?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+                <button>Get started</button>
+            </div>
+        </div>
+        <div class="slide_img" id="three">
+            <!-- <img src="../img/hero-3.jpg"> -->
+            <div class="slide-item">
+                <h1>Lorem ipsum dolor?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
+                <button>Get started</button>
+            </div>
+        </div>
+        <div id="nav_slide">
+            <label for="i1" class="dots" id="dot1"></label>
+            <label for="i2" class="dots" id="dot2"></label>
+            <label for="i3" class="dots" id="dot3"></label>
     
-        <button type="button" class="test">Press me!</button>
-    </main>
-    <footer>
-        <h1>Its footer</h1>
-    </footer>
+        </div>
+    </div>
+    
+    
     <script src="js/main.js"></script>
 </body>
 </html>

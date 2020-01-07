@@ -1,5 +1,151 @@
-header{
-    h1{
-        color: green;
+// body, html{
+// 		width: 100%;
+// 		height: 100%;	
+// 		margin: 0;
+// 		font-family: 'Just Another Hand', cursive;
+// 		overflow-X: hidden;
+// 	}
+
+#i1, #i2, #i3{ display: none;}
+
+.header-poster{
+            position: relative;
+            height: 0;
+            padding-bottom: 45%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            overflow: hidden;
+	}
+
+	.header-poster .slide_img{
+		position: absolute;
+		width: 100%;;
+		height: 100%;
+	}
+	.header-poster .slide_img img{
+		width: 100%;
     }
+    .slide_img{
+        padding: 100px;
+        color: $font--color-primary_3;
+    }
+    #one{
+        background: url(../../img/hero-1.jpg);
+        // padding: 110px;
+    }
+    #two{
+        background: url(../../img/hero-2.jpg);
+        // padding: 100px;
+    }
+    #three{
+        background: url(../../img/hero-3.jpg);
+        // padding: 100px;
+    }
+	 
+
+	
+
+	label span{
+		position: absolute;
+		font-size: 100pt;
+		top: 50%;
+	 	transform: translateY(-50%);
+	}
+
+	
+
+.header-poster #nav_slide{
+	width: 100%;
+	bottom: 12%;
+	height: 11px;
+	position: absolute;
+	text-align: center;
+	z-index: 99;
+	cursor: default;
+}
+
+#nav_slide .dots{
+	top: -5px;
+	width: 12px;
+	height: 12px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+	transition: .4s;
+}
+
+#nav_slide .dots:hover {
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.9);
+	transition: .25s
+}
+
+.slide_img{z-index: -1;}
+
+	#i1:checked ~ #one  ,
+	#i2:checked ~ #two  ,
+	#i3:checked ~ #three
+	{z-index: 9; animation: scroll 1s ease-in-out;}
+
+	#i1:checked  ~  #nav_slide #dot1,
+	#i2:checked  ~  #nav_slide #dot2,
+	#i3:checked  ~  #nav_slide #dot3
+	{ background-color: $bg-color-btn_1;}
+
+@keyframes scroll{
+	0%{	opacity:.4;}
+	100%{opacity:1;}
+}		
+
+/* .yt{
+	margin: 0 auto;
+	margin-top: 50px;
+	position: relative;
+	width: 150px;
+	height:50px;
+	border: outset #2c2c2c 4px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 30pt;
+	transition: .5s;
+}
+
+.yt a{
+	text-decoration: none;
+	color: #4c4c4c;
+	transition: .5s;
+}
+
+.yt:hover{
+	background: #4c4c4c;
+	transition: .3s;
+}
+
+.yt:hover a{
+	color: #fff;
+	transition: .3s;
+}
+ */
+@media screen and (max-width: 685px){
+	.header-poster{
+		border: none;
+		width: 100%;
+		height: 0;
+		padding-bottom: 55%; 
+	}	
+	
+	label span { font-size: 50pt; }
+	
+	
+	#nav_slide .dots{
+		width: 12px;
+		height: 12px;
+	}
+}
+@media screen  and(min-width: 970px){
+	.me{ display: none;}
 }
