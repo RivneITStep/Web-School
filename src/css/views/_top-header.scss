@@ -1,24 +1,63 @@
-.top--header{
-    .top--header__bg{
-        background-image: url("../../img/Bg\ Dark2.svg");
-        background-size: cover;
-        padding: 20px 0;
-    }
-    .top--header_toll{
-        @include font(20px, $font-light, $btn--color-primary_2--hover, 100);
-    }
-    .top--header__numbers{
-        @include font(20px, $font-light, $btn--color-primary_2--hover, 600);
-        text-decoration: none;
-    }
-    .top--header_butons{
-        text-align: right;
-        a{
-            text-align: left;
+body{
+    margin: 0;
+    padding: 0;
+    header{
+        background: none;
+        position: fixed;
+        z-index: 99;
+        width: 100%;
+        .head-line{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            .logo{
+                display: flex;
+                align-items: center;
+                width: 20%;
+                a{
+                    text-decoration: none;
+                    color: $font--color-primary_3;
+                    display: inline-block;
+                    padding: 3px;
+                    margin: 0 2px;
+                    img{
+                        max-width: 100%;
+                    }
+                    h1{
+                        margin: 0;
+                        @include font(28px, $font-light, $font--color-primary_3, 600);
+                        span{
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+            .menu{
+                nav{
+                    ul{
+                        display: flex;
+                        li{
+                            padding: 0 10px;
+                            list-style-type: none;
+                            a{
+                                text-decoration: none;
+                                @include font(14px, $font-light, $font--color-primary_4, 600);
+                                transition: 0.3s;
+                                &:hover{
+                                    @include font(14px, $font-light, $font--color-primary_3, 600);
+                                }
+                                
+                            }
+                            .active{
+                                @include font(14px, $font-light, $font--color-primary_3, 600);
+                            }
+                        }
+                    }
+                }
+            }
+
         }
-    }
-    a:first-child{
-        margin-right: 30px;
+        
     }
 }
-
