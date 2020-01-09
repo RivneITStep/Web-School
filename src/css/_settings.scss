@@ -1,0 +1,40 @@
+h1{
+    font-family: $font-semibold;
+	font-size: 28px; 
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+h2{
+    font-family: $font-regular;
+	font-size: 30px;
+   	line-height: 1.4;
+	font-weight: bold;
+}
+
+h3{
+    font-family: $font-light;
+	font-size: 36px;
+	font-weight: 300;
+}
+
+h4{
+    font-family: $font-regular;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h5{
+    font-family: $font-regular;
+	font-size: 16px;
+}
+p{
+    font-family: $font-regular;
+	font-size: 14px;
+}
+
+span{
+    font-family: $font-extrabold;
+	font-size: 28px;
+	font-weight: 800;
+}
