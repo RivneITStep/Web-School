@@ -26,7 +26,7 @@ body{
                     }
                     h1{
                         margin: 0;
-                        @include font(28px, $font-light, $font--color-primary_3, 600);
+                        @include font(28px, $font-light, $font--color-primary_3, 600, 1);
                         span{
                             font-weight: 700;
                         }
@@ -42,15 +42,15 @@ body{
                             list-style-type: none;
                             a{
                                 text-decoration: none;
-                                @include font(14px, $font-light, $font--color-primary_4, 600);
+                                @include font(14px, $font-light, $font--color-primary_4, 600, 1);
                                 transition: 0.3s;
                                 &:hover{
-                                    @include font(14px, $font-light, $font--color-primary_3, 600);
+                                    @include font(14px, $font-light, $font--color-primary_3, 600, 1);
                                 }
                                 
                             }
                             .active{
-                                @include font(14px, $font-light, $font--color-primary_3, 600);
+                                @include font(14px, $font-light, $font--color-primary_3, 600, 1);
                             }
                         }
                     }
