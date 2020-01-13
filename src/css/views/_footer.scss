@@ -1,0 +1,27 @@
+footer{
+    background-color:  $bgc--color-primary_2;
+    text-align: center;
+}
+.footer-top{
+   padding: 10px;
+}
+.footer-top i{
+    font-size: 25px;
+    color: $font--color-primary_3;
+}
+hr{
+    width: 200px;
+    border: 0.7px $font--color-primary_3 solid;
+}
+footer p{
+    font-size: 16px;
+    color: $font--color-primary_3;    
+}
+.footer-bottom{
+    background-color:  $bgc--color-primary_8;   
+}
+.footer-bottom i{   
+    margin: 10px 15px;
+    font-size: 25px;
+    color: $font--color-primary_3;    
+}
