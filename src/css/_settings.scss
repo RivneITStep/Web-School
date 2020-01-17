@@ -1,9 +1,18 @@
+@import '_mixins';
+@import '_fonts';
+@import '_variables';
+
 h1{
-    // font-family: Open Sans Semibold;
-	font-size: 28px; 
-	font-weight: 500;
-	line-height: 1.1;
+	@include font(28px, $font-semibold, $font--color-primary_3, 500, 1.1);
+    
+    
 }
+// h1{
+//     // font-family: Open Sans Semibold;
+// 	font-size: 28px; 
+// 	font-weight: 500;
+// 	line-height: 1.1;
+// }
 h2{
     // font-family: Open Sans;
 	font-size: 30px;
