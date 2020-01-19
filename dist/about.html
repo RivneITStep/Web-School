@@ -9,7 +9,8 @@
     <script src="https://kit.fontawesome.com/8d6cd7f7b8.js" crossorigin="anonymous"></script>
     <!-- Підключення bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
+    <!-- Підключення slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link  rel = "stylesheet"  href = "css/main.css" >
 </head>
 <body>
@@ -81,10 +82,10 @@
                     <i class="far fa-envelope"></i>
                     <br>
                     <hr>
-                    <p>Підписатись на новини</p>
-                    <form class="">
-                        <div class="">
-                            <input type="email" class="" id="email" placeholder="e-mail">
+                    <p id="mail-us">Підписатись на новини</p>               
+                    <form>
+                        <div class="form-group">
+                        <input type="email" class="footer"  placeholder="e-mail">
                         </div>
                         <button type="submit" class="btn--main">Підписатись</button>
                     </form>
@@ -103,5 +104,7 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 </html>

@@ -33,6 +33,7 @@ form {
 	border-radius: 8px;
   }
 
+
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -73,6 +74,15 @@ select {
 ul li{
 	// font-family: Open Sans;
 	font-size: 14px;
+}
+.checked ul li{
+    list-style-type: none;   
+    line-height: 1;
+    margin-top: 3px;
+    margin-left: -30px;
+    vertical-align: top;
+    list-style-position: inside;
+	list-style-image: url(img/iconfinder_f058_213017.png);
 }
 
 @media screen and (min-width: 480px) {
