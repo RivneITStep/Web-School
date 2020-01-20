@@ -1,3 +1,4 @@
+
 footer{
     background-color:  $bgc--color-primary_2;
     text-align: center;
@@ -16,6 +17,7 @@ hr{
 footer p{
     font-size: 16px;
     color: $font--color-primary_3;    
+    line-height: 2;
 }
 .footer-bottom{
     background-color:  $bgc--color-primary_8;   
@@ -25,3 +27,14 @@ footer p{
     font-size: 25px;
     color: $font--color-primary_3;    
 }
+footer .footer{
+	padding: 7px;
+    margin: 0px auto 15px;
+    width: auto;
+    background: #f4f7f8;
+    border-radius: 8px;
+    max-width: 600px;
+  }
+  #mail-us{
+      margin-bottom: 0;
+  }

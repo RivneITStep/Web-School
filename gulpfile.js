@@ -50,7 +50,7 @@ const uglify = require('gulp-uglify');
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const jpegrecompress = require('imagemin-jpeg-recompress');
-const pngquant = require('imagemin-pngquant');
+// const pngquant = require('imagemin-pngquant');
 const del = require('del');
 const postcss = require('gulp-postcss');
 
@@ -130,7 +130,7 @@ gulp.task('image:build', (done) => {
                 max: 90,
                 min: 80
             }),
-            pngquant(),
+            // pngquant(),
             imagemin.svgo({ plugins: [{ removeViewBox: false }] })
         ])))
         .pipe(gulp.dest(path.dist.img));

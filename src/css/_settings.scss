@@ -1,38 +1,30 @@
+@import '_mixins';
+@import '_fonts';
+@import '_variables';
+
 h1{
-    // font-family: Open Sans Semibold;
-	font-size: 28px; 
-	font-weight: 500;
-	line-height: 1.1;
+	@include font(28px, $font-semibold, $font--color-primary_3, 500, 1.1);  
 }
+
 h2{
-    // font-family: Open Sans;
-	font-size: 30px;
-  line-height: 1.4;
-	font-weight: bold;
+	@include font(30px, $font-regular, $font--color-primary_3, bold, 1.4);
 }
 h3{
-    // font-family: Open Sans Light;
-	font-size: 36px;
-	font-weight: 300;
+	@include font(30px, $font-light, $font--color-primary_4, 300, 1.1);
 }
 h4{
-    // font-family: Open Sans;
-	font-size: 18px;
-	font-weight: bold;
+	@include font(18px, $font-regular, $font--color-primary_2, 400, 1.1);
 }
 h5{
-    // font-family: Open Sans;
-	font-size: 16px;
+	@include font(16px, $font-regular, $font--color-primary_1,400, 1.1);
 }
 span{
-    // font-family: Open Sans Extrabold;
-	font-size: 28px;
-	font-weight: 800;
+	@include font(28px, $font-extrabold, $font--color-primary_3,800, 1.1);
 }
 p{
-    // font-family: Open Sans;
-	font-size: 14px;
+	@include font(14px, $font-regular, $font--color-primary_1,400, 1.1);
 }
+    
 form {
 	max-width: 300px;
 	margin: 10px auto;
@@ -40,6 +32,7 @@ form {
 	// background: #f4f7f8;
 	border-radius: 8px;
   }
+
 
 input[type="text"],
 input[type="password"],
@@ -81,6 +74,15 @@ select {
 ul li{
 	// font-family: Open Sans;
 	font-size: 14px;
+}
+.checked ul li{
+    list-style-type: none;   
+    line-height: 1;
+    margin-top: 3px;
+    margin-left: -30px;
+    vertical-align: top;
+    list-style-position: inside;
+	list-style-image: url(img/iconfinder_f058_213017.png);
 }
 
 @media screen and (min-width: 480px) {
