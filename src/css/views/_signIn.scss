@@ -1,0 +1,23 @@
+body header {
+    background-color: $bgc--color-primary_2;
+}
+
+.user-block {
+    margin: 200px auto;
+    text-align: center;
+}
+
+h1 {
+    color: $font--color-primary_1;
+}
+
+.form-submit input {
+    width: 100%;
+    border: 1px solid $bgc--color-primary_9;
+    border-radius: 9px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-size: 1rem;
+}
+
