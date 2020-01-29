@@ -1,28 +1,57 @@
 <header>
   <div class="container">
-    <div class="head-line">
-      <div class="logo">
-        <a href="#">
-          <img src="../img/logo5.png" alt="">
-        </a>
-        <a href="#">
-          <h1><span>Web</span>school</h1>
+    <div class="row">
+      <div class="col-9 logo-block m-auto">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logo5.png" width="50" height="40" class="logo" alt="">
+          Web<span>school</span>
         </a>
       </div>
-      <div class="menu">
-        <nav>
-          <ul>
-            <li><a class="active" href="#">Онлайн-курси</a></li>
-            <li><a href="#">Вiдгуки</a></li>
-            <li><a href="#">Наш блог</a></li>
-            <li><a href="#">Викладачi</a></li>
-            <li><a href="#">Вартiсть навчання</a></li>
-            <li><a href="#">Контакти</a></li>
-            <li><a href="#">Реестрацiя</a></li>
-            <li><a href="#">Вхiд</a></li>
-          </ul>
-        </nav>
+      <div class="col-3 m-auto but-container d-flex justify-content-center">
+        <button type="button" class="btn btn-primary">Вхід</button>
+        <button type="button" class="btn btn-secondary">Реєстрація</button>
       </div>
     </div>
+  </div>
+  <div class="navigate w-100" id="for-b">
+    <input type="checkbox" id="burger">
+    <label for="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <ul class="nav m-auto">
+      <li class="nav-item logo-fixed" id="logo_on">
+        <a href="#" class="nav-link">
+          <img src="../img/logo5.png" width="30" height="20" class="logo" alt="">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Онлайн-курси</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Відгуки</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Наш блог</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Викладачі</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Вартість навчання</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Контакти</a>
+      </li>
+      <ul class="media">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary">Вхід</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-secondary">Реєстрація</button>
+        </li>
+      </ul>
+    </ul>
   </div>
 </header>

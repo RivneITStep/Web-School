@@ -6,25 +6,35 @@
   font-weight: 700;
   font-size: 16px;
   transition: all 0.4s ease-in-out;
-  color: $font--color-primary_3;
+  color: $btn-color_1;
 }
 
 .btn--main {
   @extend .btn--joint;
-  background-color: $bgc--color-primary_3;
-  border: 1px solid $bgc--color-primary_3;
+  background-color: $btn--color-primary_1;
+  border: 1px solid $btn--color-primary_1;
   &:hover {
-    background-color: $bgc--color-primary_1;
-    border-color: $bgc--color-primary_1;
+    background-color: $btn--color-primary_1--hover;
+    border-color: $btn--color-primary_1--hover;
   }
 }
 
 .btn--card {
   @extend .btn--joint;
-  background-color: $bgc--color-primary_7;
+  background-color: $btn--color-primary_2;
   border: 1px solid transparent;
   &:hover {
-    background-color: rgba(0,0,0,0.4);
+    background-color: $btn--color-primary_2--hover;
   }
 }
-  
+
+.btn--transparent {
+  @extend .btn--joint;
+  background-color: transparent;
+  color: $btn--color-primary_3;
+  border: 1px solid $btn--color-primary_3;
+  &:hover {
+    background-color: $btn--color-primary_3--hover;
+    color: $btn-color_1;
+  }
+}
