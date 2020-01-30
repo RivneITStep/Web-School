@@ -22,5 +22,5 @@ $('.sl').slick({
     dots: true,
     arrows: false,
     // pauseOnDotsHover: true,
-    // adaptiveHeight: true
+    adaptiveHeight: true
 });

@@ -76,12 +76,31 @@ body{
                     display: none;
                 }
                 .nav-item{
+                    // background: $bgc--color-primary_10;
                     .active{
                         color: $font--color-primary_3;
                     }
                     a{
-                        @include font(14px, $font-semibold, $font--color-primary_4, 600,25px); 
+                        @include font(14px, $font-semibold, $font--color-primary_5, 600,25px); 
                         transition: 0.3s;
+                        position: relative;
+                        top: 0;
+                        // &::before{
+                        //     content: '';
+                        //     bottom: 0;
+                        //     right: 0;
+                        //     position: absolute;
+                        //     width: 0%;
+                        //     height: 2px;
+                        //     background-color: $font--color-primary_3;
+                        //     transition: 0.4s;
+                        //     cursor: pointer;
+                        // }
+                        // &:hover::before{
+                        //     width: 20%;
+                        //     margin: 0 auto;
+                        //     left: 0;
+                        // }
                         &:hover{
                             cursor: pointer;
                         @include font(14px, $font-semibold, $font--color-primary_3, 600,25px);
@@ -125,8 +144,25 @@ body{
             height: 0;
             overflow: hidden;
             .nav-item{
+                background: $bgc--color-primary_10;
                 a{
                     line-height: 25px;
+                    &::before{
+                        content: '';
+                        bottom: 0;
+                        right: 0;
+                        position: absolute;
+                        width: 0%;
+                        height: 2px;
+                        background-color: $font--color-primary_3;
+                        transition: 0.4s;
+                        cursor: pointer;
+                    }
+                    &:hover::before{
+                        width: 20%;
+                        margin: 0 auto;
+                        left: 0;
+                    }
                 }
             }
             .media{

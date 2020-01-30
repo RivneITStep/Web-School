@@ -1,21 +1,24 @@
 .sl{
 	overflow: hidden;
-	max-height: 690px;
+	max-height: 592px;
 	.slick-dots{
 		padding: 0;
 		display: flex;
 		justify-content: center;
 		list-style-type: none;
-		top: 612px;
+		top: 541px;
 		position: absolute;
 		width: 100%;
 		li{
-			position: relative;
+        position: relative;
+        border-radius: 50%;
     	display: inline-block;
-    	width: 20px;
-    	height: 20px;
+    	width: 14px;
+    	height: 14px;
     	margin: 0 5px;
-    	padding: 0;
+        padding: 0;
+        color: $btn--color-primary_1;
+        background: $btn--color-primary_1;
     	cursor: pointer;
 			button{
 				font-size: 0;
@@ -30,7 +33,7 @@
     			outline: none;
 				background: transparent;
 				&::before{
-					content: '•';
+					content: '';
     				font-size: 22px;
     				line-height: 20px;
    				 	position: absolute;
@@ -52,7 +55,7 @@
             position: relative;
         }
         .sl__text{
-            top: 250px;
+            top: 198px;
             left: 104px;
             position: absolute;
             z-index: 99;
