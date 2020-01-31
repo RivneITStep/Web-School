@@ -12,6 +12,15 @@ body{
             }
         }
         .but-container{
+            button{
+                a{
+                    color: $font--color-primary_3;
+                    text-decoration: none;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
                 .btn-secondary{
                     margin-left: 10px;
                 }
@@ -38,7 +47,6 @@ body{
                       }
                 }
                 &:checked ~ .nav{
-                    // height: 0;
                     overflow: visible;
                     transition: 0.6s;
                 }
@@ -76,7 +84,6 @@ body{
                     display: none;
                 }
                 .nav-item{
-                    // background: $bgc--color-primary_10;
                     .active{
                         color: $font--color-primary_3;
                     }
@@ -85,22 +92,6 @@ body{
                         transition: 0.3s;
                         position: relative;
                         top: 0;
-                        // &::before{
-                        //     content: '';
-                        //     bottom: 0;
-                        //     right: 0;
-                        //     position: absolute;
-                        //     width: 0%;
-                        //     height: 2px;
-                        //     background-color: $font--color-primary_3;
-                        //     transition: 0.4s;
-                        //     cursor: pointer;
-                        // }
-                        // &:hover::before{
-                        //     width: 20%;
-                        //     margin: 0 auto;
-                        //     left: 0;
-                        // }
                         &:hover{
                             cursor: pointer;
                         @include font(14px, $font-semibold, $font--color-primary_3, 600,25px);
@@ -113,8 +104,14 @@ body{
                     display: none;
                     list-style-type: none;
                     padding: 0;
+                    cursor: pointer;
                     .nav-item{
-                        margin: 5px 0;
+                        button{
+                            a{
+                                color: $font--color-primary_3;
+                                text-decoration: none;
+                            }
+                        }
                     }
                 }
             }
@@ -166,7 +163,11 @@ body{
                 }
             }
             .media{
-                // display: grid;
+                display: block !important;
+                .nav-item{
+                    margin: 0;
+                    padding: 7px;
+                }
             }
         }
               

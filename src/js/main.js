@@ -17,10 +17,8 @@ $('.sl').slick({
     autoplaySpeed: 1000,
     speed: 1000,
     cssEase: 'ease-in',
-    // centerMode: true,
     centerPadding: '25px',
     dots: true,
     arrows: false,
-    // pauseOnDotsHover: true,
     adaptiveHeight: true
 });

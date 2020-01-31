@@ -8,18 +8,21 @@
 		list-style-type: none;
 		top: 541px;
 		position: absolute;
-		width: 100%;
+        width: 100%;
+        .slick-active{
+            background: $btn--color-primary_active;
+        }
 		li{
         position: relative;
         border-radius: 50%;
     	display: inline-block;
-    	width: 14px;
-    	height: 14px;
+    	width: 12px;
+    	height: 12px;
     	margin: 0 5px;
         padding: 0;
         color: $btn--color-primary_1;
         background: $btn--color-primary_1;
-    	cursor: pointer;
+        cursor: pointer;
 			button{
 				font-size: 0;
     			line-height: 0;
@@ -87,8 +90,8 @@
     .sl{
         .sl__slide{
             .sl__text{
-                top: 19px;
-                left: 11px;
+                top: 11px;
+                left: 12px;
                 .sl__zag{
                     @include font(30px, $font-semibold, $font--color-primary_3, 600, 21px);
                 }   
