@@ -87,6 +87,7 @@ body{
                     .active{
                         color: $font--color-primary_3;
                     }
+
                     a{
                         @include font(14px, $font-semibold, $font--color-primary_5, 600,25px); 
                         transition: 0.3s;
@@ -95,6 +96,7 @@ body{
                         &:hover{
                             cursor: pointer;
                         @include font(14px, $font-semibold, $font--color-primary_3, 600,25px);
+
                         }
                     }
                     
@@ -110,6 +112,7 @@ body{
                             a{
                                 color: $font--color-primary_3;
                                 text-decoration: none;
+
                             }
                         }
                     }
