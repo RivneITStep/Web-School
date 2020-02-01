@@ -2,62 +2,180 @@ body{
     margin: 0;
     padding: 0;
     header{
-        background: none;
-        position: fixed;
-        z-index: 99;
-        width: 100%;
-        .head-line{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 6px 0;
-            .logo{
-                display: flex;
-                align-items: center;
-                width: 20%;
+        background: #343a40;
+        .logo-block{
+            a{
+                @include font(28px, $font-semibold, $font--color-primary_3, 700,1px);
+                span{
+                    @include font(28px, $font-light, $font--color-primary_3, 300,1px);
+                }
+            }
+        }
+        .but-container{
+            button{
                 a{
-                    text-decoration: none;
                     color: $font--color-primary_3;
-                    display: inline-block;
-                    padding: 3px;
-                    margin: 0 2px;
-                    img{
-                        max-width: 100%;
-                    }
-                    h1{
-                        margin: 0;
-                        @include font(28px, $font-light, $font--color-primary_3, 600, 1);
-                        span{
-                            font-weight: 700;
-                        }
+                    text-decoration: none;
+                    &:hover{
+                        cursor: pointer;
                     }
                 }
             }
-            .menu{
-                nav{
-                    ul{
-                        display: flex;
-                        li{
-                            padding: 0 10px;
-                            list-style-type: none;
-                            a{
-                                text-decoration: none;
-                                @include font(14px, $font-light, $font--color-primary_4, 600, 1);
-                                transition: 0.3s;
-                                &:hover{
-                                    @include font(14px, $font-light, $font--color-primary_3, 600, 1);
-                                }
-                                
-                            }
-                            .active{
-                                @include font(14px, $font-light, $font--color-primary_3, 600, 1);
-                            }
-                        }
-                    }
+                .btn-secondary{
+                    margin-left: 10px;
+                }
+        }
+        .navigate{
+            position: fixed;
+            transition: 0.5s;
+            z-index: 999;
+            background: none;
+            input{
+                display: none;
+                &:checked ~ label{
+                    span {
+                        opacity: 0;
+                        top: 50%;
+                      }
+                    span:first-child {
+                        opacity: 1;
+                        transform: rotate(405deg);
+                      }
+                    span:last-child {
+                        opacity: 1;
+                        transform: rotate(-405deg);
+                      }
+                }
+                &:checked ~ .nav{
+                    overflow: visible;
+                    transition: 0.6s;
                 }
             }
+            label{
+                position: fixed;
+                width: 100%;
+                height: 20px;
+                display: none;
+                margin-left: 89%;
+                span{
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    display: block;
+                    background: $btn-color_1;
+                    transition: 0.6s;
+                }
+                span:first-child {
+                    top: 8px; 
+                  }
+                span:last-child {
+                    top: 16px; 
+                }
+                &:hover{
+                    cursor: pointer;
+                } 
+            }
+            .nav{
+                width: 100%;
+                background: #48627c;
+                transition: 0.3s;
+                justify-content: center;
+                .logo-fixed{
+                    display: none;
+                }
+                .nav-item{
+                    .active{
+                        color: $font--color-primary_3;
+                    }
 
+                    a{
+                        @include font(14px, $font-semibold, $font--color-primary_5, 600,25px); 
+                        transition: 0.3s;
+                        position: relative;
+                        top: 0;
+                        &:hover{
+                            cursor: pointer;
+                        @include font(14px, $font-semibold, $font--color-primary_3, 600,25px);
+
+                        }
+                    }
+                    
+                    
+                }
+                .media{
+                    display: none;
+                    list-style-type: none;
+                    padding: 0;
+                    cursor: pointer;
+                    .nav-item{
+                        button{
+                            a{
+                                color: $font--color-primary_3;
+                                text-decoration: none;
+
+                            }
+                        }
+                    }
+                }
+            }
+            
         }
         
     }
+}
+@media (max-width: 991px){ 
+    header{
+        .but-container{
+            justify-content: end;
+            button{
+                display: none;
+            }
+        }
+        .navigate{
+            position: relative;
+            label{
+                display: block !important;
+                margin-top: -30px;
+            }
+            .nav{
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            height: 0;
+            overflow: hidden;
+            .nav-item{
+                background: $bgc--color-primary_10;
+                a{
+                    line-height: 25px;
+                    &::before{
+                        content: '';
+                        bottom: 0;
+                        right: 0;
+                        position: absolute;
+                        width: 0%;
+                        height: 2px;
+                        background-color: $font--color-primary_3;
+                        transition: 0.4s;
+                        cursor: pointer;
+                    }
+                    &:hover::before{
+                        width: 20%;
+                        margin: 0 auto;
+                        left: 0;
+                    }
+                }
+            }
+            .media{
+                display: block !important;
+                .nav-item{
+                    margin: 0;
+                    padding: 7px;
+                }
+            }
+        }
+              
+        }
+       
+    }
+    
 }
