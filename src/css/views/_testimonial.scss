@@ -1,0 +1,73 @@
+.testimonials-item{
+    margin-top: 70px;
+    
+    h2{
+        text-align: center;
+        @include font(34px, $font-semibold, $font--color-primary_1, 600,60px);
+    }
+    .testimonial-box{
+        margin: 10px 0;
+        padding: 15px;
+        background: $bgc--color-primary_2;
+        h3{
+            @include font(28px, $font-light, $font--color-primary_3, 300,54px);
+        }
+        p{
+            @include font(14px, $font-light, $font--color-primary_4, 300,18px);
+        }
+        hr{
+            width: 100%;
+        }
+    }
+    .testimonial-form{
+        background: $bgc--color-primary_2;
+        margin: 10px auto;
+        width: 44%;
+        padding: 5px;
+        h3{
+            text-align: center;
+            margin: 10px 0;
+        }
+        form{
+            p{
+                @include font(14px, $font-light, $font--color-primary_4, 300,0px); 
+                margin: 0;
+            }
+            input{
+                width: 100%;
+                background: none;
+                border-bottom: 1px solid;
+                padding: 2px;
+                margin-bottom: 60px;
+            }
+            textarea{
+                width: 100%;
+                background: none;
+                border: 1px solid;
+                padding: 10px;
+            }
+        }
+    }
+}
+@media (max-width: 991px){
+    .testimonials-item{
+        margin-top: 10px;
+        .testimonial-form{
+            width: 70%;
+        }
+    }
+}
+@media (max-width: 768px){
+    .testimonials-item{
+        width: 100%;
+        .testimonial-form{
+            width: 100%;
+            form{
+                button{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+}
