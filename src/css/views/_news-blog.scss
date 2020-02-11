@@ -1,0 +1,25 @@
+.blog{
+    margin-top: 20px;
+    h2{
+        margin: 20px auto;
+        @include font(34px, $font-semibold, $font--color-primary_1, 600,60px);
+    }
+    .blog-container{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        .card-box{
+            overflow: hidden;
+            border: 1px solid $border--color-primary_1;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 0;
+            img{
+                    max-width: 100%;
+            }
+            .card-box-container{
+                padding: 10px 15px;
+            }
+        }
+    }
+}
