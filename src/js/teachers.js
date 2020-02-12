@@ -3,7 +3,7 @@ let moreBlock=document.getElementById("div1");
 function down() {
     if(moreText.style.display="none"){
         moreText.style.display="block";
-        moreBlock.style.height="350px";
+        moreBlock.style.height="370px";
         document.getElementById("button1").style.display="none";
         document.getElementById("button2").style.display="block";
     }
