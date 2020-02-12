@@ -1,0 +1,50 @@
+.teachers{
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+.teachers img{
+width: 100%;
+// margin: 10px;
+}
+.portret{
+    max-width: 370px;  
+    height: 200px;
+}
+.info{
+    margin-top: 47px;
+    max-width: 370px;
+    background-color: $bgc--color-primary_2;
+    color: $font--color-primary_3;
+    height: 200px;
+}
+.info h3,h4,h5{
+    color: $font--color-primary_3;
+    text-align: center;
+    padding: 5px;
+}
+.info h3{    padding-top: 20px;}
+.icons{margin-top: -63;}
+.icons i{
+	margin: 10px 15px;
+    font-size: 25px;
+    color: $font--color-primary_3;  
+   display: inline-block;
+   
+  }
+  .info p{
+    color: $font--color-primary_3;
+    padding: 10px;
+    line-height: 1.1;
+    text-align: justify;
+    display: none;
+}
+#button1{
+    display: block;
+}
+#button2{
+    display: none;
+}
+  
+  .learn-more{
+      margin-top: 20px;
+  }
