@@ -1,0 +1,46 @@
+.page_contacts{
+    height:auto;
+    padding-top:75px;
+    padding-bottom:75px;
+    .row:nth-child(1){
+        text-align:center;
+    }
+    .row{
+        padding-bottom:35px;
+    }
+    ul{
+        
+        margin-top:25px;
+        margin-bottom:25px;
+        li{
+            text-align:left;
+            padding-bottom:15px;
+            span{
+                @include font(21px, $font-regular, $bgc--color-primary_10, 250,30px); 
+                b{
+                    @include font(21px, $font-semibold, $bgc--color-primary_10, 250,27px);
+                }
+                position:relative;
+                top:-5px;
+            }
+            
+        }
+        li:nth-child(1){
+            list-style-image:url('../../img/agile.png');
+    }
+        li:nth-child(2){
+            list-style-image:url('../../img/hear.png');
+    }
+        li:nth-child(3){
+            list-style-image:url('../../img/mobile-app.png');
+    }
+        li:nth-child(4){
+            list-style-image:url('../../img/mail.png');
+    }
+        li:nth-child(5){
+            list-style-image:url('../../img/road.png');
+    }
+    }
+
+}
+
