@@ -1,38 +1,36 @@
-@import '_mixins';
-@import '_fonts';
-@import '_variables';
+@import "_mixins";
+@import "_fonts";
+@import "_variables";
 
-h1{
-	@include font(28px, $font-semibold, $font--color-primary_3, 500, 1.1);  
+h1 {
+  @include font(28px, $font-semibold, $font--color-primary_3, 500, 1.1);
 }
 
-h2{
-	@include font(30px, $font-regular, $font--color-primary_3, bold, 1.4);
+h2 {
+  @include font(30px, $font-regular, $font--color-primary_3, bold, 1.4);
 }
-h3{
-	@include font(30px, $font-light, $font--color-primary_4, 300, 1.1);
+h3 {
+  @include font(30px, $font-light, $font--color-primary_4, 300, 1.1);
 }
-h4{
-	@include font(18px, $font-regular, $font--color-primary_2, 400, 1.1);
+h4 {
+  @include font(18px, $font-regular, $font--color-primary_2, 400, 1.1);
 }
-h5{
-	@include font(16px, $font-regular, $font--color-primary_1,400, 1.1);
+h5 {
+  @include font(16px, $font-regular, $font--color-primary_1, 400, 1.1);
 }
-span{
-	@include font(28px, $font-extrabold, $font--color-primary_3,800, 1.1);
+span {
+  @include font(28px, $font-extrabold, $font--color-primary_3, 800, 1.1);
 }
-p{
-	@include font(14px, $font-regular, $font--color-primary_1,400, 1.1);
+p {
+  @include font(14px, $font-regular, $font--color-primary_1, 400, 1.1);
 }
-    
+
 form {
-	max-width: 300px;
-	margin: 10px auto;
-	padding: 10px 20px;
-	// background: #f4f7f8;
-	border-radius: 8px;
-  }
-
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
 
 input[type="text"],
 input[type="password"],
@@ -46,7 +44,7 @@ input[type="time"],
 input[type="url"],
 textarea,
 select {
-//   background: rgba(255,255,255,0.1);
+  //   background: rgba(255,255,255,0.1);
   border: none;
   font-size: 16px;
   height: auto;
@@ -54,9 +52,9 @@ select {
   outline: 0;
   padding: 15px;
   width: 40%;
-//   background-color: #e8eeef;
+  //   background-color: #e8eeef;
   color: #8a97a0;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   margin-bottom: 30px;
 }
 
@@ -66,31 +64,27 @@ input[type="checkbox"] {
 }
 
 select {
-	padding: 6px;
-	height: 32px;
-	border-radius: 2px;
-  }
-
-ul li{
-	// font-family: Open Sans;
-	font-size: 14px;
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
 }
-.checked ul li{
-    list-style-type: none;   
-    line-height: 1;
-    margin-top: 3px;
-    margin-left: -30px;
-    vertical-align: top;
-    list-style-position: inside;
-	list-style-image: url(img/iconfinder_f058_213017.png);
+
+ul li {
+  // font-family: Open Sans;
+  font-size: 14px;
+}
+.checked ul li {
+  list-style-type: none;
+  line-height: 1;
+  margin-top: 3px;
+  margin-left: -30px;
+  vertical-align: top;
+  list-style-position: inside;
+  list-style-image: url(img/iconfinder_f058_213017.png);
 }
 
 @media screen and (min-width: 480px) {
-
-	form {
-	  max-width: 480px;
-	}
-  
-  }
-
-  
+  // form {
+  //   max-width: 480px;
+  // }
+}
