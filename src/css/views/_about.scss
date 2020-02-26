@@ -1,0 +1,47 @@
+.aboutSection {
+  @include font(30px, $font-semibold, $font--color-primary_1, 600, 65px);
+}
+.about-list ul {
+  list-style: none;
+}
+.about-list ul > li {
+  padding-left: 20px;
+  position: relative;
+  margin: 10px;
+}
+.about-list ul > li:before {
+  content: "✔";
+  position: absolute;
+  top: -24px;
+  left: -7px;
+  @include font(27px, $font-semibold, $font--color-primary_2, normal, 68px);
+}
+.about-form {
+  background: $bgc--color-primary_2;
+  margin: 10px auto;
+  width: 44%;
+  padding: 5px;
+  h3 {
+    text-align: center;
+    margin: 10px 0;
+  }
+  form {
+    p {
+      @include font(14px, $font-light, $font--color-primary_4, 300, 0px);
+      margin: 0;
+    }
+    input {
+      width: 100%;
+      background: none;
+      border-bottom: 1px solid;
+      padding: 2px;
+      margin-bottom: 60px;
+    }
+    textarea {
+      width: 100%;
+      background: none;
+      border: 1px solid;
+      padding: 10px;
+    }
+  }
+}
