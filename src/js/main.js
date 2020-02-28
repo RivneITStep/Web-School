@@ -14,7 +14,7 @@ window.onload = function () {
 }
 $('.sl').slick({
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
     speed: 1000,
     cssEase: 'ease-in',
     centerPadding: '25px',

@@ -36,15 +36,15 @@ body{
                     span {
                         opacity: 0;
                         top: 50%;
-                      }
+                        }
                     span:first-child {
                         opacity: 1;
                         transform: rotate(405deg);
-                      }
+                        }
                     span:last-child {
                         opacity: 1;
                         transform: rotate(-405deg);
-                      }
+                        }
                 }
                 &:checked ~ .nav{
                     overflow: visible;
@@ -67,7 +67,7 @@ body{
                 }
                 span:first-child {
                     top: 8px; 
-                  }
+                    }
                 span:last-child {
                     top: 16px; 
                 }
@@ -173,9 +173,6 @@ body{
                 }
             }
         }
-              
         }
-       
     }
-    
 }
