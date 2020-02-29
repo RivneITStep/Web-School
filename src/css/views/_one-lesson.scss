@@ -36,4 +36,15 @@
         border: 0.5px $bgc--color-primary_2 solid;
         width: 100%;
     }
+    .homework{
+        min-height: 320px;
+        width: 100%;
+        border:1px solid $bgc--color-primary_2;
+    }
+    form {
+        margin: 0px auto;
+        padding: 5px 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+    }
 }
