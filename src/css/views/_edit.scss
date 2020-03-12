@@ -112,11 +112,11 @@
     border-radius: 50%;
     padding: -10px;
     width: 65%;
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 30px;
       img{
       width: 100%;
-      transform: scale(1.5);
+      transform: scale(1.6);
       }
     }
     .name{
@@ -126,7 +126,7 @@
       @include font(15px, $font-light, $font--color-primary_5, 400, 1px);
     }
     .personal_item{
-      margin: 35px auto;
+      margin: 45px auto;
       display: flex;
       justify-content: center;
       padding: 0;
@@ -148,8 +148,14 @@
       }
     }
     .descr-info{
-      margin: 33px 10px 0;
+      margin: 43px 10px 0;
       @include font(15px, $font-regular, $font--color-primary_5, 400, 19px);
+    }
+  }
+  .basic-info{
+    .btn-box{
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
