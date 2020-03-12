@@ -1,0 +1,50 @@
+.one-lesson{
+    margin-top:50px;
+    margin-bottom: 20px;
+    a{
+        color: $font--color-primary_1;
+        text-decoration: none;
+        font-size: 18px;
+        &:hover{
+            cursor: pointer;
+            color:$font--color-primary_4;
+            text-decoration: none;
+        }
+    }
+    a>h1 {
+        color: $font--color-primary_1;
+        text-decoration: none;
+        &:hover{
+            cursor: pointer;
+            color:$font--color-primary_4;
+            text-decoration: none;
+        }
+    }
+    h2 {
+        color:$font--color-primary_1;
+    }
+    .prev{
+        text-align: left;
+    }
+    .now{text-align: center;}
+    .next{
+        text-align: right;
+    }
+    hr{
+        background-color: $bgc--color-primary_2;
+        height: 1px;
+        border: 0.5px $bgc--color-primary_2 solid;
+        width: 100%;
+    }
+    .homework{
+        min-height: 320px;
+        width: 100%;
+        border:1px solid $bgc--color-primary_2;
+    }
+    form {
+        margin: 0px auto;
+        padding: 5px 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+    }
+}
