@@ -1,6 +1,7 @@
 .edit{
+  padding-bottom: 0;
     h2{
-        @include font(30px, $font-semibold, $font--color-primary_1, 600, 30px);
+        @include font(30px, $font-semibold, $font--color-primary_1, 400, 30px);
     }
     .wrap {
         // margin-top: 150px;
@@ -90,4 +91,65 @@
               }
         }
       }
+      hr{
+        width: 100%;
+        border-bottom: 1.5px solid $bgc--color-primary_9;
+        opacity: 0.7;
+      }
+}
+.edit-item{
+  padding: 0;
+  margin: 15px;
+  .personal-info{
+    border-right: 1.5px solid $bgc--color-primary_9;
+    text-align: center;
+    padding: 5px 16px;
+    h4{
+      font-size: 30px;
+    }
+    .photo-box{
+      overflow: hidden;
+    border-radius: 50%;
+    padding: -10px;
+    width: 65%;
+    margin: 10px auto;
+    padding: 30px;
+      img{
+      width: 100%;
+      transform: scale(1.5);
+      }
+    }
+    .name{
+      @include font(30px, $font-semibold, $font--color-primary_8, 400, 22px);
+    }
+    span{
+      @include font(15px, $font-light, $font--color-primary_5, 400, 1px);
+    }
+    .personal_item{
+      margin: 35px auto;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      .personal_item_cont{
+        list-style-type: none;
+        display: block;
+        text-align: center;
+        padding: 0 25px;
+        &:nth-child(2){
+          border-left: 1px solid $bgc--color-primary_9;
+          border-right: 1px solid $bgc--color-primary_9;
+        }
+        p{
+          @include font(14px, $font-regular, $font--color-primary_7, 400, 1px);
+        }
+        span{
+          @include font(12px, $font-light, $font--color-primary_5, 400, 1px);
+        }
+      }
+    }
+    .descr-info{
+      margin: 33px 10px 0;
+      @include font(15px, $font-regular, $font--color-primary_5, 400, 19px);
+    }
+  }
 }
