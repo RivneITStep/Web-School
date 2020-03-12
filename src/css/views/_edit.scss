@@ -105,10 +105,10 @@
     text-align: center;
     padding: 5px 16px;
     h4{
-      font-size: 30px;
+      @include font(25px, $font-regular, $font--color-primary_5, 400, 20px);
     }
     .photo-box{
-      overflow: hidden;
+    overflow: hidden;
     border-radius: 50%;
     padding: -10px;
     width: 65%;
@@ -116,7 +116,7 @@
     padding: 30px;
       img{
       width: 100%;
-      transform: scale(1.6);
+      transform: scale(1.7);
       }
     }
     .name{
@@ -147,6 +147,9 @@
         }
       }
     }
+    .btn--main{
+      margin: 10px 0;
+    }
     .descr-info{
       margin: 43px 10px 0;
       @include font(15px, $font-regular, $font--color-primary_5, 400, 19px);
@@ -159,6 +162,9 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid $border--color-primary_2;
+      h4{
+        @include font(25px, $font-regular, $font--color-primary_5, 600, 35px);
+      }
     }
     form{
       margin: 20px 0;
@@ -179,4 +185,105 @@
       
     }
   }
+}
+
+
+
+// 
+@media (max-width: 992px){
+  .edit{
+    padding: 0;
+    margin: 40px 0;
+  }
+  .edit-item{
+    .personal-info{
+      padding: 5px 10px;
+      .photo-box{
+        img{
+          transform: scale(3.1);
+          padding: 5px;
+        }
+      }
+      .name{
+        line-height: 32px;
+      }
+      .personal_item{
+        .personal_item_cont{
+          padding: 0 11px;
+        }
+      }
+    }
+    .basic-info{
+      .btn-box{
+        .buttons{
+          width: 100%;
+          .btn--main{
+            padding: 10px 18px;
+          }
+          .btn--card{
+            padding: 10px 18px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px){
+  .edit{
+    h2{
+      text-align: center;
+    }
+  }
+  .edit-item{
+    .personal-info{
+      border: none;
+      padding: 5px 10px;
+      .photo-box{
+        img{
+          transform: scale(1.8);
+          // padding: 30px;
+        }
+      }
+    }
+  }    
+}
+@media (max-width: 320px){
+  .edit-item{
+    .personal-info{
+      .photo-box{
+        img{
+          transform: scale(2.0);
+          padding: 0;
+        }
+      }
+    }
+    .basic-info{
+      .btn-box{
+        display: block;
+        h4{
+          text-align: center;
+          font-size: 22px;
+        }
+        .buttons{
+          .btn--main{
+            width: 100%;
+            margin: 5px 0;
+          }
+          .btn--card{
+            width: 100%;
+            margin: 5px 0;
+          }
+        }
+      }
+      form{
+        .buttons-item{
+          button{
+            width: 100%;
+            margin: 5px 0;
+          }
+        }
+      }
+    }  
+  }
+   
 }
