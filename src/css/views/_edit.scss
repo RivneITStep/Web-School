@@ -93,7 +93,7 @@
       }
       hr{
         width: 100%;
-        border-bottom: 1.5px solid $bgc--color-primary_9;
+        border-bottom: 1.5px solid $border--color-primary_2;
         opacity: 0.7;
       }
 }
@@ -101,7 +101,7 @@
   padding: 0;
   margin: 15px;
   .personal-info{
-    border-right: 1.5px solid $bgc--color-primary_9;
+    border-right: 1.5px solid $border--color-primary_2;
     text-align: center;
     padding: 5px 16px;
     h4{
@@ -136,8 +136,8 @@
         text-align: center;
         padding: 0 25px;
         &:nth-child(2){
-          border-left: 1px solid $bgc--color-primary_9;
-          border-right: 1px solid $bgc--color-primary_9;
+          border-left: 1px solid $border--color-primary_2;
+          border-right: 1px solid $border--color-primary_2;
         }
         p{
           @include font(14px, $font-regular, $font--color-primary_7, 400, 1px);
@@ -154,8 +154,29 @@
   }
   .basic-info{
     .btn-box{
+      padding: 20px 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $border--color-primary_2;
+    }
+    form{
+      margin: 20px 0;
+      input{
+        width: 100%;
+      }
+      .about-me-sec{
+        margin-top: 35px;
+      }
+      hr{
+        border-bottom: 1.5px solid $border--color-primary_2;
+        width: 100%;
+        margin-bottom: 35px;
+      }
+      textarea{
+        width: 100%;
+      }
+      
     }
   }
 }
