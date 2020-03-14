@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    <!-- Підключення font awesome -->
+    <script src="https://kit.fontawesome.com/8d6cd7f7b8.js" crossorigin="anonymous"></script>
+    <!-- Підключення bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Підключення slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-9 logo-block m-auto">
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="{% static 'img/logo5.png' %}" width="50" height="40" class="logo" alt="">
+                        Web<span>school</span>
+                    </a>
+                </div>
+                <div class="col-3 m-auto but-container d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary"> <a href="../signIn.html">Вхід</a></button>
+                    <button type="button" class="btn btn-secondary">Реєстрація</button>
+                </div>
+            </div>
+        </div>
+        <div class="navigate w-100" id="for-b">
+            <input type="checkbox" id="burger">
+            <label for="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav m-auto">
+                <li class="nav-item logo-fixed" id="logo_on">
+                    <a href="../index.html" class="nav-link">
+                        <img src="{% static 'img/logo5.png' %}" width="30" height="20" class="logo" alt="">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Онлайн-курси</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../testimonials.html"> Відгуки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../new-blog.html"> Наш блог</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../teachers.html"> Викладачі</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Вартість навчання</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../page_contacts.html"> Контакти</a>
+                </li>
+                <ul class="media">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-secondary">Реєстрація</button>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="user-block">
+                <h1 class="heading">Авторизація</h1>
+                <form>
+                    <div class="form-submit">
+                        <input type="email" placeholder="e-mail">
+                        <input type="password" placeholder="password">
+                    </div>
+                    <button type="submit" class="btn--main">Зайти в особистий кабінет</button>
+                </form>
+                <div id="forgot_password"></div>
+                <button type="submit" class="btn--transparent">Забули пароль?</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row footer-top">
+                <div class="col-md-4">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <br>
+                    <hr>
+                    <p>вулиця Соборна, 16, Рівне, Рівненська область, Україна 33000</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-phone"></i>
+                    <br>
+                    <hr>
+                    <p>(097) 777-77-77
+                        <br>
+                        (073) 777-77-77
+                        <br>
+                        (050) 777-77-77</p>
+
+                </div>
+                <div class="col-md-4">
+                    <i class="far fa-envelope"></i>
+                    <br>
+                    <hr>
+                    <p id="mail-us">Підписатись на новини</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="footer" placeholder="e-mail">
+                        </div>
+                        <button type="submit" class="btn--main">Підписатись</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row footer-bottom">
+                <div class="col d-flex justify-content-center">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#"><i class="fab fa-viber"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
