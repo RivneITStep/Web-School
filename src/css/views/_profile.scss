@@ -1,0 +1,176 @@
+.profile_1{
+    margin-top:55px;
+    .title h2{
+        @include font(30px, $font-semibold, $font--color-primary_1, 400, 30px);
+        padding-top:40px;
+        padding-bottom:15px;
+        text-align:center;
+    }
+    h6{
+        @include font(16px, $font-regular, $font--color-primary_5, 400, 18px);
+    }
+    border-bottom: 1.5px solid $border--color-primary_2;
+}
+.profile_2{
+    .edit_button{
+        position:relative;
+        margin-top:25px;
+        margin-bottom:55px;
+    }
+    .start_course:after{
+        content:'розпочато';
+        background-color:green;
+        border-radius:5px;
+        padding:0px 8px 2px 7px;
+        color:white;
+        font-family:$font-regular;
+        margin-left:10px;
+        font-size:12px;
+    }
+    .finish_course:after{
+        content:'завершено';
+        background-color:$font-color-primary-hover4;
+        border-radius:5px;
+        padding:0px 8px 2px 7px;
+        color:white;
+        font-family:$font-regular;
+        margin-left:10px;
+        font-size:12px;
+    }
+    .soon_course:after{
+        content:'незабаром';
+        background-color:yellow;
+        border-radius:5px;
+        padding:0px 8px 2px 7px;
+        color:$font--color-primary_6;
+        font-family:$font-regular;
+        margin-left:10px;
+        font-size:12px;
+    }
+    ul li{
+        list-style-type:none;
+        padding-bottom:5px;
+    }
+    .col-md-8{
+        padding-top:20px;
+        div{
+            margin-bottom:15px;
+        }
+        h4{
+            width:19%;
+            position:relative;
+            vertical-align:top;
+        }
+        p{
+            width:80%;
+        }
+        h4,p,ul{
+            display:inline-block;
+            padding:0;
+            margin:0;
+        }
+    }
+    h4{
+        @include font(18px, $font-regular, $font--color-primary_5, 400, 20px);
+        }
+    p{
+        @include font(14px, $font-regular, $font--color-primary_7, 400, 18px);
+    }
+    .personal-info{
+        border-right: 1.5px solid $border--color-primary_2;
+        text-align: center;
+        padding: 5px 16px;
+        .photo-box{
+        overflow: hidden;
+        border-radius: 50%;
+        padding: -10px;
+        width: 65%;
+        margin: 20px auto;
+        padding: 30px;
+        img{
+        width: 100%;
+        transform: scale(1.7);
+        }
+    }
+    .name{
+        @include font(30px, $font-semibold, $font--color-primary_8, 400, 22px);
+    }
+    span{
+        @include font(15px, $font-light, $font--color-primary_5, 400, 1px);
+    }
+    .personal_item{
+        margin: 45px auto;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        .personal_item_cont{
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            padding: 0 25px;
+            &:nth-child(2){
+                border-left: 1px solid $border--color-primary_2;
+                border-right: 1px solid $border--color-primary_2;
+            }
+            p{
+                @include font(14px, $font-regular, $font--color-primary_7, 400, 1px);
+            }
+            span{
+                @include font(12px, $font-light, $font--color-primary_5, 400, 1px);
+            }
+        }
+    }
+} 
+}
+
+
+@media (max-width: 992px){
+    .profile_1 .title h2{
+        font-size:24px;
+    }
+    .profile_2{
+        .personal-info{
+            padding: 5px 5px;
+            .photo-box{
+            img{
+            transform: scale(3.1);
+            padding: 5px;
+            }
+            }
+            .name{
+                line-height: 32px;
+            }
+            .personal_item{
+                .personal_item_cont{
+                    padding: 0 11px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 768px){
+  .profile_2{
+    .personal-info{
+      border: none;
+      padding: 5px 10px;
+      .photo-box{
+        img{
+          transform: scale(1.8);
+          // padding: 30px;
+        }
+      }
+    }
+  }    
+}
+@media (max-width: 320px){
+  .profile_2{
+    .personal-info{
+      .photo-box{
+        img{
+          transform: scale(2.0);
+          padding: 0;
+        }
+      }
+    }
+}
+}
