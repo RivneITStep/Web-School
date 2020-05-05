@@ -1,0 +1,77 @@
+.main-bg-color4 {
+    padding: 50px 0;
+    background-color: $bgc--color-primary_6;
+    hr {
+        width: 35%;
+        border: 1px solid $font--color-primary_1;
+        margin-bottom: 30px;
+    }
+    h2, p {
+        text-align: center;
+        color: $font--color-primary_1;
+        margin-top: 20px;
+    }
+    .price-item {
+        padding: 50px;
+        margin-top: 30px;
+        background-color: $bgc--color-primary_1;
+        color: $font--color-primary_3;
+        border-radius: 8px;
+        min-height: 474px;
+        text-align: center;
+        .price-item__title {
+            margin-bottom: 40px;
+            @include font(30px, $font-semibold, $font--color-primary_3, 600, 1.5);
+        }
+        .price-item__pr {
+            margin-bottom: 20px;
+            .currency {
+                opacity: 0.6;
+                vertical-align: super;
+                font-size: 20px;
+            }
+        }
+        .price-item__desc {
+            margin-bottom: 75px;
+            p {
+                color: $font--color-primary_3;
+            }
+            a {
+                color: $font--color-primary_5;
+            }
+        }
+    }
+    .price-item2 {
+        background-color: $bgc--color-primary_5;
+    }
+    .price-item3 {
+        background-color: $bgc--color-primary_10;
+        .price-item__title {
+            margin-bottom: 85px;
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    main {
+        .main-bg-color4 {
+            .price-item {
+                padding: 20px;
+                min-height: 350px;
+                .price-item__title {
+                    @include font(20px, $font-semibold, $font--color-primary_3, 600, 1.3);
+                }
+                .price-item__desc {
+                    margin-bottom: 30px;
+                }
+            }
+            .price-item3 {
+                .price-item__title {
+                    margin-bottom: 65px;
+                }
+            }
+        }
+        
+    }
+}
