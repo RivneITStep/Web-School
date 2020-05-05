@@ -4,11 +4,7 @@
         @include font(30px, $font-semibold, $font--color-primary_1, 400, 30px);
     }
     .wrap {
-        // margin-top: 150px;
-        // perspective: 1000px;
-        // perspective-origin: 50% 50%;
         .cube {
-            // margin: auto;
             position: relative;
             cursor: pointer;
             height: 50px;
@@ -52,7 +48,6 @@
                 }
               }
               
-             
           }
           
           .cube > div {
