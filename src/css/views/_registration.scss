@@ -1,0 +1,140 @@
+.registration {
+    background-color: $bgc--color-primary_6;
+}
+
+.registration .title {
+    background-image: linear-gradient(239deg,$bgc--color-primary_3,$bgc--color-primary_1);
+    height: 614px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.registration .title-container {
+    display: block;
+    position: relative;
+    margin-top: -80px;
+}
+
+.registration .title-heading {
+    @include font(30px, $font-semibold, $font--color-primary_3, 600, 1);
+    position: relative;
+    text-transform: uppercase;
+    font-size: 93px;
+    z-index: 10;
+    margin-bottom: 13px;
+    max-width: 683px;
+}
+
+.registration .title-heading:before {
+    content: "";
+    width: 169px;
+    height: 314px;
+    background-color: #000;
+    top: -30px;
+    left: -41px;
+    box-shadow: 0 19px 57px 0 #002566;
+    position: absolute;
+    z-index: -1;
+}
+
+.registration .title-sub-heading {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.33;
+    position: absolute;
+    left: 152px;
+    top: 300px;
+    width: 80%;
+    max-width: 100%;
+}
+
+.registration .title-sub-heading:before {
+    content: "";
+    width: 125px;
+    height: 2px;
+    top: -15px;
+    background-color: #fff;
+    position: absolute;
+}
+
+.registration-form {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 820px;
+    padding: 50px 114px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 hsla(0,0%,56.5%,.5);
+    margin: -50px auto 0;
+    z-index: 10;
+}
+
+.field-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+input[type=email], input[type=password], input[type=text]{
+    width: 100%;
+    font-weight: 600;
+    padding: 15px;
+    margin-right: 8px;
+    height: auto;
+    border: 1px solid $border--color-primary_2;
+}
+
+.registration-form .captcha {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.registration-form .captcha .field-container {
+    width: 40%;
+}
+
+.registration-form .captcha-content a {
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: underline;
+    margin-left: 15px;
+    color: $font--color-primary_5;
+}
+
+.registration-form .captcha-content img {
+    margin-left: 70px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.base-checkbox {
+    display: flex;
+    
+}
+
+.registration .base-checkbox-label {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    color: $font--color-primary_6;
+}
+
+.registration-form-button {
+    display:flex;
+    justify-content: center;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.registration-form .have-account {
+    font-size: 14px;
+    margin: 30px 0 0;
+    color: $font--color-primary_6;
+    font-weight: 800;
+}

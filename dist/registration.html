@@ -56,7 +56,7 @@
             <a class="nav-link" href="../teachers.html"> Викладачі</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../price.html"> Вартість навчання</a>
+            <a class="nav-link" href="#"> Вартість навчання</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../page_contacts.html"> Контакти</a>
@@ -72,19 +72,50 @@
         </ul>
       </div>
     </header>
-    <div class="container">
-        <div class="row">
-            <div class="user-block">
-                <h1 class="heading">Авторизація</h1>
-                <form>
-                    <div class="form-submit">
-                        <input type="email" placeholder="e-mail">
-                        <input type="password" placeholder="password">
+    <div class="registration">
+        <section class="title">
+            <div class="title-container">
+                <h1 class="title-heading">зареєструвати особистий кабінет</h1>
+                <span class="title-sub-heading ">
+                    Особистий кабінет потрібен Вам для того, щоб мати можливість відправити заявку на вакансію, зареєструватись на курси або сертифікацію, слідкувати за статусом своєї заявки, а також задавати питання викладачам
+                </span>
+            </div>
+        </section>
+        <div class="registration-form">
+            <form>
+                <div class="field-container">
+                    <input type="email" placeholder="Електронна адреса*" class="">
+                </div>
+                <div class="field-container">
+                    <input type="password" placeholder="Пароль*" class="">
+                </div>
+                <div class="field-container">
+                    <input type="password" placeholder="Підтвердити пароль*" class="">
+                </div>
+                <div class="captcha">
+                    <div class="field-container">
+                        <input type="text" placeholder="Введіть код з картинки*" class="">
                     </div>
-                    <button type="submit" class="btn--main">Зайти в особистий кабінет</button>
-                </form>
-                <div id="forgot_password"></div>
-                    <button type="submit" class="btn--transparent">Забули пароль?</button>
+                    <div class="captcha-content">
+                        <img src="https://career.softserveinc.com/uk-ua/registration/showCaptcha" alt="" id="Captcha">
+                        <a href="" onclick="reload()">Оновити</a>
+                    </div>
+                </div>
+                <div class="mb-15">
+                    <span class="base-checkbox">
+                        <input id="checkbox" type="checkbox" class="base-checkbox-input">
+                        <label for="checkbox" class="base-checkbox-label">Я погоджуюсь із загальними положеннями, умовами і політикою конфіденційності та надаю дозвіл на отримання повідомлень про події, зустрічі, новини та пропозиції.</label>
+                    </span>
+                </div>
+                <div class="registration-form-button">
+                    <button type="submit" class="btn--main">Створити профіль</button>
+                </div>
+            </form>
+            <div class="t-center">
+                <div class="social">
+                    <div class="have-account">В мене вже є свій кабінет?
+                        <a href="../signIn.html">Вхід</a>
+                    </div>
                 </div>
             </div>
         </div>

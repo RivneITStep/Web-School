@@ -12,7 +12,7 @@
 .btn--main {
   @extend .btn--joint;
   background-color: $btn--color-primary_1;
-  border: 1px solid $btn--color-primary_1;
+  border: 1px solid $btn--color-primary_2;
   &:hover {
     background-color: $btn--color-primary_1--hover;
     border-color: $btn--color-primary_1--hover;
