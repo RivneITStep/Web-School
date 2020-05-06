@@ -1,0 +1,35 @@
+.payment_title {
+    margin-top:55px;
+    border-bottom: 1.5px solid $border--color-primary_2;
+    h2{
+        @include font(30px, $font-semibold, $font--color-primary_1, 400, 30px);
+        padding-top:40px;
+        padding-left: 0;
+        margin-left:0;
+        padding-bottom:15px;
+        text-align:center;
+    }
+}
+.payment_main{
+    padding-bottom:55px;
+    background:url(../../img/partner.png) no-repeat;
+    background-position:right;
+    background-size:contain;
+    h4{
+        @include font(20px, $font-regular, $font-color-primary-hover3, 500, 26px);
+        padding-top:15px;
+        }
+    h5{
+        @include font(18px, $font-regular, $font--color-primary_5, 400, 24px);
+        }
+}
+@media (max-width: 1199px){
+    .payment_main{
+        background-size:300px ;
+    }
+}
+@media(max-width:991px){
+    .payment_main{
+        background:none ;
+    }
+}
