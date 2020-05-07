@@ -1,13 +1,23 @@
 .allCourses {
     margin-top: 50px;
     margin-bottom: 30px;
+    padding-bottom:55px;
+    .row:nth-child(1){
+        padding-bottom: 15px;
+        border-bottom: 1.5px solid $border--color-primary_2;
+    }
+
+    h1{
+        margin-top:55px;
+    }
     span{
         color: $font--color-primary_1;
     }
     .main-page{
-        margin: 25px 0;
+        margin:20px 0px;
     }
     .course{
+        margin-bottom:25px;
         &:hover img {
             -webkit-box-shadow: 1px 3px 3px $font--color-primary_1;
             box-shadow: 1px 3px 3px $font--color-primary_1;
@@ -79,14 +89,35 @@
             margin-top: 10px;
             display: block;
         }
-       .course-img{
+        .course-img{
         position: relative;
         img{
             width: 100%;
             border: 3px solid $font--color-primary_1;  
             }  
         } 
-    }    
+    }  
+    .pagination{
+        margin: 35px auto;
+        .pagination-item{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $bgc--color-primary_6;
+        border: 1px solid $bgc--color-primary_9;
+        margin: 0 5px;
+        padding: 9px 15px;
+        @include font(15px, $font-light, $font--color-primary_6, 300,20px);
+        text-decoration: none;
+        &:hover{
+            cursor: pointer;
+            margin-top: -4px;
+            transition: 0.3s ease-in;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+        }
+    }  
 }
 @keyframes pulse {
     from {

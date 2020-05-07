@@ -1,7 +1,7 @@
 main {
     .main-bg-color {
         padding: 50px 0;
-        background-color: $bgc--color-primary_1;
+        // background-color: $bgc--color-primary_1;
         .course-title {
             text-align: center;
         }
@@ -14,18 +14,25 @@ main {
         .course-btn {
             text-align: center;
             margin-top: 40px;
-            
+            :hover{
+                text-decoration:none;
+                color:$font--color-primary_4;
+            }
         }
     }
     .main-bg-color2 {
         padding: 50px 0;
-        background-color: $bgc--color-primary_3;
+        background-color: $bgc--color-primary_11;
         .teachers-title {
             text-align: center;
+            color:$font--color-primary_4;
         }
         .teachers-btn {
             text-align: center;
             margin-top: 40px;
+            :hover{
+                text-decoration:none;
+            }
         }
         .teachers-item {
             margin-top: 25px;
@@ -49,13 +56,18 @@ main {
                 }
             }
         }   
-       .teacher-btn {
+        .teacher-btn {
             margin-top: 20px;
-            width: 100%;
+            position:relative;
+            left:10%;
+            
+        }
+        .btn--transparent:hover{
+            text-decoration:none;
         }
     }
     .main-bg-color3 {
-        background-color: $bgc--color-primary_5;
+        background-color: $bgc--color-primary_9;
         padding: 50px 0;
         .testimonials-title {
             text-align: center;
@@ -83,10 +95,9 @@ main {
         }
         .testimonials-btn {
             text-align: center;
-            .btn--main {
-                &:hover {
+            .btn--main:hover {
                     color: $font--color-primary_3;
-                }
+                    text-decoration:none;
             }
         }
     }
@@ -138,7 +149,6 @@ main {
         }
     }
     .main-bg-color5 {
-        background-color: $bgc--color-primary_4;
         padding: 50px 0;
         .blog-title {
             text-align: center;
@@ -146,6 +156,8 @@ main {
         .blog-btn {
             text-align: center;
             margin-top: 40px;
+            :hover{text-decoration:none;}
+            margin-bottom:35px;
         }
         .card-box{
             overflow: hidden;
@@ -169,7 +181,7 @@ main {
                         @include font(17px, $font-semibold, $font-color-primary-hover4, 400,24px);
                     }
                     p{
-                       @include font(15px, $font-light, $font-color-primary-hover3, 300,24px); 
+                        @include font(15px, $font-light, $font-color-primary-hover3, 300,24px); 
                     }
                 }
             }
@@ -179,17 +191,17 @@ main {
             .card-box-container{
                 padding: 10px 15px;
                 h4{
-                  @include font(17px, $font-semibold, $font--color-primary_7, 400,24px);
+                    @include font(17px, $font-semibold, $font--color-primary_7, 400,24px);
                 }
                 p{
-                   @include font(15px, $font-light, $font--color-primary_6, 300,24px);
+                    @include font(15px, $font-light, $font--color-primary_6, 300,24px);
                 }
                 .card-box-item{
                     span{
-                       @include font(15px, $font-light, $font--color-primary_6, 300,60px);
+                        @include font(15px, $font-light, $font--color-primary_6, 300,60px);
                     }
                     i{
-                       color: $font--color-primary_6;
+                        color: $font--color-primary_6;
                     }
                 }
             }

@@ -1,5 +1,23 @@
+.av_couses{
+    .row:nth-child(1){
+        position:relative;
+        padding-top:115px;
+        border-bottom: 1.5px solid $border--color-primary_2;
+    }
+    .btn--card{ a{
+        color:white;
+        :hover{
+            color:white;
+            text-decoration:none;
+        }
+    }
+    position:relative;
+    top:15px;
+    }
+}
+
 .list{
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .list-box{
     min-width: 300px;
@@ -12,7 +30,7 @@
     margin-top: 15px;
 }
 .connect-us-bottom>h4{
-    padding-top: 15px;
+    // padding-top: 15px;
 }
 .list-box > a, .connect-us>a{
     color: $font--color-primary_1;
@@ -28,7 +46,7 @@
     width: 300px;
     height: 250px;
     border: 2px $bgc--color-primary_9 solid;
-    margin-top: 30px;
+    // margin-top: 30px;
     margin-bottom: 30px;
 }
 .connect-us>a>i {

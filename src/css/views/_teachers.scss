@@ -17,6 +17,38 @@
 //     color: $font--color-primary_3;
 //     height: 200px;
 // }
+.details-card{
+    .row:nth-child(1){
+        padding-bottom: 15px;
+        border-bottom: 1.5px solid $border--color-primary_2;
+        margin-bottom:25px;
+    }
+    button{
+        position:relative;
+        left:25%;
+    }
+    .pagination{
+        margin: 35px auto;
+        .pagination-item{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $bgc--color-primary_6;
+        border: 1px solid $bgc--color-primary_9;
+        margin: 0 5px;
+        padding: 9px 15px;
+        @include font(15px, $font-light, $font--color-primary_6, 300,20px);
+        text-decoration: none;
+        &:hover{
+            cursor: pointer;
+            margin-top: -4px;
+            transition: 0.3s ease-in;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+        }
+    }  
+}
 .card-desc h3,h4,h5{
     color: $font--color-primary_1;
     // text-align: center;
@@ -28,17 +60,15 @@
 	margin: 10px 15px;
     font-size: 20px;
     color: $font--color-primary_1;  
-   display: inline-block;
-   
-  }
-  .icons i:hover{
+    display: inline-block;
+}
+.icons i:hover{
 	margin: 10px 15px;
     font-size: 20px;
     color: $font--color-primary_4;  
-   display: inline-block;
-   
-  }
-  .hidden-text{
+    display: inline-block;
+}
+.hidden-text{
     color: $font--color-primary_1;
     padding: 10px;
     line-height: 1.1;
@@ -51,7 +81,6 @@
 #button2{
     display: none;
 }
-  
 //   .learn-more{
 //       margin-top: 20px;
 //   }

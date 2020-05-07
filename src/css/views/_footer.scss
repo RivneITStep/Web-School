@@ -2,9 +2,18 @@
 footer{
     background-color:  $bgc--color-primary_2;
     text-align: center;
+    form{
+        background:none;
+        position:relative;
+        top:-15px;
+        button{
+            position:relative;
+            top:-7px;
+        }
+    }
 }
 .footer-top{
-   padding: 10px;
+    padding:35px 10px 0px 10px;
 }
 .footer-top i{
     font-size: 25px;
@@ -34,7 +43,7 @@ footer .footer{
     background: #f4f7f8;
     border-radius: 8px;
     max-width: 600px;
-  }
-  #mail-us{
-      margin-bottom: 0;
-  }
+}
+#mail-us{
+    margin-bottom: 0;
+}
