@@ -1,14 +1,42 @@
-.testimonials-item{
-    margin-top: 70px;
-    
-    h2{
-        text-align: center;
-        @include font(34px, $font-semibold, $font--color-primary_1, 600,60px);
+.testimonials{
+    padding-bottom:55px;
+    margin-top:115px;
+    position:relative;
+    h1{
+        margin-bottom:25px;
     }
+    .row:nth-child(1){
+        border-bottom: 1.5px solid $border--color-primary_2;
+    }
+    .pagination{
+        margin: 35px auto;
+        .pagination-item{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $bgc--color-primary_6;
+        border: 1px solid $bgc--color-primary_9;
+        margin: 0 5px;
+        padding: 9px 15px;
+        @include font(15px, $font-light, $font--color-primary_6, 300,20px);
+        text-decoration: none;
+        &:hover{
+            cursor: pointer;
+            margin-top: -4px;
+            transition: 0.3s ease-in;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+        }
+    }  
+}
+.testimonials-item{
+    margin-top: 15px;
     .testimonial-box{
         margin: 10px 0;
         padding: 15px;
         background: $bgc--color-primary_2;
+        border-radius:10px;
         h3{
             @include font(28px, $font-light, $font--color-primary_3, 300,54px);
         }

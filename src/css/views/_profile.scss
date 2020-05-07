@@ -4,18 +4,41 @@
         @include font(30px, $font-semibold, $font--color-primary_1, 400, 30px);
         padding-top:40px;
         padding-bottom:15px;
-        text-align:center;
+        // text-align:center;
     }
     h6{
         @include font(16px, $font-regular, $font--color-primary_5, 400, 18px);
     }
-    border-bottom: 1.5px solid $border--color-primary_2;
+    .row:nth-child(1){
+        border-bottom: 1.5px solid $border--color-primary_2;
+    }
+}
+a{
+    color:white;
+    :hover{
+    text-decoration:none;
+    color:white;
+}
 }
 .profile_2{
+    .btn--card{
+        padding:5px;
+        font-size:16px;
+        margin:5px 0px 25px 15px;
+    }
+    .col-md-7{
+        position:relative;
+        margin-top:25px;
+    }
     .edit_button{
         position:relative;
         margin-top:25px;
         margin-bottom:55px;
+        a{color:white;}
+        a:hover{
+            text-decoration: none;
+            color:white;
+        }
     }
     .start_course:after{
         content:'розпочато';
@@ -77,7 +100,7 @@
         @include font(14px, $font-regular, $font--color-primary_7, 400, 18px);
     }
     .personal-info{
-        border-right: 1.5px solid $border--color-primary_2;
+        // border-right: 1.5px solid $border--color-primary_2;
         text-align: center;
         padding: 5px 16px;
         .photo-box{

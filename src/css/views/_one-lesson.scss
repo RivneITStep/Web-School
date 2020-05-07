@@ -1,6 +1,15 @@
 .one-lesson{
     margin-top:50px;
     margin-bottom: 20px;
+    .row:nth-child(1){
+        border-bottom: 1.5px solid $border--color-primary_2;
+        a{
+            text-align:right;
+        }
+    }
+    .row:nth-child(2){
+        margin-top:25px;
+    }
     a{
         color: $font--color-primary_1;
         text-decoration: none;
@@ -39,12 +48,34 @@
     .homework{
         min-height: 320px;
         width: 100%;
-        border:1px solid $bgc--color-primary_2;
+        // border:1px solid $bgc--color-primary_2;
+        padding-top:15px;
+
     }
     form {
+        textarea{
+            width:100%;
+        }
         margin: 0px auto;
         padding: 5px 20px;
         background: #f4f7f8;
         border-radius: 8px;
+        div{
+            display:inline-block;
+        }
+        .send_file{
+            float:right;
+            a{
+                margin-right:15px;
+            }
+        }
+        p{
+            position:relative;
+            top:-5px;
+            font-size:12px;
+        }
+    }
+    .home_work{
+        border-bottom: 1.5px solid $border--color-primary_2;
     }
 }

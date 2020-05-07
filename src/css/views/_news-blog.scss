@@ -1,17 +1,23 @@
 .blog{
     margin-top: 20px;
     .blog-title{
-        width: 100%;
-        text-align: center;
-        h2{
-            margin: 77px 0 auto;
-            @include font(34px, $font-semibold, $font--color-primary_1, 600, 17px);
+        padding:0;
+        margin:0;
+        border-bottom: 1.5px solid $border--color-primary_2;
+        margin-bottom:15px;
+        h1{
+            line-height:0px;
         }
-        hr{
-            width: 35%;
-            border: 1px solid $font--color-primary_1;
-            margin-bottom: 30px;
-        }
+        // text-align: center;
+        // h2{
+        //     margin: 77px 0 auto;
+        //     @include font(34px, $font-semibold, $font--color-primary_1, 600, 17px);
+        // }
+        // hr{
+        //     width: 35%;
+        //     border: 1px solid $font--color-primary_1;
+        //     margin-bottom: 30px;
+        // }
     }
     
     .card-box{
@@ -88,11 +94,11 @@
     .blog{
         .blog-title{
             width: 100%;
-            text-align: center;
-            h2{
-                margin: 10px 0 auto;
-                @include font(34px, $font-semibold, $font--color-primary_1, 600, 17px);
-            }
+            // text-align: center;
+            // h2{
+            //     margin: 10px 0 auto;
+            //     @include font(34px, $font-semibold, $font--color-primary_1, 600, 17px);
+            // }
         }
     }
 }

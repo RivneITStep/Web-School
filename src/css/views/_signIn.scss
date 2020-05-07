@@ -3,21 +3,33 @@ body header {
 }
 
 .user-block {
-    margin: 200px auto;
+    margin: 150px auto;
     text-align: center;
 }
 
 h1 {
     color: $font--color-primary_1;
+    margin-bottom:15px;
 }
 
-.form-submit input {
-    width: 100%;
-    border: 1px solid $bgc--color-primary_9;
-    border-radius: 9px;
-    background-color: transparent;
-    margin-bottom: 20px;
-    font-weight: 200;
-    font-size: 1rem;
+.form-submit {
+    input {
+        width: 100%;
+        border: 1px solid $bgc--color-primary_9;
+        border-radius: 10px;
+        background-color: transparent;
+        margin-bottom: 20px;
+        font-weight: 200;
+        font-size: 1rem;
+    }
+}
+form{
+    button{
+        margin-bottom:15px;
+        a:hover{
+            color:white;
+            text-decoration:none;
+        }
+    }
 }
 

@@ -1,6 +1,8 @@
 .payment_title {
     margin-top:55px;
-    border-bottom: 1.5px solid $border--color-primary_2;
+    .row:nth-child(1){
+        border-bottom: 1.5px solid $border--color-primary_2;
+    }
     h2{
         @include font(30px, $font-semibold, $font--color-primary_1, 400, 30px);
         padding-top:40px;

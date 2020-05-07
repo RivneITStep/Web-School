@@ -21,10 +21,10 @@
 
 .btn--card {
   @extend .btn--joint;
-  background-color: $btn--color-primary_2;
+  background-color: $btn--color-primary_2--hover;
   border: 1px solid transparent;
   &:hover {
-    background-color: $btn--color-primary_2--hover;
+    background-color: $btn--color-primary_2;
   }
 }
 
