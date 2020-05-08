@@ -1,35 +1,37 @@
-body header {
-    background-color: $bgc--color-primary_2;
-}
-
-.user-block {
-    margin: 150px auto;
-    text-align: center;
-}
-
-h1 {
-    color: $font--color-primary_1;
-    margin-bottom:15px;
-}
-
-.form-submit {
-    input {
-        width: 100%;
-        border: 1px solid $bgc--color-primary_9;
-        border-radius: 10px;
-        background-color: transparent;
-        margin-bottom: 20px;
-        font-weight: 200;
-        font-size: 1rem;
+.signIn{
+    body header {
+        background-color: $bgc--color-primary_2;
     }
-}
-form{
-    button{
+    
+    .user-block {
+        margin: 150px auto;
+        text-align: center;
+    }
+    
+    h1 {
+        color: $font--color-primary_1;
         margin-bottom:15px;
-        a:hover{
-            color:white;
-            text-decoration:none;
+    }
+    
+    .form-submit {
+        input {
+            width: 100%;
+            border: 1px solid $bgc--color-primary_9;
+            border-radius: 10px;
+            background-color: transparent;
+            margin-bottom: 20px;
+            font-weight: 200;
+            font-size: 1rem;
         }
     }
+    form{
+        button{
+            margin-bottom:15px;
+            a:hover{
+                color:white;
+                text-decoration:none;
+            }
+        }
+    }
+    
 }
-

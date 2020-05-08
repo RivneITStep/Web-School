@@ -1,4 +1,4 @@
-.profile_1{
+.teacher_profile_1{
     margin-top:55px;
     .title h2{
         @include font(30px, $font-semibold, $font--color-primary_1, 400, 30px);
@@ -13,14 +13,28 @@
         border-bottom: 1.5px solid $border--color-primary_2;
     }
 }
-
-.profile_2{
-    a{
-        color:white;
-        :hover{
-        text-decoration:none;
-        color:white;
-    }
+.teacher_profile_2{
+    margin-bottom:55px;
+    table{
+        border-collapse: collapse;
+        tr:nth-child(1){
+            background:$bgc--color-primary_9;
+        }
+        tr td{
+            padding:10px;
+            text-align:center;
+        }
+        tr td:nth-child(2){
+            text-align:justify;
+        }
+        tr:nth-child(even){
+            background:$bgc--color-primary_11;
+        }
+        th{
+            text-align:center;
+            padding:5px;
+            
+        }
     }
     .btn--card{
         padding:5px;
@@ -30,16 +44,6 @@
     .col-md-7{
         position:relative;
         margin-top:25px;
-    }
-    .edit_button{
-        position:relative;
-        margin-top:25px;
-        margin-bottom:55px;
-        a{color:white;}
-        a:hover{
-            text-decoration: none;
-            color:white;
-        }
     }
     .start_course:after{
         content:'розпочато';
