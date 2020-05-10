@@ -7,15 +7,23 @@
     .row:nth-child(1){
       border-bottom: 1.5px solid $border--color-primary_2;
   }
+  a{
+    color:white;
+  }
+  a:hover{
+    color:white;
+    text-decoration:none;
+  }
 }
-a{
-  color:white;
-}
-a:hover{
-  color:white;
-  text-decoration:none;
-}
+
 .edit-item{
+  a{
+    color:white;
+  }
+  a:hover{
+    color:white;
+    text-decoration:none;
+  }
   padding: 0;
   margin: 15px;
   .personal-info{
