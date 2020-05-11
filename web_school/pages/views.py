@@ -33,3 +33,18 @@ def blog(request):
 def testimonials(request):
     
     return render(request, 'pages/testimonials.html')
+
+
+def course_page(request):
+    
+    return render(request, 'pages/course_page.html')
+
+
+def price(request):
+    
+    return render(request, 'pages/price.html')
+
+    
+def payment(request):
+    
+    return render(request, 'pages/payment.html')

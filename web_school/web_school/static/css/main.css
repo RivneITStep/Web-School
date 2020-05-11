@@ -5302,6 +5302,7 @@ section {
     margin: 10px 0;
     width: 100%;
     padding: 0;
+    transition: all 500ms;
 }
 
 .blog .card-box:hover {
