@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% include "parts/_header.html" %}
+<div class="container allCourses">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Онлайн програми</h1>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-3 ">
+          <button class="btn--main">
+    Онлайн обучение
+          </button> </div>
+        <div class="col-md-3">
+          <button class="btn--main">
+            Записанные курсы
+          </button>
+          </div>
+      </div> -->
+      <div class="row main-page">
+        <div class="col-md-4 course">
+          <a href="course_page.html">
+            <div class="course-img">
+              <img src="{% static 'img/back-end.svg' %}" alt="Профессия Back-end разработчик" title="Профессия Back-end разработчик" />
+              <a href="#">
+                <div class="button-tag online"># Онлайн</div>
+              </a>
+              <div class="button-on-course"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="title_course">Професія Back-end розробник</span>
+          </a><br />
+          <span class="time-start"><b>Старт:</b> 23 января 2020<br /><b>Рівень:</b> середній
+            <i class="fas fa-space-shuttle"></i></span>
+        </div>
+        <div class="col-md-4 course">
+          <a href="course_page.html">
+            <div class="course-img">
+              <img src="{% static 'img/python.svg' %}" alt="Профессия Python разработчик" title="Профессия Python разработчик" />
+              <a href="#">
+                <div class="button-tag online"># Онлайн</div>
+              </a>
+              <div class="button-on-course"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="title_course">Професія Python розробник</span>
+          </a><br />
+          <span class="time-start"><b>Старт:</b> 30 января 2020<br /><b>Рівень:</b> початківцям
+            <i class="fas fa-rocket"></i></span>
+        </div>
+        <div class="col-md-4 course">
+          <a href="course_page.html">
+            <div class="course-img">
+              <img src="{% static 'img/java.svg' %}" alt="Профессия Java разработчик" title="Профессия Java разработчик" />
+              <a href="#">
+                <div class="button-tag online"># Онлайн</div>
+              </a>
+              <div class="button-on-course"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="title_course">Професія Java розробник</span>
+          </a><br />
+          <span class="time-start"><b>Старт:</b> 20 февраля 2020<br /><b>Рівень:</b> початківцям
+            <i class="fas fa-rocket"></i></span>
+        </div>
+      </div>
+      <div class="row main-page">
+        <div class="col-md-4 course">
+          <a href="course_page.html">
+            <div class="course-img">
+              <img src="{% static 'img/unity.svg' %}" alt="Профессия Unity разработчик" title="Профессия Unity разработчик" />
+              <a href="#">
+                <div class="button-tag online"># Онлайн</div>
+              </a>
+              <div class="button-on-course"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="title_course">Професія Unity розробник</span>
+          </a><br />
+          <span class="time-start"><b>Старт:</b> 02 марта 2020<br /><b>Рівень:</b> початківцям
+            <i class="fas fa-rocket"></i></span>
+        </div>
+        <div class="col-md-4 course">
+          <a href="course_page.html">
+            <div class="course-img">
+              <img src="{% static 'img/front-end.svg' %}" alt="Профессия Front-end разработчик" title="Профессия Front-end разработчик" />
+              <a href="#">
+                <div class="button-tag online"># Онлайн</div>
+              </a>
+              <div class="button-on-course"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="title_course">Професія Front-end розробник</span>
+          </a><br />
+          <span class="time-start"><b>Старт:</b> 06 марта 2020<br /><b>Рівень:</b> початківцям
+            <i class="fas fa-rocket"></i></span>
+        </div>
+        <div class="col-md-4 course">
+          <a href="course_page.html">
+            <div class="course-img">
+              <img src="{% static 'img/full-stack.svg' %}" alt="Профессия Full Stack разработчик"
+                title="Профессия Full Stack разработчик" />
+              <a href="#">
+                <div class="button-tag online"># Онлайн</div>
+              </a>
+              <div class="button-on-course"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="title_course">Професія Full Stack розробник</span>
+          </a><br />
+          <span class="time-start"><b>Старт:</b> 14 aaa 2020<br /><b>Рівень:</b>початковий та середній<i class="fas fa-laptop-code"></i></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3.offset-md-9 pagination pagination">
+          <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+          <a href="#" class="pagination-item">1</a>
+          <a href="#" class="pagination-item">2</a>
+          <a href="#" class="pagination-item">3</a>
+          <a href="#" class="pagination-item">4</a>
+          <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

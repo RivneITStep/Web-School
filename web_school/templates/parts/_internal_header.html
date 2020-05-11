@@ -1,0 +1,45 @@
+{% load static %}
+<div class="navigate w-100" id="for-b">
+        <input type="checkbox" id="burger">
+        <label for="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav m-auto">
+          <li class="nav-item logo-fixed" id="logo_on">
+            <a href="{% url 'pages:index' %}" class="nav-link">
+              <img src="{% static 'img/logo5.png' %}" width="30" height="20" class="logo" alt="">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'pages:index' %}">Головна сторінка</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'pages:courses' %}">Курси</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:testimonials' %}"> Відгуки</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:blog' %}"> Наш блог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:teachers' %}"> Викладачі</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:about' %}">Про нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:contacts' %}"> Контакти</a>
+          </li>
+          <ul class="media">
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-secondary">Реєстрація</button>
+            </li>
+          </ul>
+        </ul>
+      </div>
