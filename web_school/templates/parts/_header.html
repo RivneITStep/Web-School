@@ -1,18 +1,54 @@
     {% load static %}
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-9 logo-block m-auto">
-            <a class="navbar-brand" href="{% url 'pages:index' %}">
-              <img src="{% static 'img/logo5.png' %}" width="50" height="40" class="logo" alt="">
-              Web<span>school</span>
-            </a>
-          </div>
-          <div class="col-3 m-auto but-container d-flex justify-content-center">
-            <button type="button" class="btn btn-primary"> <a href="../signIn.html">Вхід</a></button>
-            <button type="button" class="btn btn-secondary"><a href="../registration.html">Реєстрація</a></button>
-          </div>
+  {% include "parts/_internal_header.html" %}
+<div class="sl w-100">
+    <div class="sl__slide">
+        <img src="{% static 'img/hero-1.jpg' %}" alt="">
+        <div class="container">
+            <div class="sl__text">
+                <h3 class="sl__zag">
+                    Lorem ipsum dolor 1
+                </h3>
+                <p class="sl__desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel distinctio consectetur obcaecati</br>
+                    perferendis voluptas explicabo accusamus.
+                </p>
+                <button class="btn--main">Get Started</button>
+            </div>
         </div>
-      </div>
-      {% include "parts/_internal_header.html" %}
-    </header>
+
+
+    </div>
+    <div class="sl__slide">
+        <img src="{% static 'img/hero-2.jpg' %}" alt="">
+        <div class="container">
+            <div class="sl__text">
+                <h3 class="sl__zag">
+                    Lorem ipsum dolor 2
+                </h3>
+                <p class="sl__desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel distinctio consectetur obcaecati</br>
+                    perferendis voluptas explicabo accusamus.
+                </p>
+                <button class="btn--main">Find out more</button>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="sl__slide">
+        <img src="{% static 'img/hero-3.jpg' %}" alt="">
+        <div class="container">
+            <div class="sl__text">
+                <h3 class="sl__zag">
+                    Lorem ipsum dolor 3
+                </h3>
+                <p class="sl__desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel distinctio consectetur obcaecati</br>
+                    perferendis voluptas explicabo accusamus.
+                </p>
+                <button class="btn--main">Try it now</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
