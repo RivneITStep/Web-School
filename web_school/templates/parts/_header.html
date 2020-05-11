@@ -1,0 +1,61 @@
+    {% load static %}
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-9 logo-block m-auto">
+            <a class="navbar-brand" href="{% url 'pages:index' %}">
+              <img src="{% static 'img/logo5.png' %}" width="50" height="40" class="logo" alt="">
+              Web<span>school</span>
+            </a>
+          </div>
+          <div class="col-3 m-auto but-container d-flex justify-content-center">
+            <button type="button" class="btn btn-primary"> <a href="../signIn.html">Вхід</a></button>
+            <button type="button" class="btn btn-secondary"><a href="../registration.html">Реєстрація</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="navigate w-100" id="for-b">
+        <input type="checkbox" id="burger">
+        <label for="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav m-auto">
+          <li class="nav-item logo-fixed" id="logo_on">
+            <a href="{% url 'pages:index' %}" class="nav-link">
+              <img src="{% static 'img/logo5.png' %}" width="30" height="20" class="logo" alt="">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'pages:index' %}">Головна сторінка</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="../course.html">Курси</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../testimonials.html"> Відгуки</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../new-blog.html"> Наш блог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../teachers.html"> Викладачі</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about.html">Про нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../page_contacts.html"> Контакти</a>
+          </li>
+          <ul class="media">
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-secondary">Реєстрація</button>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </header>
