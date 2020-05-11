@@ -28,25 +28,25 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'pages:index' %}">Головна сторінка</a>
+            <a {% if '/' == request.path %}class="nav-link active" {% else %}{% endif %} class="nav-link" href="{% url 'pages:index' %}">Головна сторінка</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{% url 'pages:courses' %}">Курси</a>
+            <a {% if 'courses' in request.path %} class="nav-link active" {% endif %} class="nav-link " href="{% url 'pages:courses' %}">Курси</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'pages:testimonials' %}"> Відгуки</a>
+            <a {% if 'testimonials' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:testimonials' %}"> Відгуки</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'pages:blog' %}"> Наш блог</a>
+            <a {% if 'blog' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:blog' %}"> Наш блог</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'pages:teachers' %}"> Викладачі</a>
+            <a {% if 'teachers' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:teachers' %}"> Викладачі</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'pages:about' %}">Про нас</a>
+            <a {% if 'about' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:about' %}">Про нас</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'pages:contacts' %}"> Контакти</a>
+            <a {% if 'contacts' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:contacts' %}"> Контакти</a>
           </li>
           <ul class="media">
             <li class="nav-item">
