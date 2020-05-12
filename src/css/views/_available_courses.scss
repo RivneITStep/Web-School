@@ -14,6 +14,13 @@
     position:relative;
     top:15px;
     }
+    h1{
+        color:$font--color-primary_6;
+    }
+    a:hover{
+        color:$font--color-primary_6;
+        text-decoration:none;
+    }
 }
 
 .list{

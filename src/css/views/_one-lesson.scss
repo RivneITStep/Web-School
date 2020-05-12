@@ -1,6 +1,9 @@
 .one-lesson{
     margin-top:50px;
     margin-bottom: 20px;
+    h1{
+        color:$font--color-primary_6;
+    }
     .row:nth-child(1){
         border-bottom: 1.5px solid $border--color-primary_2;
         a{
@@ -71,7 +74,7 @@
         }
         p{
             position:relative;
-            top:-5px;
+            // top:-5px;
             font-size:12px;
         }
     }

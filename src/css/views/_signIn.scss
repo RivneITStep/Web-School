@@ -27,8 +27,11 @@
     form{
         button{
             margin-bottom:15px;
+            a{
+                color:$font--color-primary_3;
+            }
             a:hover{
-                color:white;
+                color:$font--color-primary_3;
                 text-decoration:none;
             }
         }

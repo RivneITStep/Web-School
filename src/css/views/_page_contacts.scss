@@ -2,6 +2,9 @@
     height:auto;
     padding-top:115px;
     padding-bottom:75px;
+    h1{
+        color:$font--color-primary_6;
+    }
     .row:nth-child(1){
         padding-bottom: 15px;
         border-bottom: 1.5px solid $border--color-primary_2;
