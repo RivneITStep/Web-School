@@ -48,3 +48,23 @@ def price(request):
 def payment(request):
     
     return render(request, 'pages/payment.html')
+    
+def teacher_profile(request):
+    
+    return render(request, 'pages/teacher_profile.html')
+
+def student_profile(request):
+    
+    return render(request, 'pages/student_profile.html')
+
+def one_lesson(request):
+    
+    return render(request, 'pages/one_lesson.html')
+
+def available_courses(request):
+    
+    return render(request, 'pages/available_courses.html')
+
+def edit(request):
+    
+    return render(request, 'pages/edit.html')
