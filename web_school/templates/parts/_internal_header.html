@@ -8,11 +8,7 @@
               Web<span>school</span>
             </a>
           </div>
-          <div class="col-3 m-auto but-container d-flex justify-content-center">{% if user.is_authenticated %}{% if user.is_staff == True %}
-          <span><a href='{% url "pages:teacher_profile" %}'>({{user}})</a></span>
-          {% else %}
-          <span><a href='{% url "pages:student_profile" %}'>({{user}})</a></span>
-          {% endif %}
+          <div class="col-3 m-auto but-container d-flex justify-content-center">{% if user.is_authenticated %}
             <button type="button" class="btn btn-primary"> <a href="{% url 'accounts:sign_out' %}">Вихід </a></button>
           
           {% else %}
@@ -55,7 +51,17 @@
           </li>
           <li class="nav-item">
             <a {% if 'contacts' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:contacts' %}"> Контакти</a>
+          </li>{% if user.is_authenticated %}
+          {% if user.is_staff == True %}
+          <li class="nav-item">
+            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Profile</a>
           </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}"> Profile</a>
+          </li>
+          {% endif %}
+          {% endif %}
           <ul class="media">
             <li class="nav-item">
               <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>

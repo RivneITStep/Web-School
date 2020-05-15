@@ -2,6 +2,8 @@
 {% block content %}
 {% load static %}
 {% include "parts/_internal_header.html" %}
+{% if user.is_authenticated %}
+
 <div class="container edit">
     <div class="row">
         <div class="col-12 d-flex">
@@ -116,4 +118,8 @@
         </div>
     </div>
 </section>
+{% else %}
+{% include "parts/_sign_in_h1.html" %}
+
+{% endif %}
 {% endblock content %}

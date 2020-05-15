@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 {% include "parts/_internal_header.html" %}
+{% if user.is_authenticated %}
 <div class="container av_couses">
     <div class='row'>
         <h1>Всі доступні курси</h1>
@@ -27,5 +28,8 @@
             </div>
         </div>
     </div>
-</div>
+</div>{% else %}
+{% include "parts/_sign_in_h1.html" %}
+
+{% endif %}
 {% endblock content %}

@@ -106,7 +106,8 @@
     </div>
 </div>
 {% else %}
-<h1 class='m-5'><a href='{% url "accounts:sign_in" %}'>Please sign_in</a></h1>
+{% include "parts/_sign_in_h1.html" %}
+
 {% endif %}
 
 {% else %}

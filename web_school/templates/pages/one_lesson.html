@@ -2,6 +2,8 @@
 {% block content %}
 {% load static %}
 {% include "parts/_internal_header.html" %}
+{% if user.is_authenticated %}
+
 <section class="one-lesson">
     <div class="container">
         <div class="row">
@@ -233,4 +235,7 @@
         </div>
     </div>
 </section>
+{% else %}
+{% include "parts/_sign_in_h1.html" %}
+{% endif %}
 {% endblock content %}
