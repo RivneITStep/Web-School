@@ -14,7 +14,11 @@ def sign_in(request):
             auth.login(request, user)
             # messages.success(request, "You are logged in")
             logged_in = True
-            return redirect('pages:index')
+            if user.is_staff == True:
+                return redirect('pages:teacher_profile')
+            else:
+                return redirect('pages:student_profile')
+
         else:
             # messages.error(request, "Login or password incorrect")
             return redirect('accounts:sign_in')
@@ -25,20 +29,20 @@ def sign_in(request):
 def registration(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
-        stuff = request.POST['stuff']
+        staff = request.POST['stuff']
         last_name = request.POST['last_name']
         email = request.POST['email']
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
+        if stuff == 'Я викладач':
+                staff = True
+        elif stuff == 'Я студент':
+                staff = False
         if User.objects.filter(email=email).exists():
             return redirect('accounts:registration')
         else:
-            user = User.objects.create_user(username = email, email=email, password=password, first_name=first_name, last_name=last_name,)
+            user = User.objects.create_user(username = email, email=email, password=password, first_name=first_name, last_name=last_name,is_staff=staff)
             user.save()
-            if stuff == 'Я викладач':
-                pass 
-            elif stuff == 'Я студент':
-                pass
             return redirect('accounts:sign_in')
 
 

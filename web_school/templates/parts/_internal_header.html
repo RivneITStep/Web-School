@@ -8,8 +8,12 @@
               Web<span>school</span>
             </a>
           </div>
-          <div class="col-3 m-auto but-container d-flex justify-content-center">{% if user.is_authenticated %}
-            <button type="button" class="btn btn-primary"> <a href="{% url 'accounts:sign_out' %}">Вихід ({{user}})</a></button>
+          <div class="col-3 m-auto but-container d-flex justify-content-center">{% if user.is_authenticated %}{% if user.is_staff == True %}
+          <span><a href='{% url "pages:teacher_profile" %}'>({{user}})</a></span>
+          {% else %}
+          <span><a href='{% url "pages:student_profile" %}'>({{user}})</a></span>
+          {% endif %}
+            <button type="button" class="btn btn-primary"> <a href="{% url 'accounts:sign_out' %}">Вихід </a></button>
           
           {% else %}
           <button type="button" class="btn btn-primary"> <a href="{% url 'accounts:sign_in' %}">Вхід</a></button>
