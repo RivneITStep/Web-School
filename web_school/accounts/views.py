@@ -34,9 +34,9 @@ def registration(request):
         email = request.POST['email']
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
-        if stuff == 'Я викладач':
+        if staff == 'Я викладач':
                 staff = True
-        elif stuff == 'Я студент':
+        elif staff == 'Я студент':
                 staff = False
         if User.objects.filter(email=email).exists():
             return redirect('accounts:registration')

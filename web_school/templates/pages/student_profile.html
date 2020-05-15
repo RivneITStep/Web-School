@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-{% include "parts/_internal_header.html" %}
+{% include "parts/_internal_header.html" %}{% if user.is_authenticated %}{% if user.is_staff == False %}
 <div class="container-fluid profile_1">
     <div class="container">
         <div class="row title">
@@ -18,7 +18,7 @@
                 <div class="photo-box">
                     <img src="{% static 'img/photo-profile.jpg' %}" alt="photo">
                 </div>
-                <h4 class="name">Steve Morris</h4>
+                <h4 class="name">{{user.first_name}} {{user.last_name}}</h4>
                 <span>UI/UX Designer</span>
                 <ul class="personal_item">
                     <li class="personal_item_cont">
@@ -56,7 +56,7 @@
             </div>
             <div>
                 <h4>Email :</h4>
-                <p>email@gmail.com</p>
+                <p>{{user.email}}</p>
             </div>
             <div>
                 <h4>Соціальні мережі:</h4>
@@ -75,4 +75,10 @@
         </div>
     </div>
 </div>
+{% else %}
+<h1 class='m-5'><a href='{% url "accounts:sign_in" %}'>Please sign_in</a></h1>
+
+{% endif %}
+{% endif %}
+
 {% endblock content %}

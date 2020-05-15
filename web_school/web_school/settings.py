@@ -26,7 +26,7 @@ SECRET_KEY = 'pf(7j*dm%3)+8p*z!4ti%642gy)92&@%t6eft(-p3lth-r*4w0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["194.44.93.225","127.0.0.1","localhost"]
 
 
 # Application definition
@@ -84,7 +84,15 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'webschool',
+#         'USER': "master",
+#         'PASSWORD': "master321",
+#         'HOST': "194.44.93.225"
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
