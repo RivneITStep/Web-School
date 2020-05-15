@@ -3,161 +3,172 @@
 {% load static %}
 {% include "parts/_header.html" %}
 <main class="main">
-        <div class="container-fluid main-bg-color">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="course-title">Комплексні курси</h1>
-                    </div>
+    <div class="container-fluid main-bg-color">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="course-title">Комплексні курси</h1>
                 </div>
-                <div class="row">
-                    <div class="col-md-3 course-item">
-                        <a href="{% url 'pages:course_page' %}">
-                            <img src="{% static 'img/java.jpg' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 course-item">
-                        <a href="{% url 'pages:course_page' %}">
-                            <img src="{% static 'img/qc.jpg' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 course-item">
-                        <a href="{% url 'pages:course_page' %}">
-                            <img src="{% static 'img/web.jpg' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 course-item">
-                        <a href="{% url 'pages:course_page' %}">
-                            <img src="{% static 'img/it-english-main-1.jpeg' %}" alt="">
-                        </a>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 course-item">
+                    <a href="{% url 'pages:course_page' %}">
+                        <img src="{% static 'img/java.jpg' %}" alt="">
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="col-md-3 course-item">
-                        <a href="{% url 'pages:course_page' %}">
-                            <img src="{% static 'img/hr-block.jpg' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 course-item">
-                        <a href="{% url 'pages:course_page' %}">
-                            <img src="{% static 'img/unnamed-file.wm.jpeg' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 course-item">
-                        <a href="{% url 'pages:course_page' %}">
-                            <img src="{% static 'img/kids-academy.jpg' %}" alt="">
-                        </a>
-                    </div>
+                <div class="col-md-3 course-item">
+                    <a href="{% url 'pages:course_page' %}">
+                        <img src="{% static 'img/qc.jpg' %}" alt="">
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 course-btn">
-                        <a href="{% url 'pages:courses' %}" class="btn--card">Усі курси</a>
-                    </div>
+                <div class="col-md-3 course-item">
+                    <a href="{% url 'pages:course_page' %}">
+                        <img src="{% static 'img/web.jpg' %}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 course-item">
+                    <a href="{% url 'pages:course_page' %}">
+                        <img src="{% static 'img/it-english-main-1.jpeg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 course-item">
+                    <a href="{% url 'pages:course_page' %}">
+                        <img src="{% static 'img/hr-block.jpg' %}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 course-item">
+                    <a href="{% url 'pages:course_page' %}">
+                        <img src="{% static 'img/unnamed-file.wm.jpeg' %}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 course-item">
+                    <a href="{% url 'pages:course_page' %}">
+                        <img src="{% static 'img/kids-academy.jpg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 course-btn">
+                    <a href="{% url 'pages:courses' %}" class="btn--card">Усі курси</a>
                 </div>
             </div>
         </div>
-        <div class="container-fluid main-bg-color2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="teachers-title">Викладачі</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="teachers-item">
-                            <div class="teachers-item__img">
-                                <img src="{% static 'img/gomer.jpeg' %}" alt="">
-                            </div>
-                            <div class="teachers-item__about">
-                                <h5>Мар’яна Лорем</h5>
-                                <h6>Freelance frontend developer</h6>
-                                <p>Курс: <a href="#" target="_blank">JavaScript</a></p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="teachers-item">
-                            <div class="teachers-item__img">
-                                <img src="{% static 'img/gomer2.png' %}" alt="">
-                            </div>
-                            <div class="teachers-item__about">
-                                <h5>Мар’яна Лорем</h5>
-                                <h6>Freelance frontend developer</h6>
-                                <p>Курс: <a href="#" target="_blank">Web Developer</a></p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="teachers-item">
-                            <div class="teachers-item__img">
-                                <img src="{% static 'img/gomer3.png' %}" alt="">
-                            </div>
-                            <div class="teachers-item__about">
-                                <h5>Мар’яна Лорем</h5>
-                                <h6>Freelance frontend developer</h6>
-                                <p>Курс: <a href="#" target="_blank">Java Core</a></p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 teachers-btn">
-                        <a href="{% url 'pages:teachers' %}" class="btn--transparent">Усі викладачі</a>
-                    </div>
+    </div>
+    <div class="container-fluid main-bg-color2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="teachers-title">Викладачі</h2>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid main-bg-color3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="testimonials-title">Відгуки</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 testimonials-item">
-                        <div class="testimonials-item__img">
-                            <img src="{% static 'img/bart-simpson.png' %}" alt="">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="teachers-item">
+                        <div class="teachers-item__img">
+                            <img src="{% static 'img/gomer.jpeg' %}" alt="">
                         </div>
-                        <div class="testimonials-item__about">
+                        <div class="teachers-item__about">
                             <h5>Мар’яна Лорем</h5>
+                            <h6>Freelance frontend developer</h6>
                             <p>Курс: <a href="#" target="_blank">JavaScript</a></p>
-                            <p>Успішно пройшов я курс по JavaScript. Наставляв мій темний і ще не обізнаний розум шикарний викладач, і просто хороша людина – Петро Жук. Із ним, складні речі ставалими простішими, навіть я б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов до своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 testimonials-item">
-                        <div class="testimonials-item__img">
-                            <img src="{% static 'img/bart-simpson2.png' %}" alt="">
-                        </div>
-                        <div class="testimonials-item__about">
-                            <h5>Мар’яна Лорем</h5>
-                            <p>Курс: <a href="#" target="_blank">Web Developer</a></p>
-                            <p>Проходила курси web-developera. Наш викладач – Журавльов Сергій. Навчанням задоволені. Перш за все, сподобалась дружня атмосфера, відкритість і простота пояснення. Уроки проходили в жвавому ритмі, мучили Сергія всіма питаннями, адже, як він казав на ввідному занятті – ви прийшли на курси, то всмоктуйте більше інформації, грузіть викладача питаннями, незалежно чи прості чи легкі. </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 testimonials-item">
-                        <div class="testimonials-item__img">
-                            <img src="{% static 'img/bart-simpson3.png' %}" alt="">
-                        </div>
-                        <div class="testimonials-item__about">
-                            <h5>Мар’яна Лорем</h5>
-                            <p>Курс: <a href="#" target="_blank">Java Core</a></p>
-                            <p>Горбань Віталій дуже хороший викладач. Розказує цікаво і зрозуміло, до складного підводить поступово що я вважаю дуже правильно. Надихає вчитися. Викладачем задоволена дуже. Що стосується самого навчання, то програма охоплює досить велику кількість матеріалу за короткий проміжок часу, потрібно бути постійно в розумовому навантаженні, попускати пояси нема коли. </p>
-                        </div>
-                    </div>
+                    <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 testimonials-btn">
-                        <a href="{% url 'pages:testimonials' %}" class="btn--main">Усі відгуки</a>
+                <div class="col-md-4">
+                    <div class="teachers-item">
+                        <div class="teachers-item__img">
+                            <img src="{% static 'img/gomer2.png' %}" alt="">
+                        </div>
+                        <div class="teachers-item__about">
+                            <h5>Мар’яна Лорем</h5>
+                            <h6>Freelance frontend developer</h6>
+                            <p>Курс: <a href="#" target="_blank">Web Developer</a></p>
+                        </div>
                     </div>
+                    <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
+                </div>
+                <div class="col-md-4">
+                    <div class="teachers-item">
+                        <div class="teachers-item__img">
+                            <img src="{% static 'img/gomer3.png' %}" alt="">
+                        </div>
+                        <div class="teachers-item__about">
+                            <h5>Мар’яна Лорем</h5>
+                            <h6>Freelance frontend developer</h6>
+                            <p>Курс: <a href="#" target="_blank">Java Core</a></p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 teachers-btn">
+                    <a href="{% url 'pages:teachers' %}" class="btn--transparent">Усі викладачі</a>
                 </div>
             </div>
         </div>
-        <!-- <div class="container-fluid main-bg-color4">
+    </div>
+    <div class="container-fluid main-bg-color3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="testimonials-title">Відгуки</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 testimonials-item">
+                    <div class="testimonials-item__img">
+                        <img src="{% static 'img/bart-simpson.png' %}" alt="">
+                    </div>
+                    <div class="testimonials-item__about">
+                        <h5>Мар’яна Лорем</h5>
+                        <p>Курс: <a href="#" target="_blank">JavaScript</a></p>
+                        <p>Успішно пройшов я курс по JavaScript. Наставляв мій темний і ще не обізнаний розум шикарний
+                            викладач, і просто хороша людина – Петро Жук. Із ним, складні речі ставалими простішими,
+                            навіть я б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача
+                            і любов до своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 testimonials-item">
+                    <div class="testimonials-item__img">
+                        <img src="{% static 'img/bart-simpson2.png' %}" alt="">
+                    </div>
+                    <div class="testimonials-item__about">
+                        <h5>Мар’яна Лорем</h5>
+                        <p>Курс: <a href="#" target="_blank">Web Developer</a></p>
+                        <p>Проходила курси web-developera. Наш викладач – Журавльов Сергій. Навчанням задоволені. Перш
+                            за все, сподобалась дружня атмосфера, відкритість і простота пояснення. Уроки проходили в
+                            жвавому ритмі, мучили Сергія всіма питаннями, адже, як він казав на ввідному занятті – ви
+                            прийшли на курси, то всмоктуйте більше інформації, грузіть викладача питаннями, незалежно чи
+                            прості чи легкі. </p>
+                    </div>
+                </div>
+                <div class="col-md-4 testimonials-item">
+                    <div class="testimonials-item__img">
+                        <img src="{% static 'img/bart-simpson3.png' %}" alt="">
+                    </div>
+                    <div class="testimonials-item__about">
+                        <h5>Мар’яна Лорем</h5>
+                        <p>Курс: <a href="#" target="_blank">Java Core</a></p>
+                        <p>Горбань Віталій дуже хороший викладач. Розказує цікаво і зрозуміло, до складного підводить
+                            поступово що я вважаю дуже правильно. Надихає вчитися. Викладачем задоволена дуже. Що
+                            стосується самого навчання, то програма охоплює досить велику кількість матеріалу за
+                            короткий проміжок часу, потрібно бути постійно в розумовому навантаженні, попускати пояси
+                            нема коли. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 testimonials-btn">
+                    <a href="{% url 'pages:testimonials' %}" class="btn--main">Усі відгуки</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container-fluid main-bg-color4">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -208,75 +219,78 @@
                 </div>
             </div>
         </div> -->
-        <div class="container-fluid main-bg-color5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="blog-title">Наші новини</h1>
+    <div class="container-fluid main-bg-color5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="blog-title">Наші новини</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card-box">
+                        <img src="{% static 'img/card-1.jpg' %}" alt="">
+                        <div class="card-box-container">
+                            <h4>Lorem ipsum dolor</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
+                                corrupti
+                                quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt
+                                ullam,
+                                placeat corporis. Voluptatibus, praesentium.</p>
+                            <div class="card-box-item">
+                                <i class="fas fa-eye"></i>
+                                <span>238</span>
+                                <i class="far fa-clock"></i>
+                                <span>10 февраля 2020 в 15:20</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="card-box">
-                            <img src="{% static 'img/card-1.jpg' %}" alt="">
-                            <div class="card-box-container">
-                                <h4>Lorem ipsum dolor</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
-                                    corrupti
-                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt ullam,
-                                    placeat corporis. Voluptatibus, praesentium.</p>
-                                <div class="card-box-item">
-                                    <i class="fas fa-eye"></i>
-                                    <span>238</span>
-                                    <i class="far fa-clock"></i>
-                                    <span>10 февраля 2020 в 15:20</span>
-                                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card-box">
+                        <img src="{% static 'img/card-2.jpg' %}" alt="">
+                        <div class="card-box-container">
+                            <h4>Lorem ipsum dolor</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
+                                corrupti
+                                quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt
+                                ullam,
+                                placeat corporis. Voluptatibus, praesentium.</p>
+                            <div class="card-box-item">
+                                <i class="fas fa-eye"></i>
+                                <span>344</span>
+                                <i class="far fa-clock"></i>
+                                <span>07 февраля 2020 в 18:09</span>
                             </div>
-                        </div>  
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="card-box">
-                            <img src="{% static 'img/card-2.jpg' %}" alt="">
-                            <div class="card-box-container">
-                                <h4>Lorem ipsum dolor</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
-                                    corrupti
-                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt ullam,
-                                    placeat corporis. Voluptatibus, praesentium.</p>
-                                <div class="card-box-item">
-                                    <i class="fas fa-eye"></i>
-                                    <span>344</span>
-                                    <i class="far fa-clock"></i>
-                                    <span>07 февраля 2020 в 18:09</span>
-                                </div>
-                            </div>
-                        </div>    
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="card-box">
-                            <img src="{% static 'img/card-3.jpg' %}" alt="">
-                            <div class="card-box-container">
-                                <h4>Lorem ipsum dolor</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
-                                    corrupti
-                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt ullam,
-                                    placeat corporis. Voluptatibus, praesentium.</p>
-                                <div class="card-box-item">
-                                    <i class="fas fa-eye"></i>
-                                    <span>664</span>
-                                    <i class="far fa-clock"></i>
-                                    <span>29 января 2020 в 14:49</span>
-                                </div>
-                            </div>
-                        </div>    
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 blog-btn">
-                        <a href="{% url 'pages:blog' %}" class="btn--transparent">Усі новини</a>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card-box">
+                        <img src="{% static 'img/card-3.jpg' %}" alt="">
+                        <div class="card-box-container">
+                            <h4>Lorem ipsum dolor</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
+                                corrupti
+                                quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt
+                                ullam,
+                                placeat corporis. Voluptatibus, praesentium.</p>
+                            <div class="card-box-item">
+                                <i class="fas fa-eye"></i>
+                                <span>664</span>
+                                <i class="far fa-clock"></i>
+                                <span>29 января 2020 в 14:49</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12 blog-btn">
+                    <a href="{% url 'pages:blog' %}" class="btn--transparent">Усі новини</a>
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
+</main>
 {% endblock content %}

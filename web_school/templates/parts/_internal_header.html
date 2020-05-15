@@ -8,9 +8,13 @@
               Web<span>school</span>
             </a>
           </div>
-          <div class="col-3 m-auto but-container d-flex justify-content-center">
-            <button type="button" class="btn btn-primary"> <a href="../signIn.html">Вхід</a></button>
-            <button type="button" class="btn btn-secondary"><a href="../registration.html">Реєстрація</a></button>
+          <div class="col-3 m-auto but-container d-flex justify-content-center">{% if user.is_authenticated %}
+            <button type="button" class="btn btn-primary"> <a href="{% url 'accounts:sign_out' %}">Вихід ({{user}})</a></button>
+          
+          {% else %}
+          <button type="button" class="btn btn-primary"> <a href="{% url 'accounts:sign_in' %}">Вхід</a></button>
+          {% endif %}
+            <button type="button" class="btn btn-secondary"><a href="{% url 'accounts:registration' %}">Реєстрація</a></button>
           </div>
         </div>
       </div>

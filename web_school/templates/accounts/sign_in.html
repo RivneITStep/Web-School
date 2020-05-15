@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "parts/_internal_header.html" %}
+{% load static %}
+<div class="container m-5">
+        <div class="row">
+            <div class="user-block">
+                <h1 class="heading">Авторизація</h1>
+                <form action="{% url 'accounts:sign_in' %}" method="POST">
+                {% csrf_token %}
+                    <div class="form-submit">
+                        <input type="email" name='email' placeholder="e-mail">
+                        <input type="password" name='password' placeholder="password">
+                    </div>
+                    <button type="submit" class="btn--main">Зайти в особистий кабінет</button>
+                </form>
+                <div id="forgot_password">
+                    <button type="submit" class="btn--transparent">Забули пароль?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
