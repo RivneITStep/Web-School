@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% include "parts/_internal_header.html" %}
+<div class="container av_couses">
+    <div class='row'>
+        <h1>Всі доступні курси</h1>
+    </div>
+    <div class="row flex-md-wrap list">
+        <div class="col  col-md-6 col-xl-8">
+            <div class="list-box">
+                <a href="{% url 'pages:one_lesson' %}">Безкоштовні html курси</a>
+                <p>10 уроків</p>
+                <a href="{% url 'pages:one_lesson' %}">Безкоштовні JavaScript курси</a>
+                <p>12 уроків</p>
+            </div>
+            <button type="submit" class="btn--card"><a href="{% url 'pages:student_profile' %}">Повернутися в особистий
+                    кабінет</a></button>
+        </div>
+        <div class="col   col-md-6 col-xl-4 justify-content-center">
+            <div class="connect-us">
+                <h4>Підключайтеся і спілкуйтеся з нами, де Вам зручно:</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a> <br>
+                <a href="#"><i class="fab fa-instagram"></i>Instagram</a><br>
+                <a href="#"><i class="fab fa-telegram-plane"></i>Telegram Bot</a><br>
+                <a href="#"><i class="fab fa-viber"></i>Viber</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

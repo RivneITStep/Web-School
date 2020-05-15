@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% include "parts/_internal_header.html" %}
+<div class="container-fluid teacher_profile_1">
+    <div class="container">
+        <div class="row title">
+            <div class="col-md-4">
+                <h2>Кабінет викладача</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container teacher_profile_2">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="personal-info">
+                <div class="photo-box">
+                    <img src="{% static 'img/photo-profile.jpg' %}" alt="photo">
+                </div>
+                <h4 class="name">Steve Morris</h4>
+                <span>UI/UX Designer</span>
+                <ul class="personal_item">
+                    <li class="personal_item_cont">
+                        <p>12</p>
+                        <span>курсів</span>
+                    </li>
+                    <li class="personal_item_cont">
+                        <p>11</p>
+                        <span>отримано відповідей до завдань</span>
+                    </li>
+                    <li class="personal_item_cont">
+                        <p>7</p>
+                        <span>перевірено завдань</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div>
+                <h4>Курси які ви ведете:</h4>
+                <ul>
+                    <li class="start_course">Курс "HTML5"</li>
+                    <li class="finish_course">Курс "Java Script"</li>
+                    <li class="soon_course">Курс "CSS"</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Email :</h4>
+                <p>email@gmail.com</p>
+            </div>
+            <div>
+                <h4>Отримані відповіді до завдань:</h4>
+                <table style="width:100%">
+                    <tr>
+                        <th>Курс</th>
+                        <th>Завдання</th>
+                        <th>Відповідь</th>
+                        <th>Виконано</th>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt
+                            excepturi
+                            illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo.
+                            Velit
+                            reprehenderit animi.</td>
+                        <td><a href="#">Завантажити</a></td>
+                        <td><input type="checkbox" checked></td>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt
+                            excepturi
+                            illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo.
+                            Velit
+                            reprehenderit animi.</td>
+                        <td><a href="#">Завантажити</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt
+                            excepturi
+                            illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo.
+                            Velit
+                            reprehenderit animi.</td>
+                        <td><a href="#">Завантажити</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt
+                            excepturi
+                            illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo.
+                            Velit
+                            reprehenderit animi.</td>
+                        <td><a href="#">Завантажити</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
