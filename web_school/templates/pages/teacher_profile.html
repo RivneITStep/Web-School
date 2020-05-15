@@ -104,6 +104,11 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md offset-md-1">
+            <button class="btn--main edit_button" type="submit"><a href="{% url 'pages:edit' %}">Редагувати дані</a></button>
+        </div>
+    </div>
 </div>
 {% else %}
 {% include "parts/_sign_in_h1.html" %}
