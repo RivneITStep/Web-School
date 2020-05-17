@@ -23,11 +23,8 @@ $(".sl").slick({
     adaptiveHeight: true,
 });
 
-$("#message").on("closed.bs.alert", function() {
-    $(".alert").alert("close");
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".msg").toggleClass("closed");
+    }, 1500);
 });
-// $(document).ready(function() {
-//     setTimeout(function() {
-//         $(".msg").toggleClass("closed");
-//     }, 1000);
-// });
