@@ -41,7 +41,7 @@ pipeline  {
             steps {
                 echo " ============== stoping all images =================="
                 sh '''
-                docker stop webschool
+                docker stop vasiazozulia/webschool
                 '''
             }
         }
@@ -49,7 +49,7 @@ pipeline  {
             steps {
                 echo " ============== removing all docker containers =================="
                 sh '''
-                docker rm webschool
+                docker rm vasiazozulia/webschool
                 '''
             }
         }
