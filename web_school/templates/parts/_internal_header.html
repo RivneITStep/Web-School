@@ -54,14 +54,15 @@
           </li>{% if user.is_authenticated %}
           {% if user.is_staff == True %}
           <li class="nav-item">
-            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Profile</a>
+            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Profile({{user.last_name}})</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}"> Profile</a>
+            <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}"> Profile({{user.last_name}})</a>
           </li>
           {% endif %}
           {% endif %}
+          {% include 'parts/_alerts.html' %}
           <ul class="media">
             <li class="nav-item">
               <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>

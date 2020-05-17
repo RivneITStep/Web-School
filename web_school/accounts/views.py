@@ -12,7 +12,7 @@ def sign_in(request):
 
         if user is not None:
             auth.login(request, user)
-            # messages.success(request, "You are logged in")
+            messages.success(request, "You are logged in")
             logged_in = True
             if user.is_staff == True:
                 return redirect('pages:teacher_profile')
@@ -20,7 +20,7 @@ def sign_in(request):
                 return redirect('pages:student_profile')
 
         else:
-            # messages.error(request, "Login or password incorrect")
+            messages.error(request, "Login or password incorrect")
             return redirect('accounts:sign_in')
     else:
         return render(request,'accounts/sign_in.html')
@@ -57,5 +57,5 @@ def dashboard(request):
 
 def sign_out(request):
     auth.logout(request)
-    # messages.success(request, "See you later!")
+    messages.success(request, "See you later!")
     return redirect("pages:index")

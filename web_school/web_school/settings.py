@@ -135,3 +135,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "web_school/static")
 ]
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
