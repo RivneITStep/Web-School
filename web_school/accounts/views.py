@@ -39,12 +39,15 @@ def registration(request):
                 user = User.objects.create_user(username = email, email=email,password=password,is_staff=staff)
                 new_teacher = Teacher.objects.create(user=user, email=email, first_name=first_name, last_name=last_name)
                 new_teacher.save()
+                return redirect('accounts:sign_in')
         elif staff == 'Я студент':
                 staff = False
                 user = User.objects.create_user(username = email, email=email,password=password,is_staff=staff)
                 new_student = Student.objects.create(user=user, email=email, first_name=first_name, last_name=last_name)
                 new_student.save()
+                return redirect('accounts:sign_in')
         if User.objects.filter(email=email).exists():
+            messages.error(request, "This e-mail allready taken")
             return redirect('accounts:registration')
         else:
             return redirect('accounts:sign_in')

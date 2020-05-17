@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from accounts.models import Student, Teacher
 
 def index(request):
     
@@ -50,20 +51,32 @@ def payment(request):
     return render(request, 'pages/payment.html')
     
 def teacher_profile(request):
-    
-    return render(request, 'pages/teacher_profile.html')
+    if request.user.is_authenticated:
+        profile = Teacher.objects.all().filter(email=request.user.username)
+        context = {
+            'profile': profile
+            }
+
+    return render(request, 'pages/teacher_profile.html',context)
 
 def student_profile(request):
-    
-    return render(request, 'pages/student_profile.html')
+    if request.user.is_authenticated:
+        profile = Student.objects.all().filter(email=request.user.username)
+        context = {
+            'profile': profile
+        }
+        return render(request, 'pages/student_profile.html',context)
+
 
 def one_lesson(request):
     
     return render(request, 'pages/one_lesson.html')
 
+
 def available_courses(request):
     
     return render(request, 'pages/available_courses.html')
+
 
 def edit(request):
     

@@ -17,8 +17,9 @@
     <div class="row">
         <div class="col-md-5">
             <div class="personal-info">
-                <div class="photo-box">
-                    <img src="{% static 'img/photo-profile.jpg' %}" alt="photo">
+                <div class="photo-box">{% for prof in profile %}
+                    <img src="{{ prof.photo_main.url }}" alt="photo">
+                {% endfor %}
                 </div>
                 <h4 class="name">{{user.first_name}} {{user.last_name}}</h4>
                 <span>UI/UX Designer</span>
