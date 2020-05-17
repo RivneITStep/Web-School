@@ -13,17 +13,18 @@
 </div>
 <div class="container profile_2">
     <div class="row">
+    {% for prof in profile %}
         <div class="col-md-5">
             <div class="personal-info">
-                <div class="photo-box">{% for prof in profile %}{% if prof.photo_main %}
+                <div class="photo-box">{% if prof.photo_main %}
                 <img src="{{ prof.photo_main.url }}" alt="photo">
                 {% else %}
                 <img src="#" alt="photo">
                 {% endif %}
                 
-                {% endfor %}
+                
                 </div>
-                <h4 class="name">{{user.first_name}} {{user.last_name}}</h4>
+                <h4 class="name">{{prof.first_name}} {{prof.last_name}}</h4>
                 <span>UI/UX Designer</span>
                 <ul class="personal_item">
                     <li class="personal_item_cont">
@@ -74,6 +75,7 @@
                 </ul>
             </div>
         </div>
+    {% endfor %}
     </div>
 </div>
 {% else %}

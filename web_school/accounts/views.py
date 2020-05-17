@@ -15,8 +15,12 @@ def sign_in(request):
             messages.success(request, "You are logged in")
             logged_in = True
             if user.is_staff == True:
+                messages.success(request, "Wellcome")
+
                 return redirect('pages:teacher_profile')
             else:
+                messages.success(request, "Wellcome")
+
                 return redirect('pages:student_profile')
 
         else:
