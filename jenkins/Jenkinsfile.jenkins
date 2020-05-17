@@ -37,5 +37,29 @@ pipeline  {
                 '''
             }
         }
+        stage("docker stop") {
+            steps {
+                echo " ============== stoping all images =================="
+                sh '''
+                docker stop webschool
+                '''
+            }
+        }
+        stage("docker remove") {
+            steps {
+                echo " ============== removing all docker containers =================="
+                sh '''
+                docker rm webschool
+                '''
+            }
+        }
+        stage("docker run") {
+            steps {
+                echo " ============== starting webschool =================="
+                sh '''
+                docker run -d --restart=always --name webschool -p 3000:3000 vasiazozulia/webschool
+                '''
+            }
+        }
     }
 }
