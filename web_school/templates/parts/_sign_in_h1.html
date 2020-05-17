@@ -1,2 +1,10 @@
-<h1 class='m-5'><a href='{% url "accounts:sign_in" %}'>Please sign_in</a></h1>
-
+{% load static %}
+<div class="container sign_on_h1">
+    <div class="row">
+        <div class="col-md">
+            <h1 class='m-5'>Для подальших дій потрібна аторизація, будь ласка <a href='{% url "accounts:sign_in" %}'>авторизуйтесь</a>.</h1>
+            <h2>Ви новий користувач?<a href='{% url "accounts:registration" %}'>ЗАРЕЄСТРУВАТИСЯ В СИСТЕМІ</a></h2>
+            <img src="{% static 'img/rocket.png' %}" alt="rocket">
+        </div>
+    </div>
+</div>

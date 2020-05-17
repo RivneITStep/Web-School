@@ -54,11 +54,11 @@
           </li>{% if user.is_authenticated %}
           {% if user.is_staff == True %}
           <li class="nav-item">
-            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Profile({{user.last_name}})</a>
+            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Особистий кабінет</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}"> Profile({{user.last_name}})</a>
+            <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}">Особистий кабінет</a>
           </li>
           {% endif %}
           {% endif %}

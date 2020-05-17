@@ -90,6 +90,15 @@ DATABASES = {
 #         'NAME': 'webschool',
 #         'USER': "master",
 #         'PASSWORD': "master321",
+#         'HOST': "localhost"
+#     }
+# }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'webschool',
+#         'USER': "master",
+#         'PASSWORD': "master321",
 #         'HOST': "194.44.93.225"
 #     }
 # }

@@ -6728,6 +6728,52 @@ select {
     font-size: 12px;
 }
 
+.sign_on_h1 {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.sign_on_h1 h1 {
+    font-size: 24px;
+    color: #494d55;
+    font-family: "Open Sans SemiBold";
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.sign_on_h1 h2 {
+    font-size: 14px;
+    color: #494d55;
+    font-family: "Open Sans SemiBold";
+    text-align: center;
+    padding: 0;
+    margin-top: -15px;
+}
+
+.sign_on_h1 img {
+    width: 25%;
+    height: auto;
+    position: relative;
+    left: 37.5%;
+    animation: rocket 5s linear 2s infinite alternate;
+}
+
+@keyframes rocket {
+    0% {
+        left: 35.5%;
+        top: 0px;
+    }
+    50% {
+        left: 39.5%;
+        top: 0px;
+    }
+    100% {
+        left: 35.5%;
+        top: 0px;
+    }
+}
+
 .one-lesson .home_work {
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
 }
@@ -7041,6 +7087,24 @@ select {
         transform: scale(2);
         padding: 0;
     }
+}
+
+.teacher_profile_2 button a {
+    color: white;
+}
+
+.teacher_profile_2 button a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.profile_2 a:hover {
+    text-decoration: none;
+}
+
+.msg {
+    position: absolute;
+    top: 41px;
 }
 
 
