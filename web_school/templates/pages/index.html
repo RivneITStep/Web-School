@@ -63,6 +63,8 @@
                     <h2 class="teachers-title">Викладачі</h2>
                 </div>
             </div>
+            {% if teachers %}
+            {% for teacher in teachers %}
             <div class="row">
                 <div class="col-md-4">
                     <div class="teachers-item">
@@ -70,40 +72,18 @@
                             <img src="{% static 'img/gomer.jpeg' %}" alt="">
                         </div>
                         <div class="teachers-item__about">
-                            <h5>Мар’яна Лорем</h5>
-                            <h6>Freelance frontend developer</h6>
-                            <p>Курс: <a href="#" target="_blank">JavaScript</a></p>
-                        </div>
-                    </div>
-                    <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
-                </div>
-                <div class="col-md-4">
-                    <div class="teachers-item">
-                        <div class="teachers-item__img">
-                            <img src="{% static 'img/gomer2.png' %}" alt="">
-                        </div>
-                        <div class="teachers-item__about">
-                            <h5>Мар’яна Лорем</h5>
-                            <h6>Freelance frontend developer</h6>
-                            <p>Курс: <a href="#" target="_blank">Web Developer</a></p>
-                        </div>
-                    </div>
-                    <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
-                </div>
-                <div class="col-md-4">
-                    <div class="teachers-item">
-                        <div class="teachers-item__img">
-                            <img src="{% static 'img/gomer3.png' %}" alt="">
-                        </div>
-                        <div class="teachers-item__about">
-                            <h5>Мар’яна Лорем</h5>
-                            <h6>Freelance frontend developer</h6>
-                            <p>Курс: <a href="#" target="_blank">Java Core</a></p>
+                            <h5>{{teacher.first_name}} {{teacher.last_name}}</h5>
+                            <h6>Дещо про вчителя...</h6>
+                            <p>Курс: <a href="#" target="_blank">{{teacher.course}}</a></p>
                         </div>
                     </div>
                     <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
                 </div>
             </div>
+            {% endfor %}
+            {% else %}
+            <h2>No Teachers yet =(...</h2>
+            {% endif %}
             <div class="row">
                 <div class="col-md-12 teachers-btn">
                     <a href="{% url 'pages:teachers' %}" class="btn--transparent">Усі викладачі</a>

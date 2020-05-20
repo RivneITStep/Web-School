@@ -18,9 +18,9 @@
                 <div class="personal-info">
                     <h4>Профiль</h4>
                     <div class="photo-box">
-                        <img src="{% static 'img/photo-profile.jpg' %}" alt="photo">
+                        <img src="{{ profile.photo_main.url }}" alt="photo">
                     </div>
-                    <h4 class="name">Steve Morris</h4>
+                    <h4 class="name">{{ profile.first_name }} {{ profile.last_name }}</h4>
                     <span>UI/UX Designer</span>
                     <ul class="personal_item">
                         <li class="personal_item_cont">
@@ -36,7 +36,13 @@
                             <span>оцінено домашніх робіт</span>
                         </li>
                     </ul>
-                    <button class="btn--main">Завантажити нове фото</button>
+                    <form id='photo' action="{% url 'pages:edit_photo' %}" method="POST">
+                    <input type="file" id="img" name="img" accept="image/*">
+                    <input type="hidden" name="persona" value="{{profile.email}}">
+                    
+                    {% csrf_token %}
+                    </form>
+                    <button class="btn--main" type='submit' form='photo'>Завантажити нове фото</button>
                     <button class="btn--card">Видалити поточне фото</button>
                     <p class="descr-info">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt excepturi
@@ -49,66 +55,78 @@
                 <div class="basic-info">
                     <div class="btn-box">
                         <h4>Основна інформація</h4>
-                        <div class="buttons">
+                        <div class="buttons">{% if user.student %}
                             <button class="btn--card"><a href="{% url 'pages:student_profile' %}">Скасувати</a></button>
+                            {% else %}
+                            <button class="btn--card"><a href="{% url 'pages:teacher_profile' %}">Скасувати</a></button>
+                            {% endif %}
                             <button class="btn--main">Зберегти зміни</button>
                         </div>
-                    </div>
-                    <form action="#">
+                    </div>{% if user.student %}
+                    <form action="{% url 'pages:edit_student' %}" method="POST">
+                    {% else %}
+                    <form action="{% url 'pages:edit_teacher' %}" method="POST">
+                    {% endif %}
+                    {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="form-name">
                                     Ваше ім'я:
-                                </label></br>
-                                <input type="text" placeholder="Ім'я" id="form-name">
+                                </label><br>
+                                <input type="text" name='first_name' placeholder="{{profile.first_name}}" id="form-name">
+                                <input type='hidden' name='user_id' value = {{profile.id}}>
                             </div>
                             <div class="col-md-6">
                                 <label for="form-surname">
                                     Ваше прізвище:
-                                </label></br>
-                                <input type="text" placeholder="Прізвище" id="form-surname">
+                                </label><br>
+                                <input type="text" name='last_name' placeholder="{{profile.last_name}}" id="form-surname">
                             </div>
                         </div>
                         <label for="spec">
                             Ваш напрямок:
-                        </label></br>
-                        <input type="text" id="spec" name="" placeholder="Напрямок">
+                        </label><br>
+                        <input type="text" id="spec" name="course" placeholder="Напрямок">
                         <label for="email">
                             Ваш email:
-                        </label></br>
-                        <input type="email" id="email" name="" placeholder="Email">
+                        </label><br>
+                        <input type='hidden' name='user_email' value = {{user.email}}>
+                        <input type="email" id="email" name="email" placeholder="{{user.email}}">
                         <h4 class="about-me-sec">Про мене:</h4>
                         <hr>
                         <label for="text-about">
                             Декілька слів про мене:
-                        </label></br>
-                        <textarea type="text" id="text-about" placeholder="Заповніть інформацію про себе"></textarea>
+                        </label><br>
+                        <textarea type="text" id="text-about" name='body' placeholder="Заповніть інформацію про себе"></textarea>
                         <h4 class="about-me-sec">Соціальні мережі:</h4>
                         <hr>
                         <label for="facebook">
                             Facebook Url:
-                        </label></br>
-                        <input type="text" id="facebook" name="" placeholder="Посилання на Ваш аккаунт">
+                        </label><br>
+                        <input type="text" id="facebook" name="facebook" placeholder="Посилання на Ваш аккаунт">
                         <label for="twitter">
                             Twitter Url:
-                        </label></br>
-                        <input type="text" id="twitter" name="" placeholder="Посилання на Ваш аккаунт">
+                        </label><br>
+                        <input type="text" id="twitter" name="twitter" placeholder="Посилання на Ваш аккаунт">
                         <label for="link">
                             LinkedIn Url:
-                        </label></br>
-                        <input type="text" id="link" name="" placeholder="Посилання на Ваш аккаунт">
+                        </label><br>
+                        <input type="text" id="link" name="linkedIn" placeholder="Посилання на Ваш аккаунт">
                         <label for="google">
                             Google+ Url:
-                        </label></br>
-                        <input type="text" id="google" name="" placeholder="Посилання на Ваш аккаунт">
+                        </label><br>
+                        <input type="text" id="google" name="google" placeholder="Посилання на Ваш аккаунт">
                         <h4 class="about-me-sec">Захис данних:</h4>
                         <hr>
                         <label for="password">
                             Ваш пароль:
-                        </label></br>
-                        <input type="text" id="password" name="" placeholder="************">
-                        <div class="buttons-item">
+                        </label><br>
+                        <input type="text" id="password" name="password" placeholder="************">
+                        <div class="buttons-item">{% if user.student%}
                             <button class="btn--card"><a href="{% url 'pages:student_profile' %}">Скасувати</a></button>
+                            {% else %}
+                            <button class="btn--card"><a href="{% url 'pages:teacher_profile' %}">Скасувати</a></button>
+                            {% endif %}
                             <button class="btn--main" type="submit">Зберегти зміни</button>
                         </div>
                     </form>

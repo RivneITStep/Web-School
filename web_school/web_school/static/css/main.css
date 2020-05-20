@@ -7105,6 +7105,12 @@ select {
 .msg {
     position: absolute;
     top: 41px;
+    transition: all 500ms;
+}
+
+.closed {
+    top: -100px;
+    opacity: 0;
 }
 
 

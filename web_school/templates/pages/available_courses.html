@@ -9,11 +9,18 @@
     </div>
     <div class="row flex-md-wrap list">
         <div class="col  col-md-6 col-xl-8">
-            <div class="list-box">
-                <a href="{% url 'pages:one_lesson' %}">Безкоштовні html курси</a>
-                <p>10 уроків</p>
-                <a href="{% url 'pages:one_lesson' %}">Безкоштовні JavaScript курси</a>
-                <p>12 уроків</p>
+            <div class="list-box">{% for crs in course %}
+                <a href="{% url 'courses:one_lesson' crs.id %}">Безкоштовні {{crs.title}} курси</a>
+            <p>
+            {% for less in lesson %}{% if crs == less.course %}
+            {{less.course.id}}
+            {% else %}
+            {% endif %}
+            
+            {% endfor %}
+             уроків</p>
+            {% endfor %}
+                
             </div>
             <button type="submit" class="btn--card"><a href="{% url 'pages:student_profile' %}">Повернутися в особистий
                     кабінет</a></button>

@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from accounts.models import Student, Teacher
+from django.shortcuts import get_object_or_404
 
 def index(request):
-    
-    return render(request, 'pages/index.html')
+    teacher = Teacher.objects.all()
+    return render(request, 'pages/index.html', context={'teachers':teacher})
 
 
 def about(request):
@@ -68,9 +69,7 @@ def student_profile(request):
         return render(request, 'pages/student_profile.html',context)
 
 
-def one_lesson(request):
-    
-    return render(request, 'pages/one_lesson.html')
+
 
 
 def available_courses(request):
@@ -78,6 +77,80 @@ def available_courses(request):
     return render(request, 'pages/available_courses.html')
 
 
-def edit(request):
-    
+def edit_student(request):
+    if request.method == "POST":
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        user_email = request.POST['user_email']
+        user_id = request.POST['user_id']
+        course = request.POST['course']
+        body = request.POST['body']
+        facebook = request.POST['facebook']
+        twitter = request.POST['twitter']
+        linkedIn = request.POST['linkedIn']
+        google = request.POST['google']
+    if request.user.is_authenticated:
+        profile = Student.objects.get(user=request.user)
+        context = {
+            'profile': profile
+        }
+    return render(request, 'pages/edit.html',context)
+
+
+def edit_teacher(request):
+    if request.method == "POST":
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        user_email = request.POST['user_email']
+        user_id = request.POST['user_id']
+        course = request.POST['course']
+        body = request.POST['body']
+        facebook = request.POST['facebook']
+        twitter = request.POST['twitter']
+        linkedIn = request.POST['linkedIn']
+        google = request.POST['google']
+        profile = Teacher.objects.get(id=user_id)
+        profile.first_name = first_name
+        profile.last_name = last_name
+        profile.email = email
+        profile.course = course
+        profile.body = body
+        profile.facebook = facebook
+        profile.twitter = twitter
+        profile.linkedIn = linkedIn
+        profile.google = google
+        request.user.email = email
+        profile.save()
+    if request.user.is_authenticated:
+        profile = Teacher.objects.get(user=request.user)
+        context = {
+            'profile': profile
+        }
+    return render(request, 'pages/edit.html',context)
+
+
+
+def edit_photo(request):
+    # if request.method == "POST":
+    #     img = request.POST['img']
+    #     persona = request.POST['persona']
+    #     student = get_object_or_404(Student, email=persona)
+    #     if img:
+    #         if student:
+    #             student.photo_main = 'students_photos/' + img
+    #             student.save()
+    #         else:
+    #             teacher = get_object_or_404(Teacher,email=persona)
+    #             teacher.photo_main = 'teachers_photos/' + img
+    #             teacher.save()
+    #         return render(request, 'pages/edit.html')
+    #     else:
+    #         return render(request, 'pages/edit.html')
     return render(request, 'pages/edit.html')
+    
+    
+def edit_profile(request):
+    if request.method == "POST":
+        pass

@@ -7,8 +7,14 @@ class Teacher(models.Model):
     last_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=100)
-    photo_main = models.ImageField(upload_to='teachers_photos/%Y/%m/%d', blank=True)
-    course = models.CharField(max_length=200)
+    photo_main = models.ImageField(upload_to='teachers_photos/', blank=True)
+    course = models.CharField(max_length=200, blank=True)
+    body = models.TextField(blank=True)
+    facebook = models.CharField(max_length=500, blank=True)
+    twitter = models.CharField(max_length=500, blank=True)
+    linkedIn = models.CharField(max_length=500, blank=True)
+    google = models.CharField(max_length=500, blank=True)
+
 
 
     def __str__(self):
@@ -25,7 +31,12 @@ class Student(models.Model):
     free_access = models.BooleanField(default=False)
     paid_access = models.BooleanField(default=False)
     lesson_access = models.BooleanField(default=False)
-    photo_main = models.ImageField(upload_to='students_photos/%Y/%m/%d', blank=True)
+    body = models.TextField(blank=True)
+    photo_main = models.ImageField(upload_to='students_photos/', blank=True)
+    facebook = models.CharField(max_length=500, blank=True)
+    twitter = models.CharField(max_length=500, blank=True)
+    linkedIn = models.CharField(max_length=500, blank=True)
+    google = models.CharField(max_length=500, blank=True)
 
     
     def __str__(self):

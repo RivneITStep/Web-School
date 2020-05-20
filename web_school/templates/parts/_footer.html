@@ -24,8 +24,11 @@
                     <hr>
                     <p id="mail-us">Підписатись на новини</p>               
                     <form>
-                        <div class="form-group">
+                        <div class="form-group"> {% if user.is_authenticated %}
+                        <input type="email" class="footer"  placeholder="{{user.email}}">
+                        {% else %}
                         <input type="email" class="footer"  placeholder="e-mail">
+                        {% endif %}
                         </div>
                         <button type="submit" class="btn--main">Підписатись</button>
                     </form>
