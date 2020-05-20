@@ -41,7 +41,7 @@ pipeline  {
             steps {
                 echo " ============== stoping all images =================="
                 sh '''
-                docker stop vasiazozulia/webschool
+                docker stop webschool
                 '''
             }
         }
@@ -49,7 +49,7 @@ pipeline  {
             steps {
                 echo " ============== removing all docker containers =================="
                 sh '''
-                docker rm vasiazozulia/webschool
+                docker rm webschool
                 '''
             }
         }
@@ -57,7 +57,7 @@ pipeline  {
             steps {
                 echo " ============== starting webschool =================="
                 sh '''
-                docker run -d --restart=always --name webschool -p 3000:3000 vasiazozulia/webschool
+                docker run -d --restart=always --name webschool -p 80:3000 vasiazozulia/webschool
                 '''
             }
         }
