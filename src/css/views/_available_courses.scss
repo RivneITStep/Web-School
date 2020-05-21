@@ -1,4 +1,7 @@
 .av_couses{
+    h2{
+        @include font(30px, $font-semibold, $font--color-primary_1, 600, 65px);
+    }
     .row:nth-child(1){
         position:relative;
         padding-top:115px;

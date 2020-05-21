@@ -49,13 +49,13 @@
             <a class="nav-link active" href="../index.html">Головна сторінка</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../course.html">Курси</a>
+            <a class="nav-link " href="../courses.html">Курси</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../testimonials.html"> Відгуки</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../new-blog.html"> Наш блог</a>
+            <a class="nav-link" href="../blog.html"> Наш блог</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../teachers.html"> Викладачі</a>
@@ -64,11 +64,11 @@
             <a class="nav-link" href="../about.html">Про нас</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../page_contacts.html"> Контакти</a>
+            <a class="nav-link" href="../contacts.html"> Контакти</a>
           </li>
           <ul class="media">
             <li class="nav-item">
-              <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>
+              <button type="button" class="btn btn-primary"><a href="../sign_in.html">Вхід</a></button>
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-secondary">Реєстрація</button>
@@ -136,8 +136,18 @@
                 <div class="about-form">
                     <h3>Залиште свій відгук</h3>
                     <form action="" method="post">
-                        <p>Ім'я</p></br>
-                        <input type="text" id="name" placeholder="Ім'я">
+                        <p>Курс*</p></br>
+                        <select>
+                            <option>Оберіть курс</option>
+                            <option>HTML</option>
+                            <option>CSS</option>
+                        </select>
+                        <p>Викладач*</p></br>
+                        <select>
+                            <option>Оберіть викладача</option>
+                            <option>Іванов Іван Іванович</option>
+                            <option>Лорем Мар'яна Вікторівна</option>
+                        </select>
                         <p>Залиште свій відгук тут</p></br>
                         <textarea type="text" name="testimonial" id="message" placeholder="Ваш відгук"></textarea>
                         <button type="submit" class="btn--main">Надіслати відгук</button>

@@ -1,7 +1,4 @@
 .aboutSection {
-  h2{
-    @include font(30px, $font-semibold, $font--color-primary_1, 600, 65px);
-  }
   border-bottom: 1.5px solid $border--color-primary_2;
   margin-bottom:15px;
 }
@@ -22,7 +19,7 @@
 }
 .about-form {
   margin: 30px auto;
-  width: 44%;
+  width: 100%;
   padding: 5px;
   h3 {
     text-align: center;
@@ -33,7 +30,7 @@
     padding:25px 20px 0px 20px;
     button{
       position:relative;
-      left:27%;
+      left:40%;
       margin-bottom:25px;
     }
     p {
@@ -44,13 +41,14 @@
     input {
       width: 100%;
       background: none;
-      border-bottom: 1px solid;
       padding: 10px;
+    }
+    option{
+      border:1px solid $border--color-primary_4;
     }
     textarea {
       width: 100%;
-      background: none;
-      border: 1px solid;
+      border:1px solid $border--color-primary_4;
     }
   }
 }

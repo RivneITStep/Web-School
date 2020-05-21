@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
     <header>
       <div class="container">
@@ -49,13 +47,13 @@
             <a class="nav-link active" href="../index.html">Головна сторінка</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../course.html">Курси</a>
+            <a class="nav-link " href="../courses.html">Курси</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../testimonials.html"> Відгуки</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../new-blog.html"> Наш блог</a>
+            <a class="nav-link" href="../blog.html"> Наш блог</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../teachers.html"> Викладачі</a>
@@ -64,11 +62,11 @@
             <a class="nav-link" href="../about.html">Про нас</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../page_contacts.html"> Контакти</a>
+            <a class="nav-link" href="../contacts.html"> Контакти</a>
           </li>
           <ul class="media">
             <li class="nav-item">
-              <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>
+              <button type="button" class="btn btn-primary"><a href="../sign_in.html">Вхід</a></button>
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-secondary">Реєстрація</button>
@@ -77,76 +75,20 @@
         </ul>
       </div>
     </header>
-    <div class="container-fluid profile_1">
-        <div class="container">
-            <div class="row title">
-                <div class="col-md-4">
-                    <h2>Кабінет студента</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container profile_2">
+    <div class="container signIn">
         <div class="row">
-            <div class="col-md-5">
-                <div class="personal-info">
-                    <div class="photo-box">
-                        <img src="../img/photo-profile.jpg" alt="photo">
+            <div class="user-block">
+                <h1 class="heading">Авторизація</h1>
+                <form>
+                    <div class="form-submit">
+                        <input type="email" placeholder="e-mail">
+                        <input type="password" placeholder="password">
                     </div>
-                    <h4 class="name">Steve Morris</h4>
-                    <span>UI/UX Designer</span>
-                    <ul class="personal_item">
-                        <li class="personal_item_cont">
-                            <p>12</p>
-                            <span>курсів</span>
-                        </li>
-                        <li class="personal_item_cont">
-                            <p>11</p>
-                            <span>здано завдань</span>
-                        </li>
-                        <li class="personal_item_cont">
-                            <p>7</p>
-                            <span>оцінено завдань</span>
-                        </li>
-                    </ul>
+                    <button type="submit" class="btn--main"><a href="user_profile.html">Увійти в особистий кабінет</a></button>
+                </form>
+                <div id="forgot_password"></div>
+                    <button type="submit" class="btn--transparent">Забули пароль?</button>
                 </div>
-            </div>
-            <div class="col-md-7">
-                <div>
-                    <h4>Про себе :</h4>
-                    <p class="descr-info">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt excepturi
-                        illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo. Velit
-                        reprehenderit animi.
-                    </p>
-                </div>
-                <div>
-                    <h4>Курси :</h4>
-                    <ul>
-                        <li class="start_course">Курс "HTML5"</li>
-                        <li class="finish_course">Курс "Java Script"</li>
-                        <li class="soon_course">Курс "CSS"</li>
-                    </ul>
-                    <button class="btn--card"><a href="available_courses.html">Переглянути всі досутпні курси</a></button>
-                </div>
-                <div>
-                    <h4>Email :</h4>
-                    <p>email@gmail.com</p>
-                </div>
-                <div>
-                    <h4>Соціальні мережі:</h4>
-                    <ul>
-                        <li>Facebook URL</li>
-                        <li>Twitter URL</li>
-                        <li>LinkedIn URL</li>
-                        <li>Google+ URL</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md offset-md-1">
-                <button class="btn--main edit_button" type="submit"><a href="edit.html">Редагувати дані</a></button>
             </div>
         </div>
     </div>
@@ -200,5 +142,4 @@
     <script src="js/teachers.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
