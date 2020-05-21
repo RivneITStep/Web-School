@@ -9,6 +9,16 @@
     -webkit-box-shadow: inset 198px 0px 300px 48px rgba(0,0,0,0.56);
     -moz-box-shadow: inset 198px 0px 300px 48px rgba(0,0,0,0.56);
     box-shadow: inset 198px 0px 300px 48px rgba(0,0,0,0.56);
+    h2,h4{
+        color:$font--color-primary_3;
+    }
+    a{
+        color:$font--color-primary_3;
+    }
+    a:hover{
+        color:$font--color-primary_3;
+        text-decoration:none;
+    }
 }
 .uppercase{
     text-transform:uppercase;
@@ -84,6 +94,9 @@
     background-position: center center;
 }
 .career{
+    h1{
+        color:$font--color-primary_1;
+    }
     .container{
         padding-top:75px;
         height:500px;
@@ -123,6 +136,10 @@
     height:550px;
     text-align:center;
     padding-top:55px;
+    a:hover{
+        text-decoration:none;
+        color:$font--color-primary_3;
+    }
     .container{
         background:url(../../img/bg_3.png) no-repeat;
         background-size:350px;
@@ -158,6 +175,9 @@
 }
 .career_3{
     text-align:center;
+    h4{
+        color:$font--color-primary_3;
+    }
     h1{
         padding-top:55px;
         color:$font--color-primary_3;
@@ -183,8 +203,13 @@
 } 
 .container-fluid.career_4{
     height: auto;
+    a:hover{
+        text-decoration:none;
+        color:$font--color-primary_3;
+    }
     h1{
         text-align: center;
+        color:$font--color-primary_1;
     }
     padding-top:55px;
     .row:nth-child(3){
@@ -220,6 +245,9 @@
     background:linear-gradient( rgba(226, 225, 225, 0.685), transparent 1px), linear-gradient( 90deg, rgba(226, 225, 225, 0.685), transparent 1px);
     background-size: 15px 15px;
     background-position: center center;
+    h1{
+        color:$font--color-primary_1;
+    }
     .row:nth-child(1){
         padding:35px;
         text-align:center;
@@ -241,6 +269,10 @@
     padding-top:35px;
     background:linear-gradient(to bottom, rgba(21, 19, 41, 0.863) 0%,rgba(21, 19, 41, 0.863) 100%),url(../../img/map.jpg) no-repeat;
     background-size:cover;
+    a:hover{
+        text-decoration:none;
+        color:$font--color-primary_3;
+    }
     .container{
         .btn--card{
             background:$btn--color-primary_active;

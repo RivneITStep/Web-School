@@ -41,6 +41,10 @@
             }
         }
     }
+    a:hover{
+        text-decoration: none;
+        color: $font--color-primary_3;
+    }
     .price-item2 {
         background-color: $bgc--color-primary_5;
     }
