@@ -1,0 +1,35 @@
+.one_news{
+    height:auto;
+    padding-top:115px;
+    padding-bottom:75px;
+    .row:nth-child(1){
+        padding-bottom: 15px;
+        border-bottom: 1.5px solid $border--color-primary_2;
+        margin-bottom: 25px;
+    }
+    // .image{
+    //     height:250px;
+    //     overflow:hidden;
+    // }
+    img{
+        width:50%;
+        height:auto;
+        float:right;
+        margin:0px 0px 15px 15px;
+    }
+    p{
+        @include font(21px, $font-regular, $bgc--color-primary_10, 250,30px); 
+        text-align:justify;
+    }
+    span{
+        @include font(18px, $font-regular, $font--color-primary_1, 250,20px); 
+    }
+    .card-box-item{
+        margin:55px 0px;
+    }
+    .date{
+        position:relative;
+        top:-25px;
+        text-align:right;
+    }
+}
