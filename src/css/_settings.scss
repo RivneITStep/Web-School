@@ -7,7 +7,7 @@ h1 {
 }
 
 h2 {
-  @include font(30px, $font-regular, $font--color-primary_3, bold, 1.4);
+  @include font(30px, $font-regular, $font--color-primary_1, bold, 1.4);
 }
 h3 {
   @include font(30px, $font-light, $font--color-primary_4, 300, 1.1);

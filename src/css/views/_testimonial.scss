@@ -2,10 +2,7 @@
     padding-bottom:55px;
     margin-top:115px;
     position:relative;
-    h1{
-        margin-bottom:25px;
-    }
-    .row:nth-child(1){
+    .row.line{
         border-bottom: 1.5px solid $border--color-primary_2;
     }
     .pagination{
@@ -31,71 +28,56 @@
     }  
 }
 .testimonials-item{
-    margin-top: 15px;
-    .testimonial-box{
-        margin: 10px 0;
-        padding: 15px;
-        background: $bgc--color-primary_2;
-        border-radius:10px;
-        h3{
-            @include font(28px, $font-light, $font--color-primary_3, 300,54px);
-        }
-        p{
-            @include font(14px, $font-light, $font--color-primary_4, 300,18px);
-        }
-        hr{
-            width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background: $bgc--color-primary_2;
+    border-radius:10px;
+    h3{
+        @include font(18px, $font-light, $font--color-primary_3, 300,24px);
+        text-align: center;
+    }
+    p{
+        @include font(14px, $font-light, $font--color-primary_4, 300,18px);
+    }
+    span{
+        @include font(14px, $font-light, $font--color-primary_3, 300,18px);
+    }
+    .course,.teacher,.data *{
+        display:inline-block;
+    }
+    .teacher{
+        margin-left:5%;
+    }
+    div.data{
+        text-align:right;
+        margin-right:5%;
+    }
+    .fa-clock{
+        color:$font--color-primary_3;
+    }
+    .card-img{
+        position:relative;
+        width:150px;
+        height:150px;
+        border-radius:100%;
+        img{
+            position:relative;
+            height:100%;
+            width:auto;
         }
     }
-    .testimonial-form{
-        background: $bgc--color-primary_2;
-        margin: 10px auto;
-        width: 44%;
-        padding: 5px;
-        h3{
-            text-align: center;
-            margin: 10px 0;
-        }
-        form{
-            p{
-                @include font(14px, $font-light, $font--color-primary_4, 300,0px); 
-                margin: 0;
-            }
-            input{
-                width: 100%;
-                background: none;
-                border-bottom: 1px solid;
-                padding: 2px;
-                margin-bottom: 60px;
-            }
-            textarea{
-                width: 100%;
-                background: none;
-                border: 1px solid;
-                padding: 10px;
-            }
-        }
+    .t_item{
+        padding:5px;
     }
 }
 @media (max-width: 991px){
     .testimonials-item{
         margin-top: 10px;
-        .testimonial-form{
-            width: 70%;
-        }
     }
 }
 @media (max-width: 768px){
     .testimonials-item{
         width: 100%;
-        .testimonial-form{
-            width: 100%;
-            form{
-                button{
-                    width: 100%;
-                }
-            }
-        }
     }
     
 }

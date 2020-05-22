@@ -15,6 +15,17 @@
 }
 .teacher_profile_2{
     margin-bottom:55px;
+    .btn--main{
+        position:relative;
+        left:23%;
+    }
+    .btn--main a:hover{
+        text-decoration:none;
+        color:$font--color-primary_3;
+    }
+    .btn--main a{
+        color:$font--color-primary_3;
+    }
     table{
         border-collapse: collapse;
         tr:nth-child(1){

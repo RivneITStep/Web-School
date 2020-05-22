@@ -1,19 +1,24 @@
 .av_couses{
+    margin-bottom:55px;
+    h2{
+        @include font(30px, $font-semibold, $font--color-primary_1, 600, 65px);
+    }
     .row:nth-child(1){
         position:relative;
         padding-top:115px;
         border-bottom: 1.5px solid $border--color-primary_2;
     }
-    .btn--card{ a{
+    .btn--card{ 
+        a{
         color:white;
-        :hover{
+        }
+        a:hover{
             color:white;
             text-decoration:none;
         }
     }
     position:relative;
     top:15px;
-    }
 }
 
 .list{

@@ -17,15 +17,19 @@
 .profile_2{
     a{
         color:white;
-        :hover{
+    }
+    a:hover{
         text-decoration:none;
         color:white;
-    }
     }
     .btn--card{
         padding:5px;
         font-size:16px;
         margin:5px 0px 25px 15px;
+    }
+    .btn--main{
+        position:relative;
+        left:22%;
     }
     .col-md-7{
         position:relative;

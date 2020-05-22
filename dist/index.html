@@ -47,13 +47,13 @@
             <a class="nav-link active" href="../index.html">Головна сторінка</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../course.html">Курси</a>
+            <a class="nav-link " href="../courses.html">Курси</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../testimonials.html"> Відгуки</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../new-blog.html"> Наш блог</a>
+            <a class="nav-link" href="../blog.html"> Наш блог</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../teachers.html"> Викладачі</a>
@@ -62,11 +62,11 @@
             <a class="nav-link" href="../about.html">Про нас</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../page_contacts.html"> Контакти</a>
+            <a class="nav-link" href="../contacts.html"> Контакти</a>
           </li>
           <ul class="media">
             <li class="nav-item">
-              <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>
+              <button type="button" class="btn btn-primary"><a href="../sign_in.html">Вхід</a></button>
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-secondary">Реєстрація</button>
@@ -131,51 +131,36 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="course-title">Комплексні курси</h1>
+                        <h2 class="course-title">Комплексні курси</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3 course-item">
                         <a href="course_page.html">
-                            <img src="../img/java.jpg" alt="">
+                            <img src="img/back-end.svg" alt="Профессия Back-end разработчик" />
                         </a>
                     </div>
                     <div class="col-md-3 course-item">
                         <a href="course_page.html">
-                            <img src="../img/qc.jpg" alt="">
+                            <img src="img/python.svg" alt="Профессия Python разработчик"
+                                title="Профессия Python разработчик" />
                         </a>
                     </div>
                     <div class="col-md-3 course-item">
                         <a href="course_page.html">
-                            <img src="../img/web.jpg" alt="">
+                            <img src="img/java.svg" alt="Профессия Java разработчик" title="Профессия Java разработчик" />
                         </a>
                     </div>
                     <div class="col-md-3 course-item">
                         <a href="course_page.html">
-                            <img src="../img/it-english-main-1.jpeg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 course-item">
-                        <a href="course_page.html">
-                            <img src="../img/hr-block.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 course-item">
-                        <a href="course_page.html">
-                            <img src="../img/unnamed-file.wm.jpeg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 course-item">
-                        <a href="course_page.html">
-                            <img src="../img/kids-academy.jpg" alt="">
+                            <img src="img/unity.svg" alt="Профессия Unity разработчик"
+                                title="Профессия Unity разработчик" />
                         </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 course-btn">
-                        <a href="course.html" class="btn--card">Усі курси</a>
+                        <a href="courses.html" class="btn--card">Усі курси</a>
                     </div>
                 </div>
             </div>
@@ -184,48 +169,93 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="teachers-title">Викладачі</h2>
+                        <h2 class="teachers-title">Наші викладачі</h2>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row details-card">
                     <div class="col-md-4">
-                        <div class="teachers-item">
-                            <div class="teachers-item__img">
-                                <img src="../img/gomer.jpeg" alt="">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                    alt="" />
                             </div>
-                            <div class="teachers-item__about">
-                                <h5>Мар’яна Лорем</h5>
-                                <h6>Freelance frontend developer</h6>
-                                <p>Курс: <a href="#" target="_blank">JavaScript</a></p>
+                            <div class="card-desc">
+                                <h3>Анастасія Українка</h3>
+                                <h5>Викладач Web-school</h5>
+                                <h4>Курс: HTML/CSS</h4>
+                                <div class="icons d-flex justify-content-center">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </div>
+                                <div class="toggle">
+                                    <p class="hidden-text content">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
+                                        natus facilis ipsam tempore, optio maxime pariatur dolor qui
+                                        laudantium cum odio modi voluptas ad est porro cupiditate quo
+                                        tempora repellat.
+                                    </p>
+                                    <button type="submit" class="btn--transparent toggler">
+                                        Детальніше
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="teachers-item">
-                            <div class="teachers-item__img">
-                                <img src="../img/gomer2.png" alt="">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                    alt="" />
                             </div>
-                            <div class="teachers-item__about">
-                                <h5>Мар’яна Лорем</h5>
-                                <h6>Freelance frontend developer</h6>
-                                <p>Курс: <a href="#" target="_blank">Web Developer</a></p>
+                            <div class="card-desc">
+                                <h3>Анастасія Українка</h3>
+                                <h5>Викладач Web-school</h5>
+                                <h4>Курс: HTML/CSS</h4>
+                                <div class="icons d-flex justify-content-center">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </div>
+                                <div class="toggle">
+                                    <p class="hidden-text content">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
+                                        natus facilis ipsam tempore, optio maxime pariatur dolor qui
+                                        laudantium cum odio modi voluptas ad est porro cupiditate quo
+                                        tempora repellat.
+                                    </p>
+                                    <button type="submit" class="btn--transparent toggler">
+                                        Детальніше
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="teachers-item">
-                            <div class="teachers-item__img">
-                                <img src="../img/gomer3.png" alt="">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                    alt="" />
                             </div>
-                            <div class="teachers-item__about">
-                                <h5>Мар’яна Лорем</h5>
-                                <h6>Freelance frontend developer</h6>
-                                <p>Курс: <a href="#" target="_blank">Java Core</a></p>
+                            <div class="card-desc">
+                                <h3>Анастасія Українка</h3>
+                                <h5>Викладач Web-school</h5>
+                                <h4>Курс: HTML/CSS</h4>
+                                <div class="icons d-flex justify-content-center">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </div>
+                                <div class="toggle">
+                                    <p class="hidden-text content">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
+                                        natus facilis ipsam tempore, optio maxime pariatur dolor qui
+                                        laudantium cum odio modi voluptas ad est porro cupiditate quo
+                                        tempora repellat.
+                                    </p>
+                                    <button type="submit" class="btn--transparent toggler">
+                                        Детальніше
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <a href="#" class="btn--transparent teacher-btn">Детальніше про ви��ладача </a>
                     </div>
                 </div>
                 <div class="row">
@@ -243,34 +273,70 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 testimonials-item">
-                        <div class="testimonials-item__img">
-                            <img src="../img/bart-simpson.png" alt="">
-                        </div>
-                        <div class="testimonials-item__about">
-                            <h5>Мар’яна Лорем</h5>
-                            <p>Курс: <a href="#" target="_blank">JavaScript</a></p>
-                            <p>Успішно пройшов я курс по JavaScript. Наставляв мій темний і ще не обізнаний розум шикарний викладач, і просто хороша людина – Петро Жук. Із ним, складні речі ставалими простішими, навіть я б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов до своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.</p>
+                    <div class="testimonials-item">
+                        <div class="col-md">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                    alt="" />
+                            </div>
+                            <h3>Мар'яна Лорем</h3>
+                            <p class="course"><span>Курс: </span>HTML</p>
+                            <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
+                            <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
+                                просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
+                                навіть я
+                                б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
+                                до
+                                своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
+                            </p>
+                            <div class="data">
+                                <i class="far fa-clock"></i>
+                                <p>25.04.2020</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 testimonials-item">
-                        <div class="testimonials-item__img">
-                            <img src="../img/bart-simpson2.png" alt="">
-                        </div>
-                        <div class="testimonials-item__about">
-                            <h5>Мар’яна Лорем</h5>
-                            <p>Курс: <a href="#" target="_blank">Web Developer</a></p>
-                            <p>Проходила курси web-developera. Наш викладач – Журавльов Сергій. Навчанням задоволені. Перш за все, сподобалась дружня атмосфера, відкритість і простота пояснення. Уроки проходили в жвавому ритмі, мучили Сергія всіма питаннями, адже, як він казав на ввідному занятті – ви прийшли на курси, то всмоктуйте більше інформації, грузіть викладача питаннями, незалежно чи прості чи легкі. </p>
+                    <div class="testimonials-item">
+                        <div class="col-md">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                    alt="" />
+                            </div>
+                            <h3>Мар'яна Лорем</h3>
+                            <p class="course"><span>Курс: </span>HTML</p>
+                            <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
+                            <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
+                                просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
+                                навіть я
+                                б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
+                                до
+                                своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
+                            </p>
+                            <div class="data">
+                                <i class="far fa-clock"></i>
+                                <p>25.04.2020</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 testimonials-item">
-                        <div class="testimonials-item__img">
-                            <img src="../img/bart-simpson3.png" alt="">
-                        </div>
-                        <div class="testimonials-item__about">
-                            <h5>Мар’яна Лорем</h5>
-                            <p>Курс: <a href="#" target="_blank">Java Core</a></p>
-                            <p>Горбань Віталій дуже хороший викладач. Розказує цікаво і зрозуміло, до складного підводить поступово що я вважаю дуже правильно. Надихає вчитися. Викладачем задоволена дуже. Що стосується самого навчання, то програма охоплює досить велику кількість матеріалу за короткий проміжок часу, потрібно бути постійно в розумовому навантаженні, попускати пояси нема коли. </p>
+                    <div class="testimonials-item">
+                        <div class="col-md">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                    alt="" />
+                            </div>
+                            <h3>Мар'яна Лорем</h3>
+                            <p class="course"><span>Курс: </span>HTML</p>
+                            <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
+                            <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
+                                просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
+                                навіть я
+                                б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
+                                до
+                                своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
+                            </p>
+                            <div class="data">
+                                <i class="far fa-clock"></i>
+                                <p>25.04.2020</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -336,7 +402,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="blog-title">Наші новини</h1>
+                        <h2 class="blog-title">Наші новини</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -347,7 +413,8 @@
                                 <h4>Lorem ipsum dolor</h4>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
                                     corrupti
-                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt ullam,
+                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt
+                                    ullam,
                                     placeat corporis. Voluptatibus, praesentium.</p>
                                 <div class="card-box-item">
                                     <i class="fas fa-eye"></i>
@@ -356,7 +423,7 @@
                                     <span>10 февраля 2020 в 15:20</span>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="card-box">
@@ -365,7 +432,8 @@
                                 <h4>Lorem ipsum dolor</h4>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
                                     corrupti
-                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt ullam,
+                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt
+                                    ullam,
                                     placeat corporis. Voluptatibus, praesentium.</p>
                                 <div class="card-box-item">
                                     <i class="fas fa-eye"></i>
@@ -374,7 +442,7 @@
                                     <span>07 февраля 2020 в 18:09</span>
                                 </div>
                             </div>
-                        </div>    
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="card-box">
@@ -383,7 +451,8 @@
                                 <h4>Lorem ipsum dolor</h4>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id voluptatum, in
                                     corrupti
-                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt ullam,
+                                    quasi sunt distinctio, odit facilis nihil neque inventore sit quos facere deserunt
+                                    ullam,
                                     placeat corporis. Voluptatibus, praesentium.</p>
                                 <div class="card-box-item">
                                     <i class="fas fa-eye"></i>
@@ -392,7 +461,7 @@
                                     <span>29 января 2020 в 14:49</span>
                                 </div>
                             </div>
-                        </div>    
+                        </div>
                     </div>
                 </div>
                 <div class="row">

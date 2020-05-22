@@ -1,7 +1,6 @@
 main {
     .main-bg-color {
         padding: 50px 0;
-        // background-color: $bgc--color-primary_1;
         .course-title {
             text-align: center;
         }
@@ -20,12 +19,15 @@ main {
             }
         }
     }
+    h2{
+        padding: 15px 0px;
+    }
     .main-bg-color2 {
         padding: 50px 0;
-        background-color: $bgc--color-primary_11;
+        border-top:1px dashed $border--color-primary_4;
+        // background-color: $bgc--color-primary_11;
         .teachers-title {
             text-align: center;
-            color:$font--color-primary_4;
         }
         .teachers-btn {
             text-align: center;
@@ -68,23 +70,20 @@ main {
     }
     .main-bg-color3 {
         background-color: $bgc--color-primary_9;
-        padding: 50px 0;
+        padding: 50px 0px;
         .testimonials-title {
             text-align: center;
         }
         .testimonials-item {
-            .testimonials-item__img {
-                border-radius: 50%;
-                background-color: $bgc--color-primary_3;
-                margin: 0 auto;
-                padding: 30px;
-                img {
-                    width: 100%;
-                }
+            padding:0;
+            margin:15px;
+            .card-img{
+            margin:15px 25%;
             }
+            width:30%;
             .testimonials-item__about {
                 text-align: center;
-                padding: 40px 0;
+                padding: 35px 0px;
                 h5, p, a {
                     color: $font--color-primary_3;
                 }
