@@ -74,7 +74,7 @@
                         <div class="teachers-item__about">
                             <h5>{{teacher.first_name}} {{teacher.last_name}}</h5>
                             <h6>Дещо про вчителя...</h6>
-                            <p>Курс: <a href="#" target="_blank">{{teacher.course}}</a></p>
+                            <p>Курс: <a href="{% url 'pages:courses' %}" target="_blank">{{teacher.courses}}</a></p>
                         </div>
                     </div>
                     <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>

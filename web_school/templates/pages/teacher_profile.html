@@ -8,6 +8,7 @@
         <div class="row title">
             <div class="col-md-4">
                 <h2>Кабінет викладача</h2>
+                <a href='#'>Перейти до Адмін панелі</a>
             </div>
         </div>
     </div>
@@ -41,10 +42,14 @@
         <div class="col-md-7">
             <div>
                 <h4>Курси які ви ведете:</h4>
-                <ul>
-                    <li class="start_course">Курс "HTML5"</li>
-                    <li class="finish_course">Курс "Java Script"</li>
-                    <li class="soon_course">Курс "CSS"</li>
+                <ul>{% for course in courses %}
+                {% if course.avelable == True %}
+                <li class="start_course">Курс: "{{course.title}}"</li>
+                {% else %}
+                <li class="finish_course">Курс: "{{course.title}}"</li>
+                {% endif %}
+                {% endfor %}
+                    
                 </ul>
             </div>
             <div>

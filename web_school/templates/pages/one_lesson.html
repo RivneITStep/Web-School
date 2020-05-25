@@ -80,18 +80,18 @@
             <div class="col d-flex justify-content-center">
                 <p>{{less.text_area}}</p>
             </div>
-        </div>{% if user.student.paid_access == True %}
+        </div>
+        {% if user.student.paid_access == True %}
+        {% for task in tasks %}
+        {% if task.lesson == less %}
                 <div class="row home_work">
             <div class="col">
-                <h2>Завдання</h2>
+                <h2>{{task.title}}</h2>
             </div>
         </div>
         <div class="row">
             <div class="col homework ">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime unde repudiandae, facere nostrum
-                    dolorem ipsam accusamus in magni. Corporis, repellendus!
-                    Ipsa unde nobis, a eos maiores molestiae voluptate quaerat facilis asperiores ipsam! Incidunt vel
-                    dolores cupiditate accusantium quisquam.</p>
+                <p>{{task.question}}</p>
                 <form action="" method="post">
 
                     <textarea name="one-lesson" id="message" placeholder="Ваша відповідь"></textarea>
@@ -107,6 +107,10 @@
                 </form>
             </div>
         </div>
+        {% else %}
+        <h2>Перевіряємо ваше попереднє завдання!</h2>
+        {% endif %}
+        {% endfor %}
         {% else %}
         <h2>Для отримання доступу до домашніх завданнь потрібно оплатити курс навчання!</h2>
         {% endif %}

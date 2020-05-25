@@ -8,7 +8,7 @@ class Teacher(models.Model):
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=100)
     photo_main = models.ImageField(upload_to='teachers_photos/', blank=True)
-    course = models.CharField(max_length=200, blank=True)
+    courses = models.CharField(max_length=200, blank=True)
     body = models.TextField(blank=True)
     facebook = models.CharField(max_length=500, blank=True)
     twitter = models.CharField(max_length=500, blank=True)
@@ -18,7 +18,7 @@ class Teacher(models.Model):
 
 
     def __str__(self):
-        return 'Teacher for user {}'.format(self.user.username)
+        return 'Teacher {}'.format(self.user.username)
 
 
 
@@ -40,4 +40,4 @@ class Student(models.Model):
 
     
     def __str__(self):
-        return 'Student for user {}'.format(self.user.username)
+        return 'Student {}'.format(self.user.username)

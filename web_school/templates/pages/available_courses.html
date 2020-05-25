@@ -13,7 +13,7 @@
                 <a href="{% url 'courses:one_lesson' crs.id %}">Безкоштовні {{crs.title}} курси</a>
             <p>
             {% for less in lesson %}{% if crs == less.course %}
-            {{less.course.id}}
+            {{lesson.count}}
             {% else %}
             {% endif %}
             

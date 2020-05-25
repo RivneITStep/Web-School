@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from accounts.models import Student, Teacher
 from django.shortcuts import get_object_or_404
 from django.contrib import messages, auth
+from courses.models import Course, Lesson
 
 
 def index(request):
@@ -25,8 +26,9 @@ def contacts(request):
 
 
 def teachers(request):
-    
-    return render(request, 'pages/teachers.html')
+    teacher = Teacher.objects.all()
+    course = Course.objects.all()
+    return render(request, 'pages/teachers.html',context={'teachers':teacher,'courses':course})
 
 
 
@@ -52,8 +54,10 @@ def payment(request):
 def teacher_profile(request):
     if request.user.is_authenticated:
         profile = Teacher.objects.get(user=request.user.id)
+        courses = Course.objects.all().filter(teacher=profile)
         context = {
-            'profile': profile
+            'profile': profile,
+            'courses': courses
             }
 
     return render(request, 'pages/teacher_profile.html',context)
@@ -92,13 +96,13 @@ def edit_student(request):
         profile.first_name = first_name
         profile.last_name = last_name
         profile.email = email
-        profile.course = course
         profile.body = body
         profile.facebook = facebook
         profile.twitter = twitter
         profile.linkedIn = linkedIn
         profile.google = google
         request.user.email = email
+        request.user.username = email
         request.user.save()
         profile.save()
         messages.success(request, "Your information was updated!")
@@ -127,13 +131,14 @@ def edit_teacher(request):
         profile.first_name = first_name
         profile.last_name = last_name
         profile.email = email
-        profile.course = course
+        profile.courses = course
         profile.body = body
         profile.facebook = facebook
         profile.twitter = twitter
         profile.linkedIn = linkedIn
         profile.google = google
         request.user.email = email
+        request.user.username = email
         request.user.save()
         profile.save()
         messages.success(request, "Your information was updated!")
