@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-{% include "parts/_internal_header.html" %}{% if user.is_authenticated %}{% if user.is_staff == False %}
+{% include "parts/_internal_header.html" %}{% if user.is_authenticated %}
 <div class="container-fluid profile_1">
     <div class="container">
         <div class="row title">
@@ -13,18 +13,13 @@
 </div>
 <div class="container profile_2">
     <div class="row">
-    {% for prof in profile %}
+   
         <div class="col-md-5">
             <div class="personal-info">
-                <div class="photo-box">{% if prof.photo_main %}
-                <img src="{{ prof.photo_main.url }}" alt="photo">
-                {% else %}
-                <img src="#" alt="photo">
-                {% endif %}
-                
-                
+                <div class="photo-box">
+                <img src="{{ profile.photo_main.url }}" alt="photo">
                 </div>
-                <h4 class="name">{{prof.first_name}} {{prof.last_name}}</h4>
+                <h4 class="name">{{profile.first_name}} {{profile.last_name}}</h4>
                 <span>UI/UX Designer</span>
                 <ul class="personal_item">
                     <li class="personal_item_cont">
@@ -63,7 +58,7 @@
             </div>
             <div>
                 <h4>Email :</h4>
-                <p>{{user.email}}</p>
+                <p>{{profile.email}}</p>
             </div>
             <div>
                 <h4>Соціальні мережі:</h4>
@@ -75,12 +70,9 @@
                 </ul>
             </div>
         </div>
-    {% endfor %}
+    
     </div>
 </div>
-{% else %}
-{% include "parts/_sign_in_h1.html" %}
-{% endif %}
 {% else %}
 {% include "parts/_sign_in_h1.html" %}
 {% endif %}

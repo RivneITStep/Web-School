@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from accounts.models import Student, Teacher
 from django.shortcuts import get_object_or_404
+from django.contrib import messages, auth
+
 
 def index(request):
     teacher = Teacher.objects.all()
@@ -53,7 +55,7 @@ def payment(request):
     
 def teacher_profile(request):
     if request.user.is_authenticated:
-        profile = Teacher.objects.all().filter(email=request.user.username)
+        profile = Teacher.objects.get(user=request.user.id)
         context = {
             'profile': profile
             }
@@ -62,7 +64,7 @@ def teacher_profile(request):
 
 def student_profile(request):
     if request.user.is_authenticated:
-        profile = Student.objects.all().filter(email=request.user.username)
+        profile = Student.objects.get(user=request.user.id)
         context = {
             'profile': profile
         }
@@ -90,6 +92,20 @@ def edit_student(request):
         twitter = request.POST['twitter']
         linkedIn = request.POST['linkedIn']
         google = request.POST['google']
+        profile = Student.objects.get(id=user_id)
+        profile.first_name = first_name
+        profile.last_name = last_name
+        profile.email = email
+        profile.course = course
+        profile.body = body
+        profile.facebook = facebook
+        profile.twitter = twitter
+        profile.linkedIn = linkedIn
+        profile.google = google
+        request.user.email = email
+        request.user.save()
+        profile.save()
+        messages.success(request, "Your information was updated!")
     if request.user.is_authenticated:
         profile = Student.objects.get(user=request.user)
         context = {
@@ -122,7 +138,10 @@ def edit_teacher(request):
         profile.linkedIn = linkedIn
         profile.google = google
         request.user.email = email
+        request.user.save()
         profile.save()
+        messages.success(request, "Your information was updated!")
+
     if request.user.is_authenticated:
         profile = Teacher.objects.get(user=request.user)
         context = {
