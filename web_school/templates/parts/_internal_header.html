@@ -41,7 +41,7 @@
             <a {% if 'testimonials' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:testimonials' %}"> Відгуки</a>
           </li>
           <li class="nav-item">
-            <a {% if 'blog' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:blog' %}"> Наш блог</a>
+            <a {% if 'blog' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'blog:blog' %}"> Наш блог</a>
           </li>
           <li class="nav-item">
             <a {% if 'teachers' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:teachers' %}"> Викладачі</a>

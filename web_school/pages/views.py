@@ -29,10 +29,6 @@ def teachers(request):
     return render(request, 'pages/teachers.html')
 
 
-def blog(request):
-    
-    return render(request, 'pages/blog.html')
-
 
 def testimonials(request):
     
