@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1>Наші викладачі</h1>
+            <h2>Наші викладачі</h2>
           </div>
         </div>
         <div class="row">{% for teacher in teachers %}
@@ -27,7 +27,7 @@
               <div class="card-desc">
                 <h3>{{teacher.first_name}} {{teacher.last_name}}</h3>
                 <h5>Викладач Web-school</h5>
-                 <h4>Курс:
+                <h4>Курс:
                 {% for course in courses %}
                 {% if course.teacher.id == teacher.id %}
                     -{{course.title}}-

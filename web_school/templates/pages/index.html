@@ -7,45 +7,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="course-title">Комплексні курси</h1>
+                    <h2 class="course-title">Комплексні курси</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/java.jpg' %}" alt="">
+                        <img src="{% static 'img/back-end.svg' %}" alt="Профессия Back-end разработчик"/>
                     </a>
                 </div>
                 <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/qc.jpg' %}" alt="">
+                        <img src="{% static 'img/python.svg' %}" alt="Профессия Python разработчик"
+                        title="Профессия Python разработчик"/>
                     </a>
                 </div>
                 <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/web.jpg' %}" alt="">
+                        <img src="{% static 'img/java.svg' %}" alt="Профессия Java разработчик" title="Профессия Java разработчик"/>
                     </a>
                 </div>
                 <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/it-english-main-1.jpeg' %}" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 course-item">
-                    <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/hr-block.jpg' %}" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 course-item">
-                    <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/unnamed-file.wm.jpeg' %}" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 course-item">
-                    <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/kids-academy.jpg' %}" alt="">
+                        <img src="{% static 'img/unity.svg' %}" alt="Профессия Unity разработчик"
+                        title="Профессия Unity разработчик" />
                     </a>
                 </div>
             </div>
@@ -60,24 +45,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="teachers-title">Викладачі</h2>
+                    <h2 class="teachers-title">Наші викладачі</h2>
                 </div>
             </div>
             {% if teachers %}
             {% for teacher in teachers %}
-            <div class="row">
+            <div class="row details-card">
                 <div class="col-md-4">
-                    <div class="teachers-item">
-                        <div class="teachers-item__img">
-                            <img src="{% static 'img/gomer.jpeg' %}" alt="">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80" alt="">
                         </div>
-                        <div class="teachers-item__about">
-                            <h5>{{teacher.first_name}} {{teacher.last_name}}</h5>
-                            <h6>Дещо про вчителя...</h6>
-                            <p>Курс: <a href="{% url 'pages:courses' %}" target="_blank">{{teacher.courses}}</a></p>
+                        <div class="card-desc">
+                            <h3>{{teacher.first_name}} {{teacher.last_name}}</h3>
+                            <h5>Дещо про вчителя...</h5>
+                            <h4>Курс: <a href="{% url 'pages:courses' %}" target="_blank">{{teacher.courses}}</a></h4>
+                            <div class="icons d-flex justify-content-center">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                            <div class="toggle">
+                                <p class="hidden-text content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
+                                    natus facilis ipsam tempore, optio maxime pariatur dolor qui
+                                    laudantium cum odio modi voluptas ad est porro cupiditate quo
+                                    tempora repellat.
+                                </p>
+                                <button type="submit" class="btn--transparent toggler">
+                                    Детальніше
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
                 </div>
             </div>
             {% endfor %}
@@ -148,62 +147,11 @@
             </div>
         </div>
     </div>
-    <!-- <div class="container-fluid main-bg-color4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="price-title">Ціни</h2>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="price-item">
-                            <h3 class="price-item__title">Самостійне проходження</h3>
-                            <div class="price-item__pr">
-                                <span class="currency">$</span><span class="number">120</span>
-                            </div>
-                            <div class="price-item__desc">
-                                <p>Lorem ipsum dolor, sit amet consectetur...</p>
-                                <a href="#" target="_blank">Більше</a>                          
-                            </div>
-                            <a class="btn--card" href="#">Buy Now</a>                        
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="price-item price-item2">
-                            <h3 class="price-item__title">Курс з перевіркою</h3>
-                            <div class="price-item__pr">
-                                <span class="currency">$</span><span class="number">180</span>
-                            </div>
-                            <div class="price-item__desc">
-                                <p>Lorem ipsum dolor, sit amet consectetur...</p>
-                                <a href="#" target="_blank">Більше</a>                          
-                            </div>
-                            <a class="btn--card" href="#">Buy Now</a>                        
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="price-item price-item3">
-                            <h3 class="price-item__title">VIP</h3>
-                            <div class="price-item__pr">
-                                <span class="currency">$</span><span class="number">240</span>
-                            </div>
-                            <div class="price-item__desc">
-                                <p>Lorem ipsum dolor, sit amet consectetur...</p>
-                                <a href="#" target="_blank">Більше</a>                          
-                            </div>
-                            <a class="btn--card" href="#">Buy Now</a>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     <div class="container-fluid main-bg-color5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="blog-title">Наші новини</h1>
+                    <h2 class="blog-title">Наші новини</h2>
                 </div>
             </div>
             <div class="row">{% if blog_list %}
@@ -213,7 +161,9 @@
                         <a href="{% url 'blog:single_blog_url' blog.id %}">
                         {% for img in imges %}
                         {% if img.blog_id == blog %}
-                        <img src="{{img.photo_main.url}}" alt="">
+                        <div class="img_blog">
+                            <img src="{{img.photo_main.url}}" alt="">
+                        </div>
                         {% else %}
                         {% endif %}
                         {% endfor %}
