@@ -6,6 +6,7 @@ class Course(models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     avelable = models.BooleanField(default=True)
+    photo_main = models.ImageField(upload_to='courses_img/', blank=True)
 
     def __str__(self):
         return self.title
