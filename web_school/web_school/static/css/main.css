@@ -4539,7 +4539,12 @@ main .main-bg-color5 .blog-btn {
 main .main-bg-color5 .blog-btn :hover {
     text-decoration: none;
 }
-
+.img_blog{
+    display:block;
+    position:relative;
+    height:200px;
+    overflow:hidden;
+}
 main .main-bg-color5 .card-box {
     overflow: hidden;
     border: 1px solid #e3e3e3;
@@ -7016,7 +7021,7 @@ select {
 }
 
 .one_news img {
-    width: 50%;
+    max-width: 45%;
     height: auto;
     float: right;
     margin: 0 0 15px 15px;

@@ -20,7 +20,7 @@
                 <div class="photo-box">{% if profile.photo_main %}
                 <img src="{{ profile.photo_main.url }}" alt="photo">
                 {% else %}
-                <img src="#" alt="photo">
+                <img src="{% static 'img/user.png' %}" alt="photo">
                 {% endif %}
                 </div>
                 <h4 class="name">{{profile.first_name}} {{profile.last_name}}</h4>
