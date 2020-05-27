@@ -4,75 +4,57 @@
 {% include "parts/_internal_header.html" %}
 
 <section class="details-card">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Наші викладачі</h2>
-          </div>
-        </div>
-        <div class="row">{% if teachers %}
-        
-        
-        {% for teacher in teachers %}
-              <div class="col-md-4">
-            <div class="card-content">
-              <div class="card-img">{% if teacher.photo_main %}
-              <img
-                  src="{{teacher.photo_main.url}}"
-                  alt="" />
-              {% else %}
-              <img
-                  src="{% static 'img/user.png' %}"
-                  alt="" />
-              {% endif %}
-                
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Наші викладачі</h2>
+      </div>
+    </div>
+    <div class="row">
+      {% if teachers %}
+      {% for teacher in teachers %}
+      <div class="col-md-4">
+          <div class="card-content">
+              <div class="card-img">
+                  <img src="{% static 'img/user.png' %}" alt="">
               </div>
               <div class="card-desc">
-                <h3>{{teacher.first_name}} {{teacher.last_name}}</h3>
-                <h5>Викладач Web-school</h5>
-                <h4>Курс:
-                {% for course in courses %}
-                {% if course.teacher.id == teacher.id %}
-                    -{{course.title}}-
-                {% else %}
-                Не визначено...
-                {% endif %}
-                {% endfor %}
-                </h4>
-                <div class="icons d-flex justify-content-center">
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="toggle">
-                  <p class="hidden-text content">{% if teacher.body %}
-                  {{teacher.body}}
-                  {% else %}
-                  Інформація відсутня!
-                  {% endif %}
-                    
-                  </p>
-                  <button type="submit" class="btn--transparent toggler">
-                    Детальніше
-                  </button>
-                </div>
+                  <h3>{{teacher.first_name}} {{teacher.last_name}}</h3>
+                  <h5>Дещо про вчителя...</h5>
+                  <h4>Курс: <a href="{% url 'pages:courses' %}" target="_blank">{{teacher.courses}}</a></h4>
+                  <div class="icons d-flex justify-content-center">
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </div>
+                  <div class="toggle">
+                      <p class="hidden-text content">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
+                          natus facilis ipsam tempore, optio maxime pariatur dolor qui
+                          laudantium cum odio modi voluptas ad est porro cupiditate quo
+                          tempora repellat.
+                      </p>
+                      <button type="submit" class="btn--transparent toggler">
+                          Детальніше
+                      </button>
+                  </div>
               </div>
-            </div>
-          </div>
-          {% endfor %}
-          {% else %}
-            <h2 style='color:green;'>!!!SORRY COMMING SOON!!!</h2>
-        {% endif %}
-              </div>
-        <div class="row">
-            <div class="col-md-3.offset-md-9 pagination pagination">
-              <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
-              <a href="#" class="pagination-item">1</a>
-              <a href="#" class="pagination-item">2</a>
-              <a href="#" class="pagination-item">3</a>
-              <a href="#" class="pagination-item">4</a>
-              <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
-            </div>
           </div>
       </div>
-    </section>
+      {% endfor %}
+      {% else %}
+      <h2>No Teachers yet =(...</h2>
+      {% endif %}
+  </div>
+    <div class="row">
+      <div class="col-md-3.offset-md-9 pagination pagination">
+        <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" class="pagination-item">1</a>
+        <a href="#" class="pagination-item">2</a>
+        <a href="#" class="pagination-item">3</a>
+        <a href="#" class="pagination-item">4</a>
+        <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}

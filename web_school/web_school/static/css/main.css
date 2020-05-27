@@ -4849,6 +4849,15 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     margin-bottom: 25px;
 }
 
+.main-bg-color2.details-card .row:nth-child(1){
+    border-bottom:none;
+}
+
+.main-bg-color2.details-card .card-desc{
+    min-height:250px;
+    vertical-align:bottom;
+}
+
 .details-card button {
     position: relative;
     left: 25%;
@@ -6420,7 +6429,6 @@ select {
     margin-top: 25px;
     margin-bottom: 55px;
 }
-
 .profile_2 .edit_button a {
     color: #fff;
 }
@@ -6770,7 +6778,6 @@ select {
 
 .teacher_profile_2 .btn--main {
     position: relative;
-    left: 23%;
 }
 
 .teacher_profile_2 .btn--main a:hover {
