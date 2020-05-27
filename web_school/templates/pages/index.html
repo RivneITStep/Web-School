@@ -63,9 +63,10 @@
                     <h2 class="teachers-title">Викладачі</h2>
                 </div>
             </div>
+            
+            <div class="row">
             {% if teachers %}
             {% for teacher in teachers %}
-            <div class="row">
                 <div class="col-md-4">
                     <div class="teachers-item">
                         <div class="teachers-item__img">
@@ -79,11 +80,12 @@
                     </div>
                     <a href="#" class="btn--transparent teacher-btn">Детальніше про викладача </a>
                 </div>
-            </div>
+            
             {% endfor %}
             {% else %}
             <h2>No Teachers yet =(...</h2>
             {% endif %}
+            </div>
             <div class="row">
                 <div class="col-md-12 teachers-btn">
                     <a href="{% url 'pages:teachers' %}" class="btn--transparent">Усі викладачі</a>

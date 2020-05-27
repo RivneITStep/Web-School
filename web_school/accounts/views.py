@@ -41,6 +41,10 @@ def registration(request):
         if User.objects.filter(email=email).exists():
             messages.error(request, "This e-mail allready taken")
             return redirect('accounts:registration')
+        
+        if len(password) <= 6:
+            messages.warning(request,"Your password mast be longer than 6 simbols")
+            return redirect("accounts:registration")
         if staff == 'Я викладач':
                 staff = True
                 user = User.objects.create_user(username = email, email=email,password=password,is_staff=staff, first_name=first_name, last_name=last_name)
