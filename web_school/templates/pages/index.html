@@ -13,24 +13,25 @@
             <div class="row">
                 <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/back-end.svg' %}" alt="Профессия Back-end разработчик"/>
+                        <img src="{% static 'img/back-end.svg' %}" alt="Профессия Back-end разработчик" />
                     </a>
                 </div>
                 <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
                         <img src="{% static 'img/python.svg' %}" alt="Профессия Python разработчик"
-                        title="Профессия Python разработчик"/>
+                            title="Профессия Python разработчик" />
                     </a>
                 </div>
                 <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/java.svg' %}" alt="Профессия Java разработчик" title="Профессия Java разработчик"/>
+                        <img src="{% static 'img/java.svg' %}" alt="Профессия Java разработчик"
+                            title="Профессия Java разработчик" />
                     </a>
                 </div>
                 <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
                         <img src="{% static 'img/unity.svg' %}" alt="Профессия Unity разработчик"
-                        title="Профессия Unity разработчик" />
+                            title="Профессия Unity разработчик" />
                     </a>
                 </div>
             </div>
@@ -41,19 +42,16 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid main-bg-color2">
+    <div class="container-fluid main-bg-color2 details-card">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="teachers-title">Наші викладачі</h2>
                 </div>
             </div>
-            
             <div class="row">
-
-            <div class="row details-card">
-                        {% if teachers %}
-            {% for teacher in teachers %}
+                {% if teachers %}
+                {% for teacher in teachers %}
                 <div class="col-md-4">
                     <div class="card-content">
                         <div class="card-img">
@@ -81,17 +79,15 @@
                         </div>
                     </div>
                 </div>
-            
-            {% endfor %}
-            {% else %}
-            <h2>No Teachers yet =(...</h2>
-            {% endif %}
-            </div>
+                {% endfor %}
+                {% else %}
+                <h2>No Teachers yet =(...</h2>
+                {% endif %}
             </div>
             <div class="row">
                 <div class="col-md-12 teachers-btn">
                     <a href="{% url 'pages:teachers' %}" class="btn--transparent">Усі викладачі</a>
-                
+                </div>
             </div>
         </div>
     </div>
@@ -103,45 +99,70 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 testimonials-item">
-                    <div class="testimonials-item__img">
-                        <img src="{% static 'img/bart-simpson.png' %}" alt="">
-                    </div>
-                    <div class="testimonials-item__about">
-                        <h5>Мар’яна Лорем</h5>
-                        <p>Курс: <a href="#" target="_blank">JavaScript</a></p>
-                        <p>Успішно пройшов я курс по JavaScript. Наставляв мій темний і ще не обізнаний розум шикарний
-                            викладач, і просто хороша людина – Петро Жук. Із ним, складні речі ставалими простішими,
-                            навіть я б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача
-                            і любов до своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 testimonials-item">
-                    <div class="testimonials-item__img">
-                        <img src="{% static 'img/bart-simpson2.png' %}" alt="">
-                    </div>
-                    <div class="testimonials-item__about">
-                        <h5>Мар’яна Лорем</h5>
-                        <p>Курс: <a href="#" target="_blank">Web Developer</a></p>
-                        <p>Проходила курси web-developera. Наш викладач – Журавльов Сергій. Навчанням задоволені. Перш
-                            за все, сподобалась дружня атмосфера, відкритість і простота пояснення. Уроки проходили в
-                            жвавому ритмі, мучили Сергія всіма питаннями, адже, як він казав на ввідному занятті – ви
-                            прийшли на курси, то всмоктуйте більше інформації, грузіть викладача питаннями, незалежно чи
-                            прості чи легкі. </p>
+                <div class="testimonials-item">
+                    <div class="col-md">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                alt="" />
+                        </div>
+                        <h3>Мар'яна Лорем</h3>
+                        <p class="course"><span>Курс: </span>HTML</p>
+                        <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
+                        <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
+                            просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
+                            навіть я
+                            б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
+                            до
+                            своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
+                        </p>
+                        <div class="data">
+                            <i class="far fa-clock"></i>
+                            <p>25.04.2020</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 testimonials-item">
-                    <div class="testimonials-item__img">
-                        <img src="{% static 'img/bart-simpson3.png' %}" alt="">
+                <div class="testimonials-item">
+                    <div class="col-md">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                alt="" />
+                        </div>
+                        <h3>Мар'яна Лорем</h3>
+                        <p class="course"><span>Курс: </span>HTML</p>
+                        <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
+                        <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
+                            просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
+                            навіть я
+                            б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
+                            до
+                            своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
+                        </p>
+                        <div class="data">
+                            <i class="far fa-clock"></i>
+                            <p>25.04.2020</p>
+                        </div>
                     </div>
-                    <div class="testimonials-item__about">
-                        <h5>Мар’яна Лорем</h5>
-                        <p>Курс: <a href="#" target="_blank">Java Core</a></p>
-                        <p>Горбань Віталій дуже хороший викладач. Розказує цікаво і зрозуміло, до складного підводить
-                            поступово що я вважаю дуже правильно. Надихає вчитися. Викладачем задоволена дуже. Що
-                            стосується самого навчання, то програма охоплює досить велику кількість матеріалу за
-                            короткий проміжок часу, потрібно бути постійно в розумовому навантаженні, попускати пояси
-                            нема коли. </p>
+                </div>
+                <div class="testimonials-item">
+                    <div class="col-md">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                                alt="" />
+                        </div>
+                        <h3>Мар'яна Лорем</h3>
+                        <p class="course"><span>Курс: </span>HTML</p>
+                        <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
+                        <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
+                            просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
+                            навіть я
+                            б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
+                            до
+                            своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
+                        </p>
+                        <div class="data">
+                            <i class="far fa-clock"></i>
+                            <p>25.04.2020</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,42 +181,42 @@
                 </div>
             </div>
             <div class="row">{% if blog_list %}
-            {% for blog in blog_list %}
-            <div class="col-lg-4 col-md-6 col-sm-12">
+                {% for blog in blog_list %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card-box">
                         <a href="{% url 'blog:single_blog_url' blog.id %}">
-                        {% for img in imges %}
-                        {% if img.blog_id == blog %}
-                        <div class="img_blog">
-                            <img src="{{img.photo_main.url}}" alt="">
-                        </div>
-                        {% else %}
-                        {% endif %}
-                        {% endfor %}
-                        <div class="card-box-container">
-                            <h4>{{blog.title}}</h4>
-                            <p>{{blog.text_area}}</p>
-                            <div class="card-box-item">
-                                <i class="fas fa-eye"></i>
-                                <span>{{blog.views}}</span>
-                                <i class="far fa-clock"></i>
-                                <span>{{blog.pub_date}}</span>
+                            {% for img in imges %}
+                            {% if img.blog_id == blog %}
+                            <div class="img_blog">
+                                <img src="{{img.photo_main.url}}" alt="">
                             </div>
-                        </div>
+                            {% else %}
+                            {% endif %}
+                            {% endfor %}
+                            <div class="card-box-container">
+                                <h4>{{blog.title}}</h4>
+                                <p>{{blog.text_area}}</p>
+                                <div class="card-box-item">
+                                    <i class="fas fa-eye"></i>
+                                    <span>{{blog.views}}</span>
+                                    <i class="far fa-clock"></i>
+                                    <span>{{blog.pub_date}}</span>
+                                </div>
+                            </div>
                     </div>
                     </a>
                 </div>
-           {% endfor %}
-           {% else %}
-            <h2 style='color:green;'>!!!SORRY COMMING SOON!!!</h2>
-           {% endif %}
-           </div>
+                {% endfor %}
+                {% else %}
+                <h2 style='color:green;'>!!!SORRY COMMING SOON!!!</h2>
+                {% endif %}
+            </div>
             <div class="row">
                 <div class="col-md-12 blog-btn">
                     <a href="{% url 'blog:blog' %}" class="btn--transparent">Усі новини</a>
                 </div>
             </div>
         </div>
-    
+
 </main>
 {% endblock content %}
