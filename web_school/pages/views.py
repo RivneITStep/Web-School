@@ -10,7 +10,8 @@ def index(request):
     teacher = Teacher.objects.all()
     blog_list = Blog.objects.filter(moderated=True).order_by('-pub_date')[:3]
     blog_img = Blog_Img.objects.all()
-    return render(request, 'pages/index.html', context={'teachers':teacher,'blog_list':blog_list,'imges':blog_img})
+    courses = Course.objects.all()
+    return render(request, 'pages/index.html', context={'teachers':teacher,'blog_list':blog_list,'imges':blog_img,'courses':courses})
 
 
 def about(request):
@@ -19,8 +20,11 @@ def about(request):
 
 
 def courses(request):
+    courses = Course.objects.all()
     
-    return render(request, 'pages/courses.html')
+    return render(request, 'pages/courses.html',context={
+        'courses':courses
+    })
 
 
 def contacts(request):
@@ -55,7 +59,7 @@ def payment(request):
     return render(request, 'pages/payment.html')
     
 def teacher_profile(request):
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and request.user.is_superuser==False:
         profile = Teacher.objects.get(user=request.user.id)
         courses = Course.objects.all().filter(teacher=profile)
         context = {
@@ -63,7 +67,12 @@ def teacher_profile(request):
             'courses': courses
             }
 
-    return render(request, 'pages/teacher_profile.html',context)
+        return render(request, 'pages/teacher_profile.html',context)
+
+    else:
+        return render(request, 'pages/teacher_profile.html')
+
+
 
 def student_profile(request):
     if request.user.is_authenticated:

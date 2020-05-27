@@ -10,29 +10,15 @@
                     <h2 class="course-title">Комплексні курси</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3 course-item">
+            <div class="row">{% for course in courses %}
+            <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/back-end.svg' %}" alt="Профессия Back-end разработчик"/>
+                        <img src="{{course.photo_main.url}}" alt="{{course.title}}"/>
                     </a>
                 </div>
-                <div class="col-md-3 course-item">
-                    <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/python.svg' %}" alt="Профессия Python разработчик"
-                        title="Профессия Python разработчик"/>
-                    </a>
-                </div>
-                <div class="col-md-3 course-item">
-                    <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/java.svg' %}" alt="Профессия Java разработчик" title="Профессия Java разработчик"/>
-                    </a>
-                </div>
-                <div class="col-md-3 course-item">
-                    <a href="{% url 'pages:course_page' %}">
-                        <img src="{% static 'img/unity.svg' %}" alt="Профессия Unity разработчик"
-                        title="Профессия Unity разработчик" />
-                    </a>
-                </div>
+            {% endfor %}
+                
+
             </div>
             <div class="row">
                 <div class="col-md-12 course-btn">

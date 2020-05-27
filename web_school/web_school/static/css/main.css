@@ -4539,12 +4539,14 @@ main .main-bg-color5 .blog-btn {
 main .main-bg-color5 .blog-btn :hover {
     text-decoration: none;
 }
-.img_blog{
-    display:block;
-    position:relative;
-    height:200px;
-    overflow:hidden;
+
+.img_blog {
+    display: block;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
 }
+
 main .main-bg-color5 .card-box {
     overflow: hidden;
     border: 1px solid #e3e3e3;
@@ -5242,7 +5244,7 @@ section {
 @media (min-width: 1500px) {
     .main-page .course {
         width: 28%;
-        margin-right: 8%;
+        margin-right: 0%;
         margin-bottom: 20px;
     }
     .main-page .course:nth-child(3n) {
