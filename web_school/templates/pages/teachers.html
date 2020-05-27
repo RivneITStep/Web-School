@@ -10,7 +10,10 @@
             <h1>Наші викладачі</h1>
           </div>
         </div>
-        <div class="row">{% for teacher in teachers %}
+        <div class="row">{% if teachers %}
+        
+        
+        {% for teacher in teachers %}
               <div class="col-md-4">
             <div class="card-content">
               <div class="card-img">{% if teacher.photo_main %}
@@ -56,6 +59,9 @@
             </div>
           </div>
           {% endfor %}
+          {% else %}
+            <h2 style='color:green;'>!!!SORRY COMMING SOON!!!</h2>
+        {% endif %}
               </div>
         <div class="row">
             <div class="col-md-3.offset-md-9 pagination pagination">
