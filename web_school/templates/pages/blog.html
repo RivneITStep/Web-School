@@ -22,10 +22,7 @@
                         <img src="{{img.photo_main.url}}" alt="">
                         {% else %}
                         {% endif %}
-                        
                         {% endfor %}
-                        
-                         
                         <div class="card-box-container">
                             <h4>{{blog.title}}</h4>
                             <p>{{blog.text_area}}</p>
@@ -37,14 +34,10 @@
                             </div>
                         </div>
                     </div>
-    
-    </a>
+                    </a>
                 </div>
            {% endfor %}
-            
             </div>
-
-           
                 <div class="row">
                 <div class="col-md-3.offset-md-9 pagination pagination">
                 {% if blog_list.has_other_pages %}
