@@ -13,10 +13,16 @@
         <div class="row">{% for teacher in teachers %}
               <div class="col-md-4">
             <div class="card-content">
-              <div class="card-img">
-                <img
+              <div class="card-img">{% if teacher.photo_main %}
+              <img
                   src="{{teacher.photo_main.url}}"
                   alt="" />
+              {% else %}
+              <img
+                  src="#"
+                  alt="" />
+              {% endif %}
+                
               </div>
               <div class="card-desc">
                 <h3>{{teacher.first_name}} {{teacher.last_name}}</h3>

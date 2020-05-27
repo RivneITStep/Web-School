@@ -8,7 +8,7 @@ from blog.models import Blog, Blog_Img
 
 def index(request):
     teacher = Teacher.objects.all()
-    blog_list = Blog.objects.filter(moderated=True).order_by('-pub_date')
+    blog_list = Blog.objects.filter(moderated=True).order_by('-pub_date')[:3]
     blog_img = Blog_Img.objects.all()
     return render(request, 'pages/index.html', context={'teachers':teacher,'blog_list':blog_list,'imges':blog_img})
 
