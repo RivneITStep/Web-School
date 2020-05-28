@@ -13,8 +13,8 @@
           
           {% else %}
           <button type="button" class="btn btn-primary"> <a href="{% url 'accounts:sign_in' %}">Вхід</a></button>
+          <button type="button" class="btn btn-secondary"><a href="{% url 'accounts:registration' %}">Реєстрація</a></button>
           {% endif %}
-            <button type="button" class="btn btn-secondary"><a href="{% url 'accounts:registration' %}">Реєстрація</a></button>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
             <a {% if 'testimonials' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:testimonials' %}"> Відгуки</a>
           </li>
           <li class="nav-item">
-            <a {% if 'blog' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:blog' %}"> Наш блог</a>
+            <a {% if 'blog' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'blog:blog' %}"> Наш блог</a>
           </li>
           <li class="nav-item">
             <a {% if 'teachers' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:teachers' %}"> Викладачі</a>
@@ -52,9 +52,13 @@
           <li class="nav-item">
             <a {% if 'contacts' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:contacts' %}"> Контакти</a>
           </li>{% if user.is_authenticated %}
-          {% if user.is_staff == True %}
+          {% if user.teacher %}
           <li class="nav-item">
-            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Особистий кабінет</a>
+            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Особистий кабінет викладача ({{user.email}})</a>
+          </li>
+          {% elif user.student %}
+          <li class="nav-item">
+            <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}">Особистий кабінет студента ({{user.email}})</a>
           </li>
           {% else %}
           <li class="nav-item">
@@ -64,12 +68,18 @@
           {% endif %}
           {% include 'parts/_alerts.html' %}
           <ul class="media">
+          {% if user.is_authenticated %}
             <li class="nav-item">
-              <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>
+              <button type="button" class="btn btn-primary"><a href="{% url 'accounts:sign_out' %}">Вихід</a></button>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary"><a href="{% url 'accounts:sign_in' %}">Вхід</a></button>
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-secondary">Реєстрація</button>
             </li>
+            {% endif %}
           </ul>
         </ul>
       </div>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% include "parts/_internal_header.html" %}
+
+<div class="container one_news">
+    <div class="row">
+        <div class="col-lg">
+            <h2>{{blog.title}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <div class="card-box">
+                <!-- <a href="#"> -->
+                <div class="image">
+                    <img src="{{img.photo_main.url}}" alt="">
+                </div>
+                <!-- </a> -->
+                <div class="card-box-container">
+                    <p>{{blog.text_area}}
+                    </p>
+                    <div class="card-box-item">
+                        <div>
+                            <span style='font-weight:bolder;'>Writed by: {{blog.author}}</span><br>
+                            <i class="fas fa-eye"></i>
+                            <span>{{blog.views}}</span>
+                        </div>
+                        <div class="date">
+                            <i class="far fa-clock"></i>
+                            <span>{{blog.pub_date}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

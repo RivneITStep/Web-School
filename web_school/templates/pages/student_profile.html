@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-{% include "parts/_internal_header.html" %}{% if user.is_authenticated %}{% if user.is_staff == False %}
+{% include "parts/_internal_header.html" %}{% if user.is_authenticated %}
 <div class="container-fluid profile_1">
     <div class="container">
         <div class="row title">
@@ -13,18 +13,16 @@
 </div>
 <div class="container profile_2">
     <div class="row">
-    {% for prof in profile %}
+   
         <div class="col-md-5">
             <div class="personal-info">
-                <div class="photo-box">{% if prof.photo_main %}
-                <img src="{{ prof.photo_main.url }}" alt="photo">
+                <div class="photo-box">{% if profile.photo_main %}
+                <img src="{{ profile.photo_main.url }}" alt="photo">
                 {% else %}
-                <img src="#" alt="photo">
+                <img src="{% static 'img/user.png' %}" alt="photo">
                 {% endif %}
-                
-                
                 </div>
-                <h4 class="name">{{prof.first_name}} {{prof.last_name}}</h4>
+                <h4 class="name">{{profile.first_name}} {{profile.last_name}}</h4>
                 <span>UI/UX Designer</span>
                 <ul class="personal_item">
                     <li class="personal_item_cont">
@@ -40,7 +38,7 @@
                         <span>оцінено завдань</span>
                     </li>
                 </ul>
-                <button class="btn--main edit_button" type="submit"><a href="{% url 'pages:edit' %}">Редагувати дані</a></button>
+                <button class="btn--main edit_button" type="submit"><a href="{% url 'pages:edit_student' %}">Редагувати дані</a></button>
             </div>
         </div>
         <div class="col-md-7">
@@ -59,11 +57,11 @@
                     <li class="finish_course">Курс "Java Script"</li>
                     <li class="soon_course">Курс "CSS"</li>
                 </ul>
-                <button class="btn--card"><a href="{% url 'pages:available_courses' %}">Переглянути всі досутпні курси</a></button>
+                <button class="btn--card"><a href="{% url 'courses:available_courses' %}">Переглянути всі досутпні курси</a></button>
             </div>
             <div>
                 <h4>Email :</h4>
-                <p>{{user.email}}</p>
+                <p>{{profile.email}}</p>
             </div>
             <div>
                 <h4>Соціальні мережі:</h4>
@@ -75,12 +73,9 @@
                 </ul>
             </div>
         </div>
-    {% endfor %}
+    
     </div>
 </div>
-{% else %}
-{% include "parts/_sign_in_h1.html" %}
-{% endif %}
 {% else %}
 {% include "parts/_sign_in_h1.html" %}
 {% endif %}

@@ -15,11 +15,11 @@ def sign_in(request):
             messages.success(request, "You are logged in")
             logged_in = True
             if user.is_staff == True:
-                messages.success(request, "Wellcome")
+                messages.success(request, "Wellcome Teacher")
 
                 return redirect('pages:teacher_profile')
             else:
-                messages.success(request, "Wellcome")
+                messages.success(request, "Wellcome Student")
 
                 return redirect('pages:student_profile')
 
@@ -38,9 +38,16 @@ def registration(request):
         email = request.POST['email']
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
+        if User.objects.filter(email=email).exists():
+            messages.error(request, "This e-mail allready taken")
+            return redirect('accounts:registration')
+        
+        if len(password) <= 6:
+            messages.warning(request,"Your password mast be longer than 6 simbols")
+            return redirect("accounts:registration")
         if staff == 'Я викладач':
                 staff = True
-                user = User.objects.create_user(username = email, email=email,password=password,is_staff=staff)
+                user = User.objects.create_user(username = email, email=email,password=password,is_staff=staff, first_name=first_name, last_name=last_name)
                 new_teacher = Teacher.objects.create(user=user, email=email, first_name=first_name, last_name=last_name)
                 new_teacher.save()
                 return redirect('accounts:sign_in')
@@ -50,9 +57,6 @@ def registration(request):
                 new_student = Student.objects.create(user=user, email=email, first_name=first_name, last_name=last_name)
                 new_student.save()
                 return redirect('accounts:sign_in')
-        if User.objects.filter(email=email).exists():
-            messages.error(request, "This e-mail allready taken")
-            return redirect('accounts:registration')
         else:
             return redirect('accounts:sign_in')
 

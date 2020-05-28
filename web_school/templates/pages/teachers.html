@@ -4,200 +4,69 @@
 {% include "parts/_internal_header.html" %}
 
 <section class="details-card">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1>Наші викладачі</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Наші викладачі</h2>
+      </div>
+    </div>
+    <div class="row">
+      {% if teachers %}
+      {% for teacher in teachers %}
+      <div class="col-md-4">
+          <div class="card-content">
               <div class="card-img">
-                <img
-                  src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                  alt="" />
+                  <img src="{% static 'img/user.png' %}" alt="">
               </div>
               <div class="card-desc">
-                <h3>Анастасія Українка</h3>
-                <h5>Викладач Web-school</h5>
-                <h4>Курс: HTML/CSS</h4>
-                <div class="icons d-flex justify-content-center">
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="toggle">
-                  <p class="hidden-text content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-                    natus facilis ipsam tempore, optio maxime pariatur dolor qui
-                    laudantium cum odio modi voluptas ad est porro cupiditate quo
-                    tempora repellat.
-                  </p>
-                  <button type="submit" class="btn--transparent toggler">
-                    Детальніше
-                  </button>
-                </div>
+                  <h3>{{teacher.first_name}} {{teacher.last_name}}</h3>
+                  <h5>Дещо про вчителя...</h5>
+                  <h4>Курс: <a href="{% url 'pages:courses' %}" target="_blank">{{teacher.courses}}</a></h4>
+                  <div class="icons d-flex justify-content-center">
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </div>
+                  <div class="toggle">
+                      <p class="hidden-text content">
+                      {% if teacher.body %}
+                          {{teacher.body}}
+                      {% else %}
+                        No info...
+                      {% endif %}
+                      </p>
+                      <button type="submit" class="btn--transparent toggler">
+                          Детальніше
+                      </button>
+                  </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-content">
-              <div class="card-img">
-                <img
-                  src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                  alt="" />
-              </div>
-              <div class="card-desc">
-                <h3>Анастасія Українка</h3>
-                <h5>Викладач Web-school</h5>
-                <h4>Курс: HTML/CSS</h4>
-                <div class="icons d-flex justify-content-center">
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="toggle">
-                  <p class="hidden-text content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-                    natus facilis ipsam tempore, optio maxime pariatur dolor qui
-                    laudantium cum odio modi voluptas ad est porro cupiditate quo
-                    tempora repellat.
-                  </p>
-                  <button type="submit" class="btn--transparent toggler">
-                    Детальніше
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-content">
-              <div class="card-img">
-                <img
-                  src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                  alt="" />
-              </div>
-              <div class="card-desc">
-                <h3>Анастасія Українка</h3>
-                <h5>Викладач Web-school</h5>
-                <h4>Курс: HTML/CSS</h4>
-                <div class="icons d-flex justify-content-center">
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="toggle">
-                  <p class="hidden-text content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-                    natus facilis ipsam tempore, optio maxime pariatur dolor qui
-                    laudantium cum odio modi voluptas ad est porro cupiditate quo
-                    tempora repellat.
-                  </p>
-                  <button type="submit" class="btn--transparent toggler">
-                    Детальніше
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card-content">
-              <div class="card-img">
-                <img
-                  src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                  alt="" />
-              </div>
-              <div class="card-desc">
-                <h3>Анастасія Українка</h3>
-                <h5>Викладач Web-school</h5>
-                <h4>Курс: HTML/CSS</h4>
-                <div class="icons d-flex justify-content-center">
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="toggle">
-                  <p class="hidden-text content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-                    natus facilis ipsam tempore, optio maxime pariatur dolor qui
-                    laudantium cum odio modi voluptas ad est porro cupiditate quo
-                    tempora repellat.
-                  </p>
-                  <button type="submit" class="btn--transparent toggler">
-                    Детальніше
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-content">
-              <div class="card-img">
-                <img
-                  src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                  alt="" />
-              </div>
-              <div class="card-desc">
-                <h3>Анастасія Українка</h3>
-                <h5>Викладач Web-school</h5>
-                <h4>Курс: HTML/CSS</h4>
-                <div class="icons d-flex justify-content-center">
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="toggle">
-                  <p class="hidden-text content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-                    natus facilis ipsam tempore, optio maxime pariatur dolor qui
-                    laudantium cum odio modi voluptas ad est porro cupiditate quo
-                    tempora repellat.
-                  </p>
-                  <button type="submit" class="btn--transparent toggler">
-                    Детальніше
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-content">
-              <div class="card-img">
-                <img
-                  src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                  alt="" />
-              </div>
-              <div class="card-desc">
-                <h3>Анастасія Українка</h3>
-                <h5>Викладач Web-school</h5>
-                <h4>Курс: HTML/CSS</h4>
-                <div class="icons d-flex justify-content-center">
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="toggle">
-                  <p class="hidden-text content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-                    natus facilis ipsam tempore, optio maxime pariatur dolor qui
-                    laudantium cum odio modi voluptas ad est porro cupiditate quo
-                    tempora repellat.
-                  </p>
-                  <button type="submit" class="btn--transparent toggler">
-                    Детальніше
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3.offset-md-9 pagination pagination">
-              <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
-              <a href="#" class="pagination-item">1</a>
-              <a href="#" class="pagination-item">2</a>
-              <a href="#" class="pagination-item">3</a>
-              <a href="#" class="pagination-item">4</a>
-              <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
-            </div>
           </div>
       </div>
-    </section>
+      {% endfor %}
+      {% else %}
+      <h2>No Teachers yet =(...</h2>
+      {% endif %}
+  </div>
+    <div class="row">
+      <div class="col-md-3.offset-md-9 pagination pagination">
+        {% if teachers.has_other_pages %}
+                {% if teachers.has_previous %}
+                <a href="?page={{ teachers.previous_page_number }}" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+                {% else %}
+                <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+                {% endif %}
+                    
+                    {% for numb in teachers.paginator.page_range %}
+                    <a href="?page={{ numb }}" class="pagination-item">{{numb}}</a>
+                    {% endfor %}
+                {% if teachers.has_next %}
+                    <a href="?page={{ teachers.next_page_number }}" class="pagination-item"><i class="fas fa-arrow-right"></i></a>                    
+                    {% else %}
+                    <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+                    {% endif %}
+                {% else %}
+                {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}

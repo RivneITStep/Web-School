@@ -2,31 +2,31 @@
 {% block content %}
 {% load static %}
 {% include "parts/_internal_header.html" %}
-{% if user.is_authenticated %}
-{% if user.is_staff == True %}
+{% if user.is_superuser %}
+{% include "parts/_sign_in_h1.html" %}
+{% elif user.is_authenticated %}
+
 <div class="container-fluid teacher_profile_1">
     <div class="container">
         <div class="row title">
             <div class="col-md-4">
                 <h2>Кабінет викладача</h2>
+                <a href='{% url "admin:index" %}'>Перейти до Адмін панелі</a>
             </div>
         </div>
     </div>
 </div>
 <div class="container teacher_profile_2">
     <div class="row">
-    {% for prof in profile %}
         <div class="col-md-5">
             <div class="personal-info">
-                <div class="photo-box">{% if prof.photo_main %}
-                <img src="{{ prof.photo_main.url }}" alt="photo">
+                <div class="photo-box">{% if profile.photo_main %}
+                <img src="{{ profile.photo_main.url }}" alt="photo">
                 {% else %}
-                <img src="#" alt="photo">
+                <img src="{% static 'img/user.png' %}" alt="photo">
                 {% endif %}
-                
-                
                 </div>
-                <h4 class="name">{{prof.first_name}} {{prof.last_name}}</h4>
+                <h4 class="name">{{profile.first_name}} {{profile.last_name}}</h4>
                 <span>UI/UX Designer</span>
                 <ul class="personal_item">
                     <li class="personal_item_cont">
@@ -42,21 +42,25 @@
                         <span>перевірено завдань</span>
                     </li>
                 </ul>
-                <button class="btn--main edit_button" type="submit"><a href="{% url 'pages:edit' %}">Редагувати дані</a></button>
+                <button class="btn--main edit_button" type="submit"><a href="{% url 'pages:edit_teacher' %}">Редагувати дані</a></button>
             </div>
         </div>
         <div class="col-md-7">
             <div>
                 <h4>Курси які ви ведете:</h4>
-                <ul>
-                    <li class="start_course">Курс "HTML5"</li>
-                    <li class="finish_course">Курс "Java Script"</li>
-                    <li class="soon_course">Курс "CSS"</li>
+                <ul>{% for course in courses %}
+                {% if course.avelable == True %}
+                <li class="start_course">Курс: "{{course.title}}"</li>
+                {% else %}
+                <li class="finish_course">Курс: "{{course.title}}"</li>
+                {% endif %}
+                {% endfor %}
+                    
                 </ul>
             </div>
             <div>
                 <h4>Email :</h4>
-                <p>{{user.email}}</p>
+                <p>{{profile.email}}</p>
             </div>
             <div>
                 <h4>Отримані відповіді до завдань:</h4>
@@ -110,13 +114,7 @@
                 </table>
             </div>
         </div>
-    {% endfor %}
     </div>
 </div>
-{% else %}
-{% include "parts/_sign_in_h1.html" %}
-{% endif %}
-{% else %}
-{% include "parts/_sign_in_h1.html" %}
 {% endif %}
 {% endblock content %}
