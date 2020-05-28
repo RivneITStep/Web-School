@@ -52,9 +52,13 @@
           <li class="nav-item">
             <a {% if 'contacts' in request.path %} class="nav-link active" {% endif %} class="nav-link" href="{% url 'pages:contacts' %}"> Контакти</a>
           </li>{% if user.is_authenticated %}
-          {% if user.is_staff == True %}
+          {% if user.teacher %}
           <li class="nav-item">
-            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Особистий кабінет</a>
+            <a class="nav-link active"class="nav-link" href="{% url 'pages:teacher_profile' %}"> Особистий кабінет викладача ({{user.email}})</a>
+          </li>
+          {% elif user.student %}
+          <li class="nav-item">
+            <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}">Особистий кабінет студента ({{user.email}})</a>
           </li>
           {% else %}
           <li class="nav-item">
@@ -64,12 +68,18 @@
           {% endif %}
           {% include 'parts/_alerts.html' %}
           <ul class="media">
+          {% if user.is_authenticated %}
             <li class="nav-item">
-              <button type="button" class="btn btn-primary"><a href="../signIn.html">Вхід</a></button>
+              <button type="button" class="btn btn-primary"><a href="{% url 'accounts:sign_out' %}">Вихід</a></button>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary"><a href="{% url 'accounts:sign_in' %}">Вхід</a></button>
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-secondary">Реєстрація</button>
             </li>
+            {% endif %}
           </ul>
         </ul>
       </div>
