@@ -1,17 +1,24 @@
 from django.shortcuts import render, redirect
 from accounts.models import Student, Teacher
 from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator
 from django.contrib import messages, auth
 from courses.models import Course, Lesson
-from blog.models import Blog, Blog_Img
+from blog.models import Blog, Blog_Img, Testimonials
 
 
 def index(request):
     teacher = Teacher.objects.all()
+    paginator = Paginator(teacher, 3)
+    page = request.GET.get("page")
+    teacher = paginator.get_page(page)
     blog_list = Blog.objects.filter(moderated=True).order_by('-pub_date')[:3]
     blog_img = Blog_Img.objects.all()
     courses = Course.objects.all()
-    return render(request, 'pages/index.html', context={'teachers':teacher,'blog_list':blog_list,'imges':blog_img,'courses':courses})
+    students = Student.objects.all()
+    testimonial_list = Testimonials.objects.all().order_by('-pub_date')[:3]
+
+    return render(request, 'pages/index.html', context={'teachers':teacher,'blog_list':blog_list,'imges':blog_img,'courses':courses,'students':students,'testimonials':testimonial_list})
 
 
 def about(request):
@@ -21,7 +28,9 @@ def about(request):
 
 def courses(request):
     courses = Course.objects.all()
-    
+    paginator = Paginator(courses, 2)
+    page = request.GET.get("page")
+    courses = paginator.get_page(page)
     return render(request, 'pages/courses.html',context={
         'courses':courses
     })
@@ -40,8 +49,31 @@ def teachers(request):
 
 
 def testimonials(request):
-    
-    return render(request, 'pages/testimonials.html')
+    if request.method == 'POST':
+        text_area = request.POST['text_area']
+        author_id = request.POST['author_id']
+        teacher_id = request.POST['teacher_id']
+        course_id = request.POST['course_id']
+        student_id = request.POST['student_id']
+        new_testimonial = Testimonials.objects.create(text_area=text_area,author_id=author_id,teacher_id=teacher_id,course_id=course_id,student_id=student_id)
+        messages.success(request,'Your testimonial will be published after moderation!')
+        new_testimonial.save()
+        return redirect('pages:testimonials')
+    courses = Course.objects.all().order_by("title")
+    students = Student.objects.all()
+    teachers = Teacher.objects.all()
+    testimonial_list = Testimonials.objects.all().order_by('-pub_date')
+    paginator = Paginator(testimonial_list, 3)
+    page = request.GET.get("page")
+    testimonial_list = paginator.get_page(page)
+    context={
+        "teachers":teachers,
+        "courses":courses,
+        'testimonial_list':testimonial_list,
+        'students': students
+    }
+    return render(request, 'pages/testimonials.html',context)
+
 
 
 def course_page(request):
@@ -49,14 +81,18 @@ def course_page(request):
     return render(request, 'pages/course_page.html')
 
 
+
 def price(request):
     
     return render(request, 'pages/price.html')
+
 
     
 def payment(request):
     
     return render(request, 'pages/payment.html')
+
+
     
 def teacher_profile(request):
     if request.user.is_authenticated and request.user.is_superuser==False:
@@ -89,6 +125,7 @@ def student_profile(request):
 def available_courses(request):
     
     return render(request, 'pages/available_courses.html')
+
 
 
 def edit_student(request):
@@ -124,6 +161,7 @@ def edit_student(request):
             'profile': profile
         }
     return render(request, 'pages/edit.html',context)
+
 
 
 def edit_teacher(request):
@@ -183,6 +221,7 @@ def edit_photo(request):
     return render(request, 'pages/edit.html')
     
     
+
 def edit_profile(request):
     if request.method == "POST":
         pass

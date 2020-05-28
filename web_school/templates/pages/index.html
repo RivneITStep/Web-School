@@ -11,13 +11,13 @@
                 </div>
             </div>
             <div class="row">{% for course in courses %}
-            <div class="col-md-3 course-item">
+                <div class="col-md-3 course-item">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{{course.photo_main.url}}" alt="{{course.title}}"/>
+                        <img src="{{course.photo_main.url}}" alt="{{course.title}}" />
                     </a>
                 </div>
-            {% endfor %}
-                
+                {% endfor %}
+
 
             </div>
             <div class="row">
@@ -52,10 +52,11 @@
                             </div>
                             <div class="toggle">
                                 <p class="hidden-text content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-                                    natus facilis ipsam tempore, optio maxime pariatur dolor qui
-                                    laudantium cum odio modi voluptas ad est porro cupiditate quo
-                                    tempora repellat.
+                                {% if teacher.body %}
+                                {{teacher.body}}
+                                {% else %}
+                                No info...
+                                {% endif %}
                                 </p>
                                 <button type="submit" class="btn--transparent toggler">
                                     Детальніше
@@ -84,72 +85,43 @@
                 </div>
             </div>
             <div class="row">
+                {% if testimonials %}
+                {% for testimonial in testimonials %}
                 <div class="testimonials-item">
                     <div class="col-md">
                         <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                                alt="" />
+                        {% for student in students %}
+                        {% if student.id == testimonial.student_id %}
+                        {% if student.photo_main %}
+                        <img src="{{student.photo_main.url}}" alt="photo">
+                        {% else %}
+                        <img src="{% static 'img/user.png' %}" alt="photo">
+                        {% endif %}
+                        {% else %}
+                        <img src="{% static 'img/user.png' %}" alt="photo">
+
+                        {% endif %}
+                        
+                        {% endfor %}
+                            
                         </div>
-                        <h3>Мар'яна Лорем</h3>
-                        <p class="course"><span>Курс: </span>HTML</p>
-                        <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
-                        <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
-                            просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
-                            навіть я
-                            б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
-                            до
-                            своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
+                        <h3>{{testimonial.author_id}}</h3>
+                        <p class="course"><span>Курс: </span>{{testimonial.course_id}}</p>
+                        <p class='teacher'><span>Викладач: </span>{{testimonial.teacher_id}}</p>
+                        <p>
+                        {{testimonial.text_area}}
                         </p>
                         <div class="data">
                             <i class="far fa-clock"></i>
-                            <p>25.04.2020</p>
+                            <p>{{testimonial.pub_date}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonials-item">
-                    <div class="col-md">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                                alt="" />
-                        </div>
-                        <h3>Мар'яна Лорем</h3>
-                        <p class="course"><span>Курс: </span>HTML</p>
-                        <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
-                        <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
-                            просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
-                            навіть я
-                            б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
-                            до
-                            своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
-                        </p>
-                        <div class="data">
-                            <i class="far fa-clock"></i>
-                            <p>25.04.2020</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonials-item">
-                    <div class="col-md">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                                alt="" />
-                        </div>
-                        <h3>Мар'яна Лорем</h3>
-                        <p class="course"><span>Курс: </span>HTML</p>
-                        <p class='teacher'><span>Викладач: </span>Іванов Іван Іванович</p>
-                        <p>Успішно пройшла я курс по . Наставляв мій темний і ще не обізнаний розум шикарний викладач, і
-                            просто хороша людина – Іванов Іван Іванович. Із ним, складні речі ставалими простішими,
-                            навіть я
-                            б сказав, до сміху простими. Індивідуальний підхід до кожного із учнів, самовіддача і любов
-                            до
-                            своєї роботи. Підтримка у позаурочний час, завжди щось підкаже і розкаже.
-                        </p>
-                        <div class="data">
-                            <i class="far fa-clock"></i>
-                            <p>25.04.2020</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+
+                {% else %}
+                {% endif %}
+
             </div>
             <div class="row">
                 <div class="col-md-12 testimonials-btn">

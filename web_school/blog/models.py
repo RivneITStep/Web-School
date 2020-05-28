@@ -21,3 +21,13 @@ class Blog_Img(models.Model):
 
     def __str__(self):
         return self.blog_id.title
+
+
+class Testimonials(models.Model):
+    text_area = models.TextField(blank=True)
+    pub_date = models.DateTimeField(default=datetime.now, blank=True)
+    moderated = models.BooleanField(default=True)
+    author_id = models.CharField(max_length=100)
+    teacher_id = models.CharField(max_length=100)
+    course_id = models.CharField(max_length=100)
+    student_id = models.IntegerField(blank=True)

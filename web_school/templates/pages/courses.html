@@ -33,13 +33,24 @@
       </div>
       <div class="row">
         <div class="col-md-3.offset-md-9 pagination pagination">
-          <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
-          <a href="#" class="pagination-item">1</a>
-          <a href="#" class="pagination-item">2</a>
-          <a href="#" class="pagination-item">3</a>
-          <a href="#" class="pagination-item">4</a>
-          <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
-        </div>
+          {% if courses.has_other_pages %}
+                {% if courses.has_previous %}
+                <a href="?page={{ courses.previous_page_number }}" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+                {% else %}
+                <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+                {% endif %}
+                    
+                    {% for numb in courses.paginator.page_range %}
+                    <a href="?page={{ numb }}" class="pagination-item">{{numb}}</a>
+                    {% endfor %}
+                {% if courses.has_next %}
+                    <a href="?page={{ courses.next_page_number }}" class="pagination-item"><i class="fas fa-arrow-right"></i></a>                    
+                    {% else %}
+                    <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+                    {% endif %}
+                {% else %}
+                {% endif %}
+          </div>
       </div>
     </div>
 {% endblock content %}

@@ -28,10 +28,11 @@
                   </div>
                   <div class="toggle">
                       <p class="hidden-text content">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-                          natus facilis ipsam tempore, optio maxime pariatur dolor qui
-                          laudantium cum odio modi voluptas ad est porro cupiditate quo
-                          tempora repellat.
+                      {% if teacher.body %}
+                          {{teacher.body}}
+                      {% else %}
+                        No info...
+                      {% endif %}
                       </p>
                       <button type="submit" class="btn--transparent toggler">
                           Детальніше
@@ -47,12 +48,23 @@
   </div>
     <div class="row">
       <div class="col-md-3.offset-md-9 pagination pagination">
-        <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
-        <a href="#" class="pagination-item">1</a>
-        <a href="#" class="pagination-item">2</a>
-        <a href="#" class="pagination-item">3</a>
-        <a href="#" class="pagination-item">4</a>
-        <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+        {% if teachers.has_other_pages %}
+                {% if teachers.has_previous %}
+                <a href="?page={{ teachers.previous_page_number }}" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+                {% else %}
+                <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+                {% endif %}
+                    
+                    {% for numb in teachers.paginator.page_range %}
+                    <a href="?page={{ numb }}" class="pagination-item">{{numb}}</a>
+                    {% endfor %}
+                {% if teachers.has_next %}
+                    <a href="?page={{ teachers.next_page_number }}" class="pagination-item"><i class="fas fa-arrow-right"></i></a>                    
+                    {% else %}
+                    <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+                    {% endif %}
+                {% else %}
+                {% endif %}
       </div>
     </div>
   </div>
