@@ -4453,6 +4453,10 @@ main .main-bg-color3 .testimonials-btn {
     text-align: center;
 }
 
+.testimonial_text_area{
+    text-align:justify;
+}
+
 main .main-bg-color3 .testimonials-btn .btn--main:hover {
     color: #fff;
     text-decoration: none;
@@ -4467,6 +4471,19 @@ main .main-bg-color4 h2,
 main .main-bg-color4 p {
     text-align: center;
     color: #494d55;
+}
+
+.t_item{
+    margin:0 15px;
+}
+
+/* .row.testimonial_data{
+    position:relative;
+} */
+
+.index.testimonial_text_area{
+    position:relative;
+    min-height:250px;
 }
 
 main .main-bg-color4 .price-item {
@@ -4540,11 +4557,28 @@ main .main-bg-color5 .blog-btn :hover {
     text-decoration: none;
 }
 
+.blog_text_area{
+    text-align:justify;
+    height:190px;
+    overflow:hidden;
+}
+
+/* .blog_text_area::after{
+    content:"...";
+    overflow:visible;
+} */
 .img_blog {
     display: block;
     position: relative;
     height: 200px;
+    width:100%;
     overflow: hidden;
+}
+
+.img_blog img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 main .main-bg-color5 .card-box {
@@ -4958,8 +4992,8 @@ section {
 
 .card-img img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card-desc {
@@ -5082,11 +5116,16 @@ section {
         margin-bottom: 65px;
     }
 }
-
+/* ----------------------------courses----------------------------- */
 .allCourses {
     margin-top: 50px;
     margin-bottom: 30px;
     padding-bottom: 55px;
+}
+main .allCourses {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
 }
 
 .allCourses .row:nth-child(1) {
@@ -5094,11 +5133,18 @@ section {
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
 }
 
+main .allCourses .row:nth-child(1) {
+    border-bottom:none;
+}
+
 .allCourses h2 {
     margin-top: 55px;
 }
+main .allCourses h2 {
+    margin-top:0px;
+}
 
-.allCourses span {
+.allCourses span{
     color: #494d55;
 }
 
@@ -5118,7 +5164,7 @@ section {
     color: #3eddf7;
 }
 
-.allCourses .course .button-on-course {
+.allCourses .course .button-on-course{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -5191,11 +5237,15 @@ section {
 
 .allCourses .course .course-img {
     position: relative;
+    height:170px;
+    overflow:hidden;
+    border: 3px solid #494d55;
 }
 
 .allCourses .course .course-img img {
+    object-fit: cover;
+    height: 100%;
     width: 100%;
-    border: 3px solid #494d55;
 }
 
 .allCourses .pagination {
@@ -5337,9 +5387,9 @@ section {
     line-height: 24px;
 }
 
-.blog .card-box img {
+/* .blog .card-box img {
     max-width: 100%;
-}
+} */
 
 .blog .card-box .card-box-container {
     padding: 10px 15px;

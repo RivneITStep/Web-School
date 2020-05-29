@@ -4,53 +4,53 @@
 {% include "parts/_internal_header.html" %}
 
 <div class="container allCourses">
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Комплексні курси</h2>
-        </div>
-      </div>
-      <div class="row main-page">
-      {% if courses %}
-      {% for course in courses %}
-        <div class="col-md-4 course">
-          <a href="{% url 'pages:course_page' %}">
-            <div class="course-img">
-              <img src="{{course.photo_main.url}}" alt="Профессия Back-end разработчик" title="{{course.title}}" />
-              <a href="#">
-                <div class="button-tag online"># Онлайн</div>
-              </a>
-              <div class="button-on-course"><i class="fas fa-play"></i></div>
-            </div>
-            <span class="title_course">Професія {{course.title}} розробник</span>
-          </a><br />
-          <span class="time-start"><b>Старт:</b> 23 января 2020<br /><b>Рівень:</b> середній
-            <i class="fas fa-space-shuttle"></i></span>
-        </div>
-        {% endfor %}
-      {% else %}
-      <h2>NO COURSES AVALABLE NOW!</h2>
-      {% endif %}
-      </div>
-      <div class="row">
-        <div class="col-md-3.offset-md-9 pagination pagination">
-          {% if courses.has_other_pages %}
-                {% if courses.has_previous %}
-                <a href="?page={{ courses.previous_page_number }}" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
-                {% else %}
-                <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
-                {% endif %}
-                    
-                    {% for numb in courses.paginator.page_range %}
-                    <a href="?page={{ numb }}" class="pagination-item">{{numb}}</a>
-                    {% endfor %}
-                {% if courses.has_next %}
-                    <a href="?page={{ courses.next_page_number }}" class="pagination-item"><i class="fas fa-arrow-right"></i></a>                    
-                    {% else %}
-                    <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
-                    {% endif %}
-                {% else %}
-                {% endif %}
-          </div>
-      </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Комплексні курси</h2>
     </div>
+  </div>
+  <div class="row main-page ">
+    {% if courses %}
+    {% for course in courses %}
+    <div class="col-md-4 course">
+      <a href="{% url 'pages:course_page' %}">
+        <div class="course-img">
+          <img src="{{course.photo_main.url}}" alt="Профессия Back-end разработчик" title="{{course.title}}" />
+          <a href="#">
+            <div class="button-tag online"># Онлайн</div>
+          </a>
+          <div class="button-on-course"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="title_course">Професія {{course.title}} розробник</span>
+      </a><br />
+      <span class="time-start"><b>Старт:</b> 23 января 2020<br /><b>Рівень:</b> середній
+        <i class="fas fa-space-shuttle"></i></span>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h2>NO COURSES AVALABLE NOW!</h2>
+    {% endif %}
+  </div>
+  <div class="row">
+    <div class="col-md-3.offset-md-9 pagination pagination">
+      {% if courses.has_other_pages %}
+      {% if courses.has_previous %}
+      <a href="?page={{ courses.previous_page_number }}" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+      {% else %}
+      <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+      {% endif %}
+
+      {% for numb in courses.paginator.page_range %}
+      <a href="?page={{ numb }}" class="pagination-item">{{numb}}</a>
+      {% endfor %}
+      {% if courses.has_next %}
+      <a href="?page={{ courses.next_page_number }}" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+      {% else %}
+      <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+      {% endif %}
+      {% else %}
+      {% endif %}
+    </div>
+  </div>
+</div>
 {% endblock content %}
