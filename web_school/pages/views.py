@@ -3,7 +3,7 @@ from accounts.models import Student, Teacher
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages, auth
-from courses.models import Course, Lesson
+from courses.models import Course, Lesson, Task
 from blog.models import Blog, Blog_Img, Testimonials
 
 
@@ -95,12 +95,16 @@ def payment(request):
 
     
 def teacher_profile(request):
-    if request.user.is_authenticated and request.user.is_superuser==False:
-        profile = Teacher.objects.get(user=request.user.id)
+    if request.user.is_authenticated:
+        profile = Teacher.objects.get(user=request.user)
         courses = Course.objects.all().filter(teacher=profile)
+        lessons = Lesson.objects.all().filter(course=courses)
+        tasks = Task.objects.all().filter(ready_for_check = True)
         context = {
             'profile': profile,
-            'courses': courses
+            'courses': courses,
+            'tasks':tasks,
+            'lessons':lessons
             }
 
         return render(request, 'pages/teacher_profile.html',context)
@@ -225,3 +229,18 @@ def edit_photo(request):
 def edit_profile(request):
     if request.method == "POST":
         pass
+
+
+
+def wrong(request,task_id):
+    wrong_task = Task.objects.get(id=task_id)
+    wrong_task.ready_for_check = False
+    wrong_task.save()
+    return redirect('pages:teacher_profile')
+
+
+def success(request,task_id):
+    success_task = Task.objects.get(id=task_id)
+    success_task.checked = True
+    success_task.save()
+    return redirect('pages:teacher_profile')

@@ -30,11 +30,11 @@
                 <span>UI/UX Designer</span>
                 <ul class="personal_item">
                     <li class="personal_item_cont">
-                        <p>12</p>
+                        <p>{{courses.count}}</p>
                         <span>курсів</span>
                     </li>
                     <li class="personal_item_cont">
-                        <p>11</p>
+                        <p>{{tasks.teacher.count}}</p>
                         <span>отримано відповідей до завдань</span>
                     </li>
                     <li class="personal_item_cont">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="col-md-7">
-            <div>
+            <div>{% if courses %}
                 <h4>Курси які ви ведете:</h4>
                 <ul>{% for course in courses %}
                 {% if course.avelable == True %}
@@ -55,8 +55,10 @@
                 <li class="finish_course">Курс: "{{course.title}}"</li>
                 {% endif %}
                 {% endfor %}
-                    
                 </ul>
+                {% else %}
+                {% endif %}
+
             </div>
             <div>
                 <h4>Email :</h4>
@@ -71,46 +73,23 @@
                         <th>Відповідь</th>
                         <th>Виконано</th>
                     </tr>
+                    {% if tasks %}
+                    
+                    {% for task in tasks %}
+                    {% if task.teacher == user.teacher %}
                     <tr>
-                        <td>HTML</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt
-                            excepturi
-                            illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo.
-                            Velit
-                            reprehenderit animi.</td>
-                        <td><a href="#">Завантажити</a></td>
-                        <td><input type="checkbox" checked></td>
+                        <td>{{task.lesson}}</td>
+                        <td>{{task.question}}</td>
+                        <td><a href="http://{{task.answer}}">Перевірити відповідь</a></td>
+                        <td><a href='{% url "pages:success" task.id %}'>Так</a> / <a href='{% url "pages:wrong" task.id %}'>Ні</a></td>
                     </tr>
-                    <tr>
-                        <td>HTML</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt
-                            excepturi
-                            illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo.
-                            Velit
-                            reprehenderit animi.</td>
-                        <td><a href="#">Завантажити</a></td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                        <td>HTML</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt
-                            excepturi
-                            illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo.
-                            Velit
-                            reprehenderit animi.</td>
-                        <td><a href="#">Завантажити</a></td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                        <td>HTML</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat nesciunt
-                            excepturi
-                            illum nostrum, reprehenderit ducimus, sit mollitia voluptas, ad accusamus veritatis quo.
-                            Velit
-                            reprehenderit animi.</td>
-                        <td><a href="#">Завантажити</a></td>
-                        <td><input type="checkbox"></td>
-                    </tr>
+                    {% else %}
+                    {% endif %}
+                    {% endfor %}
+                    {% else %}
+                        <td>Завдань на перевірку не виявлено!</td>
+                    {% endif %}
+                    
                 </table>
             </div>
         </div>

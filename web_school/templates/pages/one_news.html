@@ -13,9 +13,14 @@
         <div class="col-md">
             <div class="card-box">
                 <!-- <a href="#"> -->
-                <div class="image">
-                    <img src="{{img.photo_main.url}}" alt="">
-                </div>
+                {% for img in imges %}
+                        {% if img.blog_id == blog %}
+                        <div class="img_blog">
+                            <img src="{{img.photo_main.url}}" alt="">
+                        </div>
+                        {% else %}
+                        {% endif %}
+                        {% endfor %}
                 <!-- </a> -->
                 <div class="card-box-container">
                     <p>{{blog.text_area}}

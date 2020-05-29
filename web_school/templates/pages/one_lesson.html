@@ -82,9 +82,11 @@
             </div>
         </div>
         {% if user.student.paid_access == True %}
+        {% if tasks %}
         {% for task in tasks %}
-        {% if task.lesson == less %}
-                <div class="row home_work">
+        {% if task.lesson.id == less.id %}
+        {% if task.avelable == True %}
+                        <div class="row home_work">
             <div class="col">
                 <h2>{{task.title}}</h2>
             </div>
@@ -92,27 +94,35 @@
         <div class="row">
             <div class="col homework ">
                 <p>{{task.question}}</p>
-                <form action="" method="post">
-
-                    <textarea name="one-lesson" id="message" placeholder="Ваша відповідь"></textarea>
-                    <div><button type="submit" class="btn--transparent">Додати файли</button>
-
-                        <p>*максимальний розмір файлу 100мб</p>
-                    </div>
-                    <div class="send_file">
-                        <a href="#"> Зберегти
-                            чернетку</a>
+                <form action="{% url 'courses:one_lesson' less.id %}" method="POST">
+                    {% csrf_token %}
+                    {% if task.ready_for_check == True and task.checked == True %}
+                    <input class="form-control" type="text" style='background-color:lightgreen;' placeholder="{{task.answer}} <----- Здано!" readonly>
+                    {% elif task.ready_for_check == True and task.checked == False %}
+                    <input class="form-control" type="text" style='background-color:lightyellow;' placeholder="{{task.answer}} <----- На перевірці!" readonly>
+                    {% else %}
+                    <textarea name="student_answer" id="message" placeholder="Ваша відповідь"></textarea>
+                    <div class="send_file"><br>
                         <button type="submit" class="btn--main">Відправити відповідь</button>
                     </div>
+                    {% endif %}
+                    <input type='hidden' name='task_id' value={{task.id}} >
+                    
                 </form>
             </div>
         </div>
         {% else %}
         <h2>Перевіряємо ваше попереднє завдання!</h2>
         {% endif %}
+
+        {% else %}
+        {% endif %}
         {% endfor %}
         {% else %}
-        <h2>Для отримання доступу до домашніх завданнь потрібно оплатити курс навчання!</h2>
+        <h2>Немає доступних завдань!</h2>
+        {% endif %}
+        {% else %}
+        <h2>Для отримання доступу до домашніх завдань потрібно оплатити курс навчання!</h2>
         {% endif %}
 
     {% endfor %}

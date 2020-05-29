@@ -18,7 +18,7 @@ def blog(request):
 
 def single_blog(request,blog_id):
     blog = Blog.objects.get(pk=blog_id)
-    blog_img = Blog_Img.objects.get(blog_id=blog_id)
+    blog_img = Blog_Img.objects.all()
     blog.views = blog.views + 1
     blog.save()
-    return render(request, 'pages/one_news.html',context={'blog':blog,'img':blog_img})
+    return render(request, 'pages/one_news.html',context={'blog':blog,'imges':blog_img})
