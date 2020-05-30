@@ -4901,7 +4901,7 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     main .testimonials-item{
         height:95%;
     }
-    main .card-content button{
+    .card-content button{
         left:5%;
     }
 }
@@ -4916,7 +4916,7 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     border-bottom:none;
 }
 
-.main-bg-color2.details-card .card-desc{
+.details-card .card-desc{
     position:relative;
     min-height:100%;
 }
@@ -5355,7 +5355,7 @@ main .allCourses h2 {
         position:relative;
         min-height:350px;
     }
-    .main-bg-color5 h4{
+    .card-box-container h4{
         display:block;
         position:relative;
         height:60px;
@@ -5367,7 +5367,7 @@ main .allCourses h2 {
         position:relative;
         min-height:auto;
     }
-    .main-bg-color5 .blog_text_area{
+    .card-box-container .blog_text_area{
         position:relative;
         height:auto;
     }
@@ -5924,6 +5924,13 @@ main .allCourses h2 {
 }
 
 @media (max-width: 576px) {
+    /* .testimonials .card-img img{
+        height:10%;
+    } */
+    .testimonials .card-img {
+        height:50px;
+        width:50px;
+    }
     .why .row:nth-child(1) .col-lg-4:nth-child(1),
     .why .row:nth-child(1) .col-lg-4:nth-child(2),
     .why .row:nth-child(2) .col-lg-4:nth-child(1),

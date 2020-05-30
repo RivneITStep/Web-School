@@ -12,7 +12,7 @@
   <div class="row main-page ">
     {% if courses %}
     {% for course in courses %}
-    <div class="col-md-4 course">
+    <div class="col-lg-4 col-md-4 col-sm-12 course">
       <a href="{% url 'pages:course_page' %}">
         <div class="course-img">
           <img src="{{course.photo_main.url}}" alt="Профессия Back-end разработчик" title="{{course.title}}" />
