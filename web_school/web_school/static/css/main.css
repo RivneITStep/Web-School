@@ -27,27 +27,36 @@ html {
 }
 
 @media (min-width: 576px) {
-    .container {
+    /* .container {
         max-width: 540px;
-    }
+    } */
 }
 
 @media (min-width: 768px) {
-    .container {
+    /* .container {
         max-width: 720px;
-    }
+    } */
 }
 
 @media (min-width: 992px) {
-    .container {
+    /* .container {
         max-width: 960px;
-    }
+    } */
 }
 
 @media (min-width: 1200px) {
-    .container {
+    /* .container {
         max-width: 1140px;
+    } */
+}
+@media (max-width: 1200px) {
+    main .testimonials-item{
+        height:95%;
     }
+    /* .index.data{
+        position:relative;
+        margin-top:5%;
+    } */
 }
 
 .container-fluid {
@@ -4267,6 +4276,9 @@ body header .navigate .nav .media .nav-item button a {
         line-height: 21px;
         margin: 12px 0;
     }
+    .card-content button{
+        margin-left:25%;
+    }
 }
 
 footer {
@@ -4425,9 +4437,8 @@ main .main-bg-color3 .testimonials-title {
 }
 
 main .main-bg-color3 .testimonials-item {
-    padding: 0;
-    margin: 15px;
-    width: 30%;
+    padding: 10px;
+    margin-bottom:20px;
 }
 
 main .main-bg-color3 .testimonials-item .card-img {
@@ -4483,7 +4494,7 @@ main .main-bg-color4 p {
 
 .index.testimonial_text_area{
     position:relative;
-    min-height:250px;
+    min-height:270px;
 }
 
 main .main-bg-color4 .price-item {
@@ -4655,7 +4666,9 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item span {
 main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     color: #6e6e6e;
 }
-
+.card-box-item *{
+    display:inline-block;
+}
 .aboutSection {
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 15px;
@@ -4877,6 +4890,20 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     .testimonials-item {
         margin-top: 10px;
     }
+    main .testimonials-item .teacher{
+        margin-left:0;
+    }
+    main .testimonials-item img{
+        margin-left:auto;
+        margin-right:auto;
+        left:0;
+    }
+    main .testimonials-item{
+        height:95%;
+    }
+    main .card-content button{
+        left:5%;
+    }
 }
 
 .details-card .row:nth-child(1) {
@@ -4890,8 +4917,8 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item i {
 }
 
 .main-bg-color2.details-card .card-desc{
-    min-height:250px;
-    vertical-align:bottom;
+    position:relative;
+    min-height:100%;
 }
 
 .details-card button {
@@ -4981,6 +5008,7 @@ section {
     border: 4px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     margin-bottom: 20px;
+    min-height:100%;
 }
 
 .card-img {
@@ -5311,17 +5339,39 @@ main .allCourses h2 {
     }
 }
 
-@media (max-width: 950px) and (min-width: 601px) {
+@media (max-width: 992px) {
     .allCourses .course {
         width: 45%;
-        margin-right: 10%;
+        /* margin-right: 10%; */
         margin-bottom: 20px;
     }
     .main-page .course:nth-child(2n) {
         margin-right: 0;
     }
-}
+    .details-card button{
+        left:0;
+    }
+    .index.testimonial_text_area{
+        position:relative;
+        min-height:350px;
+    }
+    .main-bg-color5 h4{
+        display:block;
+        position:relative;
+        height:60px;
+    }
 
+}
+@media (max-width: 767px) {
+    .index.testimonial_text_area{
+        position:relative;
+        min-height:auto;
+    }
+    .main-bg-color5 .blog_text_area{
+        position:relative;
+        height:auto;
+    }
+}
 @media (max-width: 600px) {
     .main-page {
         justify-content: center;
@@ -5865,6 +5915,12 @@ main .allCourses h2 {
     .container-fluid.career_3 {
         height: auto;
     }
+    .card-content button{
+        margin-left:25%;
+    }
+    .details-card .col-sm-12{
+        margin-bottom:20px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -6232,7 +6288,7 @@ select {
     text-decoration: none;
 }
 
-.edit-item .personal-info {
+.edit-item .col-md-4 {
     border-right: 1.5px solid rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 5px 16px;
@@ -6287,7 +6343,7 @@ select {
     list-style-type: none;
     display: block;
     text-align: center;
-    padding: 0 25px;
+    padding: 0 0px;
 }
 
 .edit-item .personal-info .personal_item .personal_item_cont:nth-child(2) {
@@ -6365,7 +6421,7 @@ select {
 @media (max-width: 992px) {
     .edit {
         padding: 0;
-        margin: 40px 0;
+        /* margin: 40px 0; */
     }
     .edit-item .personal-info {
         padding: 5px 10px;
@@ -6409,6 +6465,9 @@ select {
         -webkit-transform: scale(2);
         transform: scale(2);
         padding: 0;
+    }
+    .edit-item *{
+        border-right:none;
     }
     .edit-item .basic-info .btn-box {
         display: block;
@@ -7056,6 +7115,9 @@ select {
     .profile_2 .personal-info .photo-box img {
         -webkit-transform: scale(1.8);
         transform: scale(1.8);
+    }
+    .edit-item .col-md-4{
+        border-right:none;
     }
 }
 
