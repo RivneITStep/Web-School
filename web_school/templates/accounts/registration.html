@@ -2,50 +2,53 @@
 {% block content %}
 {% include "parts/_internal_header.html" %}
 {% load static %}
-<div class="registration">
-    <section class="title">
-        <div class="title-container">
-            <h1 class="title-heading">зареєструвати особистий кабінет</h1>
-            <span class="title-sub-heading ">
-                Особистий кабінет потрібен Вам для того, щоб мати можливість відправити заявку на вакансію,
-                зареєструватись на курси або сертифікацію, слідкувати за статусом своєї заявки, а також задавати питання
-                викладачам
-            </span>
-        </div>
-    </section>
-    <div class="registration-form">
-        <form action="{% url 'accounts:registration' %}" method="POST">
-        {% csrf_token %}
-            <div class="field-container">
-                <select name= 'stuff'>
-                    <option>Я викладач</option>
-                    <option>Я студент</option>
-                </select>
+<div class="container-fluid registration">
+    <div class='container'>
+        <section class="title">
+            <div class="title-container">
+                <h1 class="title-heading">зареєструвати особистий кабінет</h1>
+                <span class="title-sub-heading ">
+                    Особистий кабінет потрібен Вам для того, щоб мати можливість
+                    зареєструватись на курси , слідкувати за статусом своєї заявки, а також задавати
+                    питання
+                    викладачам
+                </span>
             </div>
-            <div class="field-container">
-                <input type="text" name="first_name" placeholder="Ваше ім'я*" class="">
-            </div>
-            <div class="field-container">
-                <input type="text" name="last_name" placeholder="Ваше прізвище*" class="">
-            </div>
-            <div class="field-container">
-                <input type="email" name="email" placeholder="Електронна адреса*" class="">
-                <input type="hidden" name="username">
-            </div>
-            <div class="field-container">
-                <input type="password" name='password' placeholder="Пароль*" class="">
-            </div>
-            <div class="field-container">
-                <input type="password" name='confirm_password' placeholder="Підтвердити пароль*" class="">
-            </div>
-            <div class="registration-form-button">
-                <button type="submit" class="btn--main">Створити профіль</button>
-            </div>
-        </form>
-        <div class="t-center">
-            <div class="social">
-                <div class="have-account">Вже зареєстровані?
-                    <a href="../signIn.html">Вхід</a>
+        </section>
+        <div class="registration-form">
+            <form action="{% url 'accounts:registration' %}" method="POST">
+                {% csrf_token %}
+                <div class="field-container">
+                    <select name='stuff'>
+                        <option>Я викладач</option>
+                        <option>Я студент</option>
+                    </select>
+                </div>
+                <div class="field-container">
+                    <input type="text" name="first_name" placeholder="Ваше ім'я*" class="">
+                </div>
+                <div class="field-container">
+                    <input type="text" name="last_name" placeholder="Ваше прізвище*" class="">
+                </div>
+                <div class="field-container">
+                    <input type="email" name="email" placeholder="Електронна адреса*" class="">
+                    <input type="hidden" name="username">
+                </div>
+                <div class="field-container">
+                    <input type="password" name='password' placeholder="Пароль*" class="">
+                </div>
+                <div class="field-container">
+                    <input type="password" name='confirm_password' placeholder="Підтвердити пароль*" class="">
+                </div>
+                <div class="registration-form-button">
+                    <button type="submit" class="btn--main">Створити профіль</button>
+                </div>
+            </form>
+            <div class="t-center">
+                <div class="social">
+                    <div class="have-account">Вже зареєстровані?
+                        <a href="../signIn.html">Вхід</a>
+                    </div>
                 </div>
             </div>
         </div>

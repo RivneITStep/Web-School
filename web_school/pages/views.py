@@ -14,7 +14,7 @@ def index(request):
     teacher = paginator.get_page(page)
     blog_list = Blog.objects.filter(moderated=True).order_by('-pub_date')[:3]
     blog_img = Blog_Img.objects.all()
-    courses = Course.objects.all()
+    courses = Course.objects.all().order_by('-title')[:3]
     students = Student.objects.all()
     testimonial_list = Testimonials.objects.all().order_by('-pub_date')[:3]
 
@@ -28,7 +28,7 @@ def about(request):
 
 def courses(request):
     courses = Course.objects.all()
-    paginator = Paginator(courses, 2)
+    paginator = Paginator(courses, 3)
     page = request.GET.get("page")
     courses = paginator.get_page(page)
     return render(request, 'pages/courses.html',context={
