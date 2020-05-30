@@ -3,22 +3,31 @@
 {% load static %}
 {% include "parts/_header.html" %}
 <main class="main">
-    <div class="container-fluid main-bg-color">
-        <div class="container">
+    <div class="container-fluid main-bg-color ">
+        <div class="container allCourses">
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="course-title">Комплексні курси</h2>
                 </div>
             </div>
-            <div class="row">{% for course in courses %}
-                <div class="col-md-3 course-item">
+            <div class="row">
+                {% for course in courses %}
+                <div class="col-lg-4 col-md-4 col-sm-12 course">
                     <a href="{% url 'pages:course_page' %}">
-                        <img src="{{course.photo_main.url}}" alt="{{course.title}}" />
-                    </a>
+                        <div class="course-img">
+                            <img src="{{course.photo_main.url}}" alt="Профессия Back-end разработчик"
+                                title="{{course.title}}" />
+                            <a href="#">
+                                <div class="button-tag online"># Онлайн</div>
+                            </a>
+                            <div class="button-on-course"><i class="fas fa-play"></i></div>
+                        </div>
+                        <span class="title_course">Професія {{course.title}} розробник</span>
+                    </a><br />
+                    <span class="time-start"><b>Старт:</b> 23 января 2020<br /><b>Рівень:</b> середній
+                        <i class="fas fa-space-shuttle"></i></span>
                 </div>
                 {% endfor %}
-
-
             </div>
             <div class="row">
                 <div class="col-md-12 course-btn">
@@ -37,7 +46,7 @@
             <div class="row">
                 {% if teachers %}
                 {% for teacher in teachers %}
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                     <div class="card-content">
                         <div class="card-img">
                             <img src="{% static 'img/user.png' %}" alt="">
@@ -52,11 +61,22 @@
                             </div>
                             <div class="toggle">
                                 <p class="hidden-text content">
-                                {% if teacher.body %}
-                                {{teacher.body}}
-                                {% else %}
-                                No info...
-                                {% endif %}
+                                    {% if teacher.body %}
+                                    {{teacher.body}}
+                                    {% else %}
+                                    No info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...No info...No info...No info...No info...No info...No info...No info...No
+                                    info...
+                                    {% endif %}
                                 </p>
                                 <button type="submit" class="btn--transparent toggler">
                                     Детальніше
@@ -87,29 +107,29 @@
             <div class="row">
                 {% if testimonials %}
                 {% for testimonial in testimonials %}
-                <div class="testimonials-item">
-                    <div class="col-md">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="testimonials-item">
                         <div class="card-img">
-                        {% for student in students %}
-                        {% if student.id == testimonial.student_id %}
-                        {% if student.photo_main %}
-                        <img src="{{student.photo_main.url}}" alt="photo">
-                        {% else %}
-                        <img src="{% static 'img/user.png' %}" alt="photo">
-                        {% endif %}
-                        {% else %}
-                        <img src="{% static 'img/user.png' %}" alt="photo">
+                            {% for student in students %}
+                            {% if student.id == testimonial.student_id %}
+                            {% if student.photo_main %}
+                            <img src="{{student.photo_main.url}}" alt="photo">
+                            {% else %}
+                            <img src="{% static 'img/user.png' %}" alt="photo">
+                            {% endif %}
+                            {% else %}
+                            <img src="{% static 'img/user.png' %}" alt="photo">
 
-                        {% endif %}
-                        
-                        {% endfor %}
-                            
+                            {% endif %}
+
+                            {% endfor %}
+
                         </div>
                         <h3>{{testimonial.author_id}}</h3>
                         <p class="course"><span>Курс: </span>{{testimonial.course_id}}</p>
                         <p class='teacher'><span>Викладач: </span>{{testimonial.teacher_id}}</p>
-                        <p>
-                        {{testimonial.text_area}}
+                        <p class="index testimonial_text_area">
+                            {{testimonial.text_area}}
                         </p>
                         <div class="data">
                             <i class="far fa-clock"></i>
@@ -137,9 +157,10 @@
                     <h2 class="blog-title">Наші новини</h2>
                 </div>
             </div>
-            <div class="row">{% if blog_list %}
+            <div class="row">
+                {% if blog_list %}
                 {% for blog in blog_list %}
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card-box">
                         <a href="{% url 'blog:single_blog_url' blog.id %}">
                             {% for img in imges %}
@@ -152,12 +173,14 @@
                             {% endfor %}
                             <div class="card-box-container">
                                 <h4>{{blog.title}}</h4>
-                                <p>{{blog.text_area}}</p>
+                                <p class="blog_text_area">{{blog.text_area}}</p>
                                 <div class="card-box-item">
                                     <i class="fas fa-eye"></i>
                                     <span>{{blog.views}}</span>
-                                    <i class="far fa-clock"></i>
-                                    <span>{{blog.pub_date}}</span>
+                                    <div>
+                                        <i class="far fa-clock"></i>
+                                        <span>{{blog.pub_date}}</span>
+                                    </div>
                                 </div>
                             </div>
                     </div>

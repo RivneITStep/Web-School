@@ -13,16 +13,21 @@
         <div class="col-md">
             <div class="card-box">
                 <!-- <a href="#"> -->
-                <div class="image">
-                    <img src="{{img.photo_main.url}}" alt="">
-                </div>
+                {% for img in imges %}
+                {% if img.blog_id == blog %}
+                <img src="{{img.photo_main.url}}" alt="">
+                {% else %}
+                {% endif %}
+                {% endfor %}
                 <!-- </a> -->
                 <div class="card-box-container">
                     <p>{{blog.text_area}}
                     </p>
                     <div class="card-box-item">
                         <div>
-                            <span style='font-weight:bolder;'>Writed by: {{blog.author}}</span><br>
+                            <span style='font-weight:bolder;'>Writed by: {{blog.author}}</span>
+                        </div>
+                        <div>
                             <i class="fas fa-eye"></i>
                             <span>{{blog.views}}</span>
                         </div>

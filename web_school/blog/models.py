@@ -9,7 +9,7 @@ class Blog(models.Model):
     moderated = models.BooleanField(default=False)
     text_area = models.TextField(blank=True)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
-    views = models.IntegerField()
+    views = models.IntegerField(default=0,editable=False)
 
     def __str__(self):
         return self.title

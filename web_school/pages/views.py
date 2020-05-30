@@ -3,7 +3,7 @@ from accounts.models import Student, Teacher
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages, auth
-from courses.models import Course, Lesson
+from courses.models import Course, Lesson, Task
 from blog.models import Blog, Blog_Img, Testimonials
 
 
@@ -14,7 +14,7 @@ def index(request):
     teacher = paginator.get_page(page)
     blog_list = Blog.objects.filter(moderated=True).order_by('-pub_date')[:3]
     blog_img = Blog_Img.objects.all()
-    courses = Course.objects.all()
+    courses = Course.objects.all().order_by('-title')[:3]
     students = Student.objects.all()
     testimonial_list = Testimonials.objects.all().order_by('-pub_date')[:3]
 
@@ -28,7 +28,7 @@ def about(request):
 
 def courses(request):
     courses = Course.objects.all()
-    paginator = Paginator(courses, 2)
+    paginator = Paginator(courses, 3)
     page = request.GET.get("page")
     courses = paginator.get_page(page)
     return render(request, 'pages/courses.html',context={
@@ -95,12 +95,16 @@ def payment(request):
 
     
 def teacher_profile(request):
-    if request.user.is_authenticated and request.user.is_superuser==False:
-        profile = Teacher.objects.get(user=request.user.id)
+    if request.user.is_authenticated:
+        profile = Teacher.objects.get(user=request.user)
         courses = Course.objects.all().filter(teacher=profile)
+        lessons = Lesson.objects.all().filter(course=courses)
+        tasks = Task.objects.all().filter(ready_for_check = True)
         context = {
             'profile': profile,
-            'courses': courses
+            'courses': courses,
+            'tasks':tasks,
+            'lessons':lessons
             }
 
         return render(request, 'pages/teacher_profile.html',context)
@@ -225,3 +229,18 @@ def edit_photo(request):
 def edit_profile(request):
     if request.method == "POST":
         pass
+
+
+
+def wrong(request,task_id):
+    wrong_task = Task.objects.get(id=task_id)
+    wrong_task.ready_for_check = False
+    wrong_task.save()
+    return redirect('pages:teacher_profile')
+
+
+def success(request,task_id):
+    success_task = Task.objects.get(id=task_id)
+    success_task.checked = True
+    success_task.save()
+    return redirect('pages:teacher_profile')

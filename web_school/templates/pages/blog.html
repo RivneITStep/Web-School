@@ -4,18 +4,18 @@
 {% include "parts/_internal_header.html" %}
 
 <section class="blog">
-        <div class="container">
-            <div class="row blog-title">
-                <div class="com-12 ">
-                    <h2>Наші новини</h2>
-                </div>
+    <div class="container">
+        <div class="row blog-title">
+            <div class="com-12 ">
+                <h2>Наші новини</h2>
             </div>
-            <div class="row">
+        </div>
+        <div class="row">
             {% if blog_list %}
             {% for blog in blog_list %}
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card-box">
-                        <a href="{% url 'blog:single_blog_url' blog.id %}">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="card-box">
+                    <a href="{% url 'blog:single_blog_url' blog.id %}">
                         {% for img in imges %}
                         {% if img.blog_id == blog %}
                         <div class="img_blog">
@@ -26,44 +26,48 @@
                         {% endfor %}
                         <div class="card-box-container">
                             <h4>{{blog.title}}</h4>
-                            <p>{{blog.text_area}}</p>
+                            <p class="blog_text_area">{{blog.text_area}}</p>
                             <div class="card-box-item">
                                 <i class="fas fa-eye"></i>
                                 <span>{{blog.views}}</span>
-                                <i class="far fa-clock"></i>
-                                <span>{{blog.pub_date}}</span>
+                                <div>
+                                    <i class="far fa-clock"></i>
+                                    <span>{{blog.pub_date}}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    </a>
                 </div>
-           {% endfor %}
+                </a>
             </div>
-                <div class="row">
-                <div class="col-md-3.offset-md-9 pagination pagination">
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-md-3.offset-md-9 pagination pagination">
                 {% if blog_list.has_other_pages %}
                 {% if blog_list.has_previous %}
-                <a href="?page={{ blog_list.previous_page_number }}" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
+                <a href="?page={{ blog_list.previous_page_number }}" class="pagination-item"><i
+                        class="fas fa-arrow-left"></i></a>
                 {% else %}
                 <a href="#" class="pagination-item"><i class="fas fa-arrow-left"></i></a>
                 {% endif %}
-                    
-                    {% for numb in blog_list.paginator.page_range %}
-                    <a href="?page={{ numb }}" class="pagination-item">{{numb}}</a>
-                    {% endfor %}
+
+                {% for numb in blog_list.paginator.page_range %}
+                <a href="?page={{ numb }}" class="pagination-item">{{numb}}</a>
+                {% endfor %}
                 {% if blog_list.has_next %}
-                    <a href="?page={{ blog_list.next_page_number }}" class="pagination-item"><i class="fas fa-arrow-right"></i></a>                    
-                    {% else %}
-                    <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
-                    {% endif %}
+                <a href="?page={{ blog_list.next_page_number }}" class="pagination-item"><i
+                        class="fas fa-arrow-right"></i></a>
+                {% else %}
+                <a href="#" class="pagination-item"><i class="fas fa-arrow-right"></i></a>
+                {% endif %}
                 {% else %}
                 {% endif %}
-                  
-                </div>
+
             </div>
-            {% else %}
-            <h2 style='color:green;'>!!!SORRY COMMING SOON!!!</h2>
-            {% endif %}
         </div>
-    </section>
+        {% else %}
+        <h2 style='color:green;'>!!!SORRY COMMING SOON!!!</h2>
+        {% endif %}
+    </div>
+</section>
 {% endblock content %}

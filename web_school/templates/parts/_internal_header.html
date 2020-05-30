@@ -61,9 +61,6 @@
             <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}">Особистий кабінет студента ({{user.email}})</a>
           </li>
           {% else %}
-          <li class="nav-item">
-            <a class="nav-link active" class="nav-link" href="{% url 'pages:student_profile' %}">Особистий кабінет</a>
-          </li>
           {% endif %}
           {% endif %}
           {% include 'parts/_alerts.html' %}

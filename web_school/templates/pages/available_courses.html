@@ -5,18 +5,19 @@
 {% if user.is_authenticated %}
 <div class="container av_couses">
     <div class='row'>
-        <h1>Всі доступні курси</h1>
+        <h2>Всі доступні курси</h2>
     </div>
     <div class="row flex-md-wrap list">
         <div class="col  col-md-6 col-xl-8">
-            <div class="list-box">{% for crs in course %}
-                <a href="{% url 'courses:one_lesson' crs.id %}">Безкоштовні {{crs.title}} курси</a>
+            <div class="list-box">{% for course in courses %}
+                <a href="{% url 'courses:one_lesson' course.id %}">Безкоштовні {{course.title}} курси</a>
             <p>
-            {% for less in lesson %}{% if crs == less.course %}
-            {{lesson.count}}
+            {% for lesson in lessons %}
+            {% if lesson.course == course %}
+            {{lesson}}
+            
             {% else %}
             {% endif %}
-            
             {% endfor %}
              уроків</p>
             {% endfor %}

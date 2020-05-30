@@ -17,5 +17,7 @@ urlpatterns = [
         path('student/', views.edit_student, name="edit_student"),
         path('teacher/', views.edit_teacher, name="edit_teacher"),
         path('edit_photo/', views.edit_photo, name="edit_photo"),
+        path('wrong/<int:task_id>/', views.wrong, name="wrong"),
+        path('success/<int:task_id>/', views.success, name="success"),
 
 ]
