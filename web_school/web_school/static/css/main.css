@@ -4254,6 +4254,7 @@ body header .navigate .nav .media .nav-item button a {
     .testimonials-item {
         width: 100%;
     }
+
 }
 
 @media (max-width: 576px) {
@@ -4666,7 +4667,7 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item span {
 main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     color: #6e6e6e;
 }
-.card-box-item *{
+.blog .card-box-item *,.main .card-box-item *{
     display:inline-block;
 }
 .aboutSection {
@@ -5360,17 +5361,28 @@ main .allCourses h2 {
         position:relative;
         height:60px;
     }
-
+    .registration .title-sub-heading{
+        top: 121px!important;
+    }
 }
 @media (max-width: 767px) {
     .index.testimonial_text_area{
         position:relative;
         min-height:auto;
     }
+    .registration .title-sub-heading{
+        font-size:16px!important;
+    }
     .card-box-container .blog_text_area{
         position:relative;
         height:auto;
     }
+    .one_news img  {
+        max-width:100%!important;
+        float:center!important;
+        margin:0!important;
+    }
+
 }
 @media (max-width: 600px) {
     .main-page {
@@ -5379,6 +5391,12 @@ main .allCourses h2 {
     .main-page .course {
         width: 70%;
         margin-bottom: 50px;
+    }
+    .registration .title-heading{
+        font-size:27px!important;
+    }
+    .registration .title-sub-heading {
+        margin-top:-44px!important;
     }
 }
 
@@ -5502,7 +5520,7 @@ main .allCourses h2 {
 }
 
 .container-fluid.course_header {
-    background: url(../../img/course_1.jpg) 0 0 / cover no-repeat;
+    background: url(../img/course_1.jpg) 0 0 / cover no-repeat;
     height: 300px;
     -webkit-filter: grayscale(20%);
     filter: grayscale(20%);
@@ -5526,7 +5544,7 @@ main .allCourses h2 {
 }
 
 .course_header .col-lg-5 {
-    background: url(../../img/html_logo.svg) center/cover;
+    background: url(../img/html_logo.svg) center/cover;
     height: 300px;
 }
 
@@ -5554,20 +5572,20 @@ main .allCourses h2 {
 }
 
 .why .row:nth-child(1) .col-lg-4:nth-child(1) {
-    background: url(../../img/software-application.svg) 0 0/100px auto no-repeat;
+    background: url(../img/software-application.svg) 0 0/100px auto no-repeat;
 }
 
 .why .row:nth-child(1) .col-lg-4:nth-child(2) {
-    background: url(../../img/video.svg) 0 0/100px auto no-repeat;
+    background: url(../img/video.svg) 0 0/100px auto no-repeat;
     margin-left: 25px;
 }
 
 .why .row:nth-child(2) .col-lg-4:nth-child(1) {
-    background: url(../../img/coding.svg) 0 0/100px auto no-repeat;
+    background: url(../img/coding.svg) 0 0/100px auto no-repeat;
 }
 
 .why .row:nth-child(2) .col-lg-4:nth-child(2) {
-    background: url(../../img/seo-and-web.svg) 0 0/100px auto no-repeat;
+    background: url(../img/seo-and-web.svg) 0 0/100px auto no-repeat;
     margin-left: 25px;
 }
 
@@ -5583,7 +5601,7 @@ main .allCourses h2 {
 }
 
 .why {
-    background: url(../../img/ladder.svg) 0 0/300px auto no-repeat;
+    background: url(../img/ladder.svg) 0 0/300px auto no-repeat;
     background-position-x: 100%;
     background-position-y: 50%;
     margin-left: 25px;
@@ -5653,7 +5671,7 @@ main .allCourses h2 {
 }
 
 .career_2 .container {
-    background: url(../../img/bg_3.png) 0 0/350px no-repeat;
+    background: url(../img/bg_3.png) 0 0/350px no-repeat;
     background-position-y: 150px;
     background-position-x: 100px;
     height: 550px;
@@ -5684,7 +5702,7 @@ main .allCourses h2 {
 }
 
 .container-fluid.career_3 {
-    background: linear-gradient( to bottom, rgba(21, 19, 41, 0.863) 0, rgba(21, 19, 41, 0.863) 100%) 0 0 / cover, url(../../img/bg_4.jpg) 0 0 / cover no-repeat;
+    background: linear-gradient( to bottom, rgba(21, 19, 41, 0.863) 0, rgba(21, 19, 41, 0.863) 100%) 0 0 / cover, url(../img/bg_4.jpg) 0 0 / cover no-repeat;
     height: 600px;
 }
 
@@ -5712,7 +5730,7 @@ main .allCourses h2 {
 
 .career_3 ul li {
     text-align: left;
-    list-style-image: url("../../img/pin(2).png");
+    list-style-image: url("../img/pin(2).png");
     vertical-align: top;
     margin: 15px;
 }
@@ -5763,7 +5781,7 @@ main .allCourses h2 {
 }
 
 .container-fluid.career_4 ul li {
-    list-style-image: url(../../img/check.png);
+    list-style-image: url(../img/check.png);
     vertical-align: top;
     margin: 5px;
 }
@@ -5811,7 +5829,7 @@ main .allCourses h2 {
 .container-fluid.career_6 {
     height: auto;
     padding-top: 35px;
-    background: linear-gradient( to bottom, rgba(21, 19, 41, 0.863) 0, rgba(21, 19, 41, 0.863) 100%) 0 0 / cover, url(../../img/map.jpg) 0 0 / cover no-repeat;
+    background: linear-gradient( to bottom, rgba(21, 19, 41, 0.863) 0, rgba(21, 19, 41, 0.863) 100%) 0 0 / cover, url(../img/map.jpg) 0 0 / cover no-repeat;
 }
 
 .container-fluid.career_6 a:hover {
@@ -5827,7 +5845,7 @@ main .allCourses h2 {
 .container-fluid.career_6 .row:nth-child(2) {
     margin-top: 35px;
     height: 150px;
-    background: url(../../img/png_1.jpg) 0 0 / contain no-repeat, url(../../img/png_2.jpg) 220px / contain no-repeat, url(../../img/png_3.jpg) 440px / contain no-repeat, url(../../img/png_4.jpg) 660px / contain no-repeat, url(../../img/png_5.jpg) 880px / contain no-repeat, url(../../img/png_1.jpg) 0 0 / contain no-repeat, url(../../img/png_2.jpg) 1100px / contain no-repeat, url(../../img/png_3.jpg) 1320px / contain no-repeat, url(../../img/png_4.jpg) 1540px / contain no-repeat;
+    background: url(../img/png_1.jpg) 0 0 / contain no-repeat, url(../img/png_2.jpg) 220px / contain no-repeat, url(../img/png_3.jpg) 440px / contain no-repeat, url(../img/png_4.jpg) 660px / contain no-repeat, url(../img/png_5.jpg) 880px / contain no-repeat, url(../img/png_1.jpg) 0 0 / contain no-repeat, url(../img/png_2.jpg) 1100px / contain no-repeat, url(../img/png_3.jpg) 1320px / contain no-repeat, url(../img/png_4.jpg) 1540px / contain no-repeat;
     -webkit-filter: grayscale(0.8);
     filter: grayscale(0.8);
 }
@@ -5897,7 +5915,7 @@ main .allCourses h2 {
         background-image: none;
     }
     .container-fluid.career_2 {
-        background: linear-gradient( to bottom, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0.4) 100%) 0 0 / contain, url(../../img/bg_3.png) 0 0 / contain no-repeat;
+        background: linear-gradient( to bottom, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0.4) 100%) 0 0 / contain, url(../img/bg_3.png) 0 0 / contain no-repeat;
         background-position-x: 50%;
     }
     .container-fluid.career_2 h1,
@@ -6113,9 +6131,9 @@ main .allCourses h2 {
     padding-bottom: 55px;
 }
 
-.registration .title {
+.container .title {
     background-image: linear-gradient(239deg, #3eddf7, #1d55c4);
-    height: 614px;
+    height: 327px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6136,10 +6154,9 @@ main .allCourses h2 {
     line-height: 1;
     position: relative;
     text-transform: uppercase;
-    font-size: 93px;
+    font-size: 35px;
     z-index: 10;
-    margin-bottom: 13px;
-    max-width: 683px;
+    margin: 0 10px;
 }
 
 .registration .title-heading:before {
@@ -6147,7 +6164,7 @@ main .allCourses h2 {
     width: 169px;
     height: 314px;
     background-color: #000;
-    top: -30px;
+    top: -58px;
     left: -41px;
     box-shadow: 0 19px 57px 0 #002566;
     position: absolute;
@@ -6160,9 +6177,8 @@ main .allCourses h2 {
     line-height: 1.33;
     position: absolute;
     left: 152px;
-    top: 300px;
-    width: 80%;
-    max-width: 100%;
+    top:85px;
+    margin-top: -26px;
 }
 
 .registration .title-sub-heading:before {
@@ -6177,11 +6193,11 @@ main .allCourses h2 {
 .registration-form {
     position: relative;
     box-sizing: border-box;
-    max-width: 820px;
-    padding: 50px 114px;
+    max-width: 95%;
+    padding:5px 24px 50px 25px;
     background-color: #fff;
     box-shadow: 0 0 10px 0 rgba(144, 144, 144, 0.5);
-    margin: -50px auto 0;
+    margin: -20px auto 0;
     z-index: 10;
 }
 
@@ -6832,7 +6848,7 @@ select {
 
 .payment_main {
     padding-bottom: 55px;
-    background: url(../../img/partner.png) right/contain no-repeat;
+    background: url(../img/partner.png) right/contain no-repeat;
 }
 
 .payment_main h4 {
@@ -7153,6 +7169,11 @@ select {
     height: auto;
     float: right;
     margin: 0 0 15px 15px;
+}
+.one_news .img_blog {
+    float: right;
+    max-width: 45%;
+    height: auto;
 }
 
 .one_news p {
