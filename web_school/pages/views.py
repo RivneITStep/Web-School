@@ -99,7 +99,7 @@ def teacher_profile(request):
         profile = Teacher.objects.get(user=request.user)
         courses = Course.objects.all().filter(teacher=profile)
         lessons = Lesson.objects.all().filter(course=courses)
-        tasks = Task.objects.all().filter(ready_for_check = True)
+        tasks = Task.objects.all().filter(ready_for_check = True, teacher=profile)
         context = {
             'profile': profile,
             'courses': courses,

@@ -34,7 +34,7 @@
                         <span>курсів</span>
                     </li>
                     <li class="personal_item_cont">
-                        <p>{{tasks.teacher.count}}</p>
+                        <p>{{tasks.count}}</p>
                         <span>отримано відповідей до завдань</span>
                     </li>
                     <li class="personal_item_cont">
@@ -76,15 +76,13 @@
                     {% if tasks %}
                     
                     {% for task in tasks %}
-                    {% if task.teacher == user.teacher %}
                     <tr>
                         <td>{{task.lesson}}</td>
                         <td>{{task.question}}</td>
                         <td><a href="http://{{task.answer}}">Перевірити відповідь</a></td>
                         <td><a href='{% url "pages:success" task.id %}'>Так</a> / <a href='{% url "pages:wrong" task.id %}'>Ні</a></td>
                     </tr>
-                    {% else %}
-                    {% endif %}
+                    
                     {% endfor %}
                     {% else %}
                         <td>Завдань на перевірку не виявлено!</td>
