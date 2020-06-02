@@ -19,7 +19,8 @@ urlpatterns = [
         path('student_profile/', views.student_profile, name="student_profile"),
         path('student/', views.edit_student, name="edit_student"),
         path('teacher/', views.edit_teacher, name="edit_teacher"),
-        path('edit_photo/', views.edit_photo, name="edit_photo"),
+        path('edit_t_photo/', views.edit_t_photo, name="edit_t_photo"),
+        path('edit_s_photo/', views.edit_s_photo, name="edit_s_photo"),
         path('wrong/<int:task_id>/', views.wrong, name="wrong"),
         path('success/<int:task_id>/', views.success, name="success"),
 

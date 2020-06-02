@@ -39,10 +39,12 @@
                             <span>оцінено домашніх робіт</span>
                         </li>
                     </ul>
-                    <form id='photo' action="{% url 'pages:edit_photo' %}" method="POST" enctype="multipart/form-data">
-                        <input type="file" id="img" name="img" accept="image/*">
-                        <input type="hidden" name="persona" value="{{profile.email}}">
-
+                    {% if user.teacher %}
+                    <form id='photo' action="{% url 'pages:edit_t_photo' %}" method="POST" enctype="multipart/form-data">
+                        {% else %}
+                    <form id='photo' action="{% url 'pages:edit_s_photo' %}" method="POST" enctype="multipart/form-data">
+                        {% endif %}
+                        {{form.as_p}}
                         {% csrf_token %}
                     </form>
                     <button class="btn--main" type='submit' form='photo'>Завантажити нове фото</button>

@@ -3,15 +3,16 @@ from accounts.models import Student, Teacher
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages, auth
+from accounts.forms import *
 from courses.models import Course, Lesson, Task
 from blog.models import Blog, Blog_Img, Testimonials
 
 
 def index(request):
-    teacher = Teacher.objects.all()
-    paginator = Paginator(teacher, 3)
-    page = request.GET.get("page")
-    teacher = paginator.get_page(page)
+    teacher = Teacher.objects.all()[:3]
+    # paginator = Paginator(teacher, 3)
+    # page = request.GET.get("page")
+    # teacher = paginator.get_page(page)
     blog_list = Blog.objects.filter(moderated=True).order_by('-pub_date')[:3]
     blog_img = Blog_Img.objects.all()
     courses = Course.objects.all().order_by('-title')[:3]
@@ -176,8 +177,10 @@ def edit_student(request):
             return redirect("pages:edit_student")
     if request.user.is_authenticated:
         profile = Student.objects.get(user=request.user)
+        form = TeacherForm(instance=profile)
         context = {
-            'profile': profile
+            'profile': profile,
+            'form':form,
         }
     return render(request, 'pages/edit.html',context)
 
@@ -218,31 +221,36 @@ def edit_teacher(request):
 
     if request.user.is_authenticated:
         profile = Teacher.objects.get(user=request.user)
+        form = TeacherForm(instance=profile)
         context = {
-            'profile': profile
+            'profile': profile,
+            'form':form,
         }
     return render(request, 'pages/edit.html',context)
 
 
 
-def edit_photo(request):
-    # if request.method == "POST":
-    #     img = request.POST['img']
-    #     persona = request.POST['persona']
-    #     student = get_object_or_404(Student, email=persona)
-    #     if img:
-    #         if student:
-    #             student.photo_main = 'students_photos/' + img
-    #             student.save()
-    #         else:
-    #             teacher = get_object_or_404(Teacher,email=persona)
-    #             teacher.photo_main = 'teachers_photos/' + img
-    #             teacher.save()
-    #         return render(request, 'pages/edit.html')
-    #     else:
-    #         return render(request, 'pages/edit.html')
-    return render(request, 'pages/edit.html')
+def edit_t_photo(request):
+    profile = Teacher.objects.get(user=request.user)
+    if request.method == "POST":
+        form = TeacherForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('pages:teacher_profile')
+        context = {'form':form}
+    return render(request, 'pages/edit.html',context)
     
+
+def edit_s_photo(request):
+    profile = Student.objects.get(user=request.user)
+    if request.method == "POST":
+        form = StudentForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('pages:student_profile')
+        context = {'form':form}
+    return render(request, 'pages/edit.html',context)
+
     
 
 def edit_profile(request):
