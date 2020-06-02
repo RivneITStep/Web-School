@@ -1,0 +1,65 @@
+#!groovy
+//  groovy Jenkinsfile
+properties([disableConcurrentBuilds()])
+
+pipeline  {
+    agent { 
+        label 'master'
+        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("Create docker image") {
+            steps {
+                echo 'Creating docker image ...'
+                dir('./web_school'){
+                    sh "docker build -t vasiazozulia/webschool_backend . "
+                }
+            }
+        }
+        stage("docker login") {
+            steps {
+                echo " ============== docker login =================="
+                withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh '''
+                    docker login -u $USERNAME -p $PASSWORD
+                    '''
+                }
+            }
+        }
+        stage("docker push") {
+            steps {
+                echo " ============== pushing image =================="
+                sh '''
+                docker push vasiazozulia/webschool_backend:latest
+                '''
+            }
+        }
+        stage("docker stop") {
+            steps {
+                echo " ============== stoping all images =================="
+                sh '''
+                docker stop webschool_backend
+                '''
+            }
+        }
+        stage("docker remove") {
+            steps {
+                echo " ============== removing all docker containers =================="
+                sh '''
+                docker rm webschool_backend
+                '''
+            }
+        }
+        stage("docker run") {
+            steps {
+                echo " ============== starting webschool_backend =================="
+                sh '''
+                docker run -d --restart=always --name webschool_backend -p 8000:8000 vasiazozulia/webschool_backend
+                '''
+            }
+        }
+    }
+}
