@@ -43,6 +43,9 @@ def contacts(request):
 
 def teachers(request):
     teacher = Teacher.objects.all()
+    paginator = Paginator(teacher, 3)
+    page = request.GET.get("page")
+    teacher = paginator.get_page(page)
     course = Course.objects.all()
     return render(request, 'pages/teachers.html',context={'teachers':teacher,'courses':course})
 
