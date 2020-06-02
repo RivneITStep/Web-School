@@ -39,14 +39,13 @@
                             <span>оцінено домашніх робіт</span>
                         </li>
                     </ul>
-                    <form id='photo' action="{% url 'pages:edit_photo' %}" method="POST">
+                    <form id='photo' action="{% url 'pages:edit_photo' %}" method="POST" enctype="multipart/form-data">
                         <input type="file" id="img" name="img" accept="image/*">
                         <input type="hidden" name="persona" value="{{profile.email}}">
 
                         {% csrf_token %}
                     </form>
                     <button class="btn--main" type='submit' form='photo'>Завантажити нове фото</button>
-                    <button class="btn--card">Видалити поточне фото</button>
                     <p class="descr-info">
                         {{profile.body}}
                     </p>
@@ -61,10 +60,10 @@
                             {% else %}
                             <button class="btn--card"><a href="{% url 'pages:teacher_profile' %}">Скасувати</a></button>
                             {% endif %}
-                            <button class="btn--main">Зберегти зміни</button>
+                            <button form='edit' class="btn--main">Зберегти зміни</button>
                         </div>
                     </div>{% if user.student %}
-                    <form action="{% url 'pages:edit_student' %}" method="POST">
+                    <form action="{% url 'pages:edit_student' %}" method="POST" id='edit'>
                         {% else %}
                         <form action="{% url 'pages:edit_teacher' %}" method="POST">
                             {% endif %}

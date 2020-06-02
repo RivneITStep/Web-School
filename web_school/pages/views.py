@@ -100,11 +100,13 @@ def teacher_profile(request):
         courses = Course.objects.all().filter(teacher=profile)
         lessons = Lesson.objects.all().filter(course=courses)
         tasks = Task.objects.all().filter(ready_for_check = True, teacher=profile)
+        tasks_checked = Task.objects.all().filter(checked = True, teacher=profile)
         context = {
             'profile': profile,
             'courses': courses,
             'tasks':tasks,
-            'lessons':lessons
+            'lessons':lessons,
+            'tasks_checked':tasks_checked
             }
 
         return render(request, 'pages/teacher_profile.html',context)
@@ -117,8 +119,14 @@ def teacher_profile(request):
 def student_profile(request):
     if request.user.is_authenticated:
         profile = Student.objects.get(user=request.user.id)
+        tasks = Task.objects.all().filter(student=profile)
+        courses = set([])
+        for task in tasks:
+            course = task.lesson.course
+            courses.add(course)
         context = {
-            'profile': profile
+            'profile': profile,
+            'tasks': courses
         }
         return render(request, 'pages/student_profile.html',context)
 
@@ -139,12 +147,12 @@ def edit_student(request):
         email = request.POST['email']
         user_email = request.POST['user_email']
         user_id = request.POST['user_id']
-        course = request.POST['course']
         body = request.POST['body']
         facebook = request.POST['facebook']
         twitter = request.POST['twitter']
         linkedIn = request.POST['linkedIn']
         google = request.POST['google']
+        password = request.POST['password']
         profile = Student.objects.get(id=user_id)
         profile.first_name = first_name
         profile.last_name = last_name
@@ -156,9 +164,13 @@ def edit_student(request):
         profile.google = google
         request.user.email = email
         request.user.username = email
-        request.user.save()
-        profile.save()
-        messages.success(request, "Your information was updated!")
+        if password == request.user.student.password:
+            request.user.save()
+            profile.save()
+            messages.success(request, "Your information was updated!")
+        else:
+            messages.error(request, "Your password is incorrect")
+            return redirect("pages:edit_student")
     if request.user.is_authenticated:
         profile = Student.objects.get(user=request.user)
         context = {
@@ -193,9 +205,13 @@ def edit_teacher(request):
         profile.google = google
         request.user.email = email
         request.user.username = email
-        request.user.save()
-        profile.save()
-        messages.success(request, "Your information was updated!")
+        if password == request.user.teacher.password:
+            request.user.save()
+            profile.save()
+            messages.success(request, "Your information was updated!")
+        else:
+            messages.error(request, "Your password is incorrect")
+            return redirect("pages:edit_student")
 
     if request.user.is_authenticated:
         profile = Teacher.objects.get(user=request.user)
@@ -235,6 +251,7 @@ def edit_profile(request):
 def wrong(request,task_id):
     wrong_task = Task.objects.get(id=task_id)
     wrong_task.ready_for_check = False
+    wrong_task.checked = False
     wrong_task.save()
     return redirect('pages:teacher_profile')
 

@@ -3,10 +3,10 @@ from django.contrib import admin
 from .models import Course, Lesson, Task
 
 class CourseAdmin(admin.ModelAdmin):
-    display=('id')
+    list_display = ('title',)
 
 class LessonAdmin(admin.ModelAdmin):
-    display = ('id')
+    list_display = ('course',)
 
 class TaskAdmin(admin.ModelAdmin):
     list_display = ('title',)

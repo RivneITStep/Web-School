@@ -5373,7 +5373,7 @@ main .allCourses h2 {
         height: 60px;
     }
     .registration .title-sub-heading {
-        top: 121px!important;
+        top: 121px !important;
     }
 }
 
@@ -5383,16 +5383,16 @@ main .allCourses h2 {
         min-height: auto;
     }
     .registration .title-sub-heading {
-        font-size: 16px!important;
+        font-size: 16px !important;
     }
     .card-box-container .blog_text_area {
         position: relative;
         height: auto;
     }
     .one_news img {
-        max-width: 100%!important;
-        float: center!important;
-        margin: 0!important;
+        max-width: 100% !important;
+        float: center !important;
+        margin: 0 !important;
     }
 }
 
@@ -5405,10 +5405,10 @@ main .allCourses h2 {
         margin-bottom: 50px;
     }
     .registration .title-heading {
-        font-size: 27px!important;
+        font-size: 27px !important;
     }
     .registration .title-sub-heading {
-        margin-top: -44px!important;
+        margin-top: -44px !important;
     }
 }
 
@@ -6015,6 +6015,9 @@ main .allCourses h2 {
 
 .list-box {
     min-width: 300px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
 }
 
 .connect-us-bottom>h4,
