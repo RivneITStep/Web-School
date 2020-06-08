@@ -6,12 +6,11 @@ from .models import Course, Lesson, Task
 
 def courses(request):
     if request.user.is_authenticated:
-        course = Course.objects.all()
-        lesson = Lesson.objects.all().filter()
-
+        courses = Course.objects.all()
+        lessons = Lesson.objects.all()
         context = {
-            'courses':course,
-            'lessons': lesson
+            'courses':courses,
+            'lessons': lessons,
         }
         
     return render(request, 'pages/available_courses.html',context)

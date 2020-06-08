@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 
+
 class Teacher(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
@@ -14,6 +15,7 @@ class Teacher(models.Model):
     twitter = models.CharField(max_length=500, blank=True)
     linkedIn = models.CharField(max_length=500, blank=True)
     google = models.CharField(max_length=500, blank=True)
+    password = models.CharField(max_length=32)
 
 
 
@@ -37,6 +39,7 @@ class Student(models.Model):
     twitter = models.CharField(max_length=500, blank=True)
     linkedIn = models.CharField(max_length=500, blank=True)
     google = models.CharField(max_length=500, blank=True)
+    password = models.CharField(max_length=32)
 
     
     def __str__(self):

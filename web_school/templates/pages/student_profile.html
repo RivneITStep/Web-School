@@ -52,10 +52,12 @@
             </div>
             <div>
                 <h4>Курси :</h4>
-                <ul>
-                    <li class="start_course">Курс "HTML5"</li>
-                    <li class="finish_course">Курс "Java Script"</li>
-                    <li class="soon_course">Курс "CSS"</li>
+                <ul>{% if tasks %}
+                {% for task in tasks %}
+                    <li class="start_course">{{task}}</li>
+                {% endfor %}
+                {% else %}
+                {% endif %}
                 </ul>
                 <button class="btn--card"><a href="{% url 'courses:available_courses' %}">Переглянути всі досутпні курси</a></button>
             </div>

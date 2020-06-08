@@ -1,3 +1,6 @@
 /.vscode
 /env
 /__pycache__
+/web_school/pages/__pycache__
+/web_school/pages/migrations/__pycache__
+/web_school/accounts/__pycache__

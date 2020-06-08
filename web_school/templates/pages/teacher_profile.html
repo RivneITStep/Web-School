@@ -34,11 +34,11 @@
                         <span>курсів</span>
                     </li>
                     <li class="personal_item_cont">
-                        <p>{{tasks.teacher.count}}</p>
+                        <p>{{tasks.count}}</p>
                         <span>отримано відповідей до завдань</span>
                     </li>
                     <li class="personal_item_cont">
-                        <p>7</p>
+                        <p>{{tasks_checked.count}}</p>
                         <span>перевірено завдань</span>
                     </li>
                 </ul>
@@ -72,18 +72,27 @@
                         <th>Завдання</th>
                         <th>Відповідь</th>
                         <th>Виконано</th>
+                        <th>Студент</th>
                     </tr>
                     {% if tasks %}
                     
                     {% for task in tasks %}
-                    {% if task.teacher == user.teacher %}
+                    {% if task.checked %}
+                    <tr class="table-success">
+                        <td>{{task.lesson}}</td>
+                        <td>{{task.question}}</td>
+                        <td><a href="http://{{task.answer}}">Перевірити відповідь</a></td>
+                        <td>(Перевірено)</td>
+                        <td><small>{{task.student.last_name}} ({{task.student.email}})</small></td>
+                    </tr>
+                    {% else %}
                     <tr>
                         <td>{{task.lesson}}</td>
                         <td>{{task.question}}</td>
                         <td><a href="http://{{task.answer}}">Перевірити відповідь</a></td>
                         <td><a href='{% url "pages:success" task.id %}'>Так</a> / <a href='{% url "pages:wrong" task.id %}'>Ні</a></td>
+                        <td><small>{{task.student.first_name}} {{task.student.last_name}}</small></td>
                     </tr>
-                    {% else %}
                     {% endif %}
                     {% endfor %}
                     {% else %}

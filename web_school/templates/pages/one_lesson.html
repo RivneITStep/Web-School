@@ -6,12 +6,13 @@
 
 <section class="one-lesson">
     <div class="container">
+    {% if paged_lesson %}
     {% for less in paged_lesson %}
         <div class="row">
             <div class="col-md-9">
             
             
-                <h1>{{less.title}}</h1>
+                <h2>{{less.title}}</h2>
             </div>
             <div class="col-md-3"><a href="{% url 'courses:available_courses' %}">Повернутися до списку курсів</a></div>
         </div>
@@ -124,8 +125,12 @@
         {% else %}
         <h2>Для отримання доступу до домашніх завдань потрібно оплатити курс навчання!</h2>
         {% endif %}
-
     {% endfor %}
+        {% else %}
+            <div class="col-md-4 offset-8"><a href="{% url 'courses:available_courses' %}">Повернутися до списку курсів</a></div>
+    <h2>Уроків поки немає!!!</h2>
+    <img src='{% static "img/bart-simpson.png" %}' alt='' >
+    {% endif %}
     </div>
 </section>
 {% else %}

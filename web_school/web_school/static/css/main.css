@@ -49,9 +49,10 @@ html {
         max-width: 1140px;
     } */
 }
+
 @media (max-width: 1200px) {
-    main .testimonials-item{
-        height:95%;
+    main .testimonials-item {
+        height: 95%;
     }
     /* .index.data{
         position:relative;
@@ -4254,7 +4255,6 @@ body header .navigate .nav .media .nav-item button a {
     .testimonials-item {
         width: 100%;
     }
-
 }
 
 @media (max-width: 576px) {
@@ -4277,8 +4277,8 @@ body header .navigate .nav .media .nav-item button a {
         line-height: 21px;
         margin: 12px 0;
     }
-    .card-content button{
-        margin-left:25%;
+    .card-content button {
+        margin-left: 25%;
     }
 }
 
@@ -4439,7 +4439,7 @@ main .main-bg-color3 .testimonials-title {
 
 main .main-bg-color3 .testimonials-item {
     padding: 10px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 main .main-bg-color3 .testimonials-item .card-img {
@@ -4465,8 +4465,8 @@ main .main-bg-color3 .testimonials-btn {
     text-align: center;
 }
 
-.testimonial_text_area{
-    text-align:justify;
+.testimonial_text_area {
+    text-align: justify;
 }
 
 main .main-bg-color3 .testimonials-btn .btn--main:hover {
@@ -4485,17 +4485,18 @@ main .main-bg-color4 p {
     color: #494d55;
 }
 
-.t_item{
-    margin:0 15px;
+.t_item {
+    margin: 0 15px;
 }
+
 
 /* .row.testimonial_data{
     position:relative;
 } */
 
-.index.testimonial_text_area{
-    position:relative;
-    min-height:270px;
+.index.testimonial_text_area {
+    position: relative;
+    min-height: 270px;
 }
 
 main .main-bg-color4 .price-item {
@@ -4569,25 +4570,27 @@ main .main-bg-color5 .blog-btn :hover {
     text-decoration: none;
 }
 
-.blog_text_area{
-    text-align:justify;
-    height:190px;
-    overflow:hidden;
+.blog_text_area {
+    text-align: justify;
+    height: 190px;
+    overflow: hidden;
 }
+
 
 /* .blog_text_area::after{
     content:"...";
     overflow:visible;
 } */
+
 .img_blog {
     display: block;
     position: relative;
     height: 200px;
-    width:100%;
+    width: 100%;
     overflow: hidden;
 }
 
-.img_blog img{
+.img_blog img {
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -4667,9 +4670,12 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item span {
 main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     color: #6e6e6e;
 }
-.blog .card-box-item *,.main .card-box-item *{
-    display:inline-block;
+
+.blog .card-box-item *,
+.main .card-box-item * {
+    display: inline-block;
 }
+
 .aboutSection {
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 15px;
@@ -4891,19 +4897,19 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     .testimonials-item {
         margin-top: 10px;
     }
-    main .testimonials-item .teacher{
-        margin-left:0;
+    main .testimonials-item .teacher {
+        margin-left: 0;
     }
-    main .testimonials-item img{
-        margin-left:auto;
-        margin-right:auto;
-        left:0;
+    main .testimonials-item img {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
     }
-    main .testimonials-item{
-        height:95%;
+    main .testimonials-item {
+        height: 95%;
     }
-    .card-content button{
-        left:5%;
+    .card-content button {
+        left: 5%;
     }
 }
 
@@ -4913,13 +4919,13 @@ main .main-bg-color5 .card-box .card-box-container .card-box-item i {
     margin-bottom: 25px;
 }
 
-.main-bg-color2.details-card .row:nth-child(1){
-    border-bottom:none;
+.main-bg-color2.details-card .row:nth-child(1) {
+    border-bottom: none;
 }
 
-.details-card .card-desc{
-    position:relative;
-    min-height:100%;
+.details-card .card-desc {
+    position: relative;
+    min-height: 100%;
 }
 
 .details-card button {
@@ -5009,7 +5015,7 @@ section {
     border: 4px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     margin-bottom: 20px;
-    min-height:100%;
+    min-height: 100%;
 }
 
 .card-img {
@@ -5145,12 +5151,16 @@ section {
         margin-bottom: 65px;
     }
 }
+
+
 /* ----------------------------courses----------------------------- */
+
 .allCourses {
     margin-top: 50px;
     margin-bottom: 30px;
     padding-bottom: 55px;
 }
+
 main .allCourses {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -5163,17 +5173,18 @@ main .allCourses {
 }
 
 main .allCourses .row:nth-child(1) {
-    border-bottom:none;
+    border-bottom: none;
 }
 
 .allCourses h2 {
     margin-top: 55px;
 }
+
 main .allCourses h2 {
-    margin-top:0px;
+    margin-top: 0px;
 }
 
-.allCourses span{
+.allCourses span {
     color: #494d55;
 }
 
@@ -5193,7 +5204,7 @@ main .allCourses h2 {
     color: #3eddf7;
 }
 
-.allCourses .course .button-on-course{
+.allCourses .course .button-on-course {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -5266,8 +5277,8 @@ main .allCourses h2 {
 
 .allCourses .course .course-img {
     position: relative;
-    height:170px;
-    overflow:hidden;
+    height: 170px;
+    overflow: hidden;
     border: 3px solid #494d55;
 }
 
@@ -5349,41 +5360,42 @@ main .allCourses h2 {
     .main-page .course:nth-child(2n) {
         margin-right: 0;
     }
-    .details-card button{
-        left:0;
+    .details-card button {
+        left: 0;
     }
-    .index.testimonial_text_area{
-        position:relative;
-        min-height:350px;
+    .index.testimonial_text_area {
+        position: relative;
+        min-height: 350px;
     }
-    .card-box-container h4{
-        display:block;
-        position:relative;
-        height:60px;
+    .card-box-container h4 {
+        display: block;
+        position: relative;
+        height: 60px;
     }
-    .registration .title-sub-heading{
-        top: 121px!important;
+    .registration .title-sub-heading {
+        top: 121px !important;
     }
 }
-@media (max-width: 767px) {
-    .index.testimonial_text_area{
-        position:relative;
-        min-height:auto;
-    }
-    .registration .title-sub-heading{
-        font-size:16px!important;
-    }
-    .card-box-container .blog_text_area{
-        position:relative;
-        height:auto;
-    }
-    .one_news img  {
-        max-width:100%!important;
-        float:center!important;
-        margin:0!important;
-    }
 
+@media (max-width: 767px) {
+    .index.testimonial_text_area {
+        position: relative;
+        min-height: auto;
+    }
+    .registration .title-sub-heading {
+        font-size: 16px !important;
+    }
+    .card-box-container .blog_text_area {
+        position: relative;
+        height: auto;
+    }
+    .one_news img {
+        max-width: 100% !important;
+        float: center !important;
+        margin: 0 !important;
+    }
 }
+
 @media (max-width: 600px) {
     .main-page {
         justify-content: center;
@@ -5392,11 +5404,11 @@ main .allCourses h2 {
         width: 70%;
         margin-bottom: 50px;
     }
-    .registration .title-heading{
-        font-size:27px!important;
+    .registration .title-heading {
+        font-size: 27px !important;
     }
     .registration .title-sub-heading {
-        margin-top:-44px!important;
+        margin-top: -44px !important;
     }
 }
 
@@ -5454,6 +5466,7 @@ main .allCourses h2 {
     font-weight: 300;
     line-height: 24px;
 }
+
 
 /* .blog .card-box img {
     max-width: 100%;
@@ -5933,11 +5946,11 @@ main .allCourses h2 {
     .container-fluid.career_3 {
         height: auto;
     }
-    .card-content button{
-        margin-left:25%;
+    .card-content button {
+        margin-left: 25%;
     }
-    .details-card .col-sm-12{
-        margin-bottom:20px;
+    .details-card .col-sm-12 {
+        margin-bottom: 20px;
     }
 }
 
@@ -5946,8 +5959,8 @@ main .allCourses h2 {
         height:10%;
     } */
     .testimonials .card-img {
-        height:50px;
-        width:50px;
+        height: 50px;
+        width: 50px;
     }
     .why .row:nth-child(1) .col-lg-4:nth-child(1),
     .why .row:nth-child(1) .col-lg-4:nth-child(2),
@@ -6002,6 +6015,9 @@ main .allCourses h2 {
 
 .list-box {
     min-width: 300px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
 }
 
 .connect-us-bottom>h4,
@@ -6131,7 +6147,7 @@ main .allCourses h2 {
     padding-bottom: 55px;
 }
 
-.container .title {
+.registration .container .title {
     background-image: linear-gradient(239deg, #3eddf7, #1d55c4);
     height: 327px;
     display: flex;
@@ -6177,7 +6193,7 @@ main .allCourses h2 {
     line-height: 1.33;
     position: absolute;
     left: 152px;
-    top:85px;
+    top: 85px;
     margin-top: -26px;
 }
 
@@ -6194,7 +6210,7 @@ main .allCourses h2 {
     position: relative;
     box-sizing: border-box;
     max-width: 95%;
-    padding:5px 24px 50px 25px;
+    padding: 5px 24px 50px 25px;
     background-color: #fff;
     box-shadow: 0 0 10px 0 rgba(144, 144, 144, 0.5);
     margin: -20px auto 0;
@@ -6489,8 +6505,8 @@ select {
         transform: scale(2);
         padding: 0;
     }
-    .edit-item *{
-        border-right:none;
+    .edit-item * {
+        border-right: none;
     }
     .edit-item .basic-info .btn-box {
         display: block;
@@ -6563,6 +6579,7 @@ select {
     margin-top: 25px;
     margin-bottom: 55px;
 }
+
 .profile_2 .edit_button a {
     color: #fff;
 }
@@ -6932,7 +6949,7 @@ select {
 }
 
 .teacher_profile_2 table tr td {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 
@@ -7139,8 +7156,8 @@ select {
         -webkit-transform: scale(1.8);
         transform: scale(1.8);
     }
-    .edit-item .col-md-4{
-        border-right:none;
+    .edit-item .col-md-4 {
+        border-right: none;
     }
 }
 
@@ -7170,6 +7187,7 @@ select {
     float: right;
     margin: 0 0 15px 15px;
 }
+
 .one_news .img_blog {
     float: right;
     max-width: 45%;

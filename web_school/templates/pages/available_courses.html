@@ -10,18 +10,9 @@
     <div class="row flex-md-wrap list">
         <div class="col  col-md-6 col-xl-8">
             <div class="list-box">{% for course in courses %}
-                <a href="{% url 'courses:one_lesson' course.id %}">Безкоштовні {{course.title}} курси</a>
-            <p>
-            {% for lesson in lessons %}
-            {% if lesson.course == course %}
-            {{lesson}}
-            
-            {% else %}
-            {% endif %}
+                <a href="{% url 'courses:one_lesson' course.id %}"> {{course.title}} курси</a>
+                <p>Викладач: {{course.teacher.first_name}} {{course.teacher.last_name}}</p><hr class='w-100'>
             {% endfor %}
-             уроків</p>
-            {% endfor %}
-                
             </div>
             <button type="submit" class="btn--card"><a href="{% url 'pages:student_profile' %}">Повернутися в особистий
                     кабінет</a></button>
